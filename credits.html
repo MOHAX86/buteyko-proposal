@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="uk" data-type="service" data-radius="soft" data-buttons="block" data-motion>
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Метод Бутейка онлайн: photograph credits</title>
+<meta name="description" content="The photographers, licences and source pages of the photographs on the Метод Бутейка онлайн website.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Метод Бутейка онлайн з Аліком Муллахметовим">
+<meta property="og:description" content="10 індивідуальних занять у Zoom за місяць. Безкоштовна консультація в Telegram.">
+<meta property="og:image" content="share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#f7f9f8">
+<!-- <link rel="canonical" href="https://www.buteyko.com.ua/"> -->
+<meta name="site-kind" content="other">
+<meta name="page-type" content="service">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Hanken+Grotesk:wght@400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<link rel="stylesheet" href="assets/icons/icon.css">
+<link rel="stylesheet" href="assets/diagrams/diagram.css">
+<style>
+:root {
+  --p-bg: #f7f9f8; --p-surface: #ebf0ee; --p-ink: #06525c; --p-muted: #2f737d;
+  --p-accent: #06525c; --p-accent-ink: #f7f9f8; --p-action: #06525c; --p-action-ink: #f7f9f8;
+  --p-inv-bg: #06525c; --p-inv-surface: #205d66; --p-inv-ink: #f7f9f8; --p-inv-muted: #c1d0d2;
+  --p-inv-accent: #f7f9f8; --p-inv-accent-ink: #06525c; --p-inv-action: #f7f9f8; --p-inv-action-ink: #06525c;
+  --font-display: "Newsreader", Georgia, serif;
+  --font-text: "Hanken Grotesk", system-ui, sans-serif;
+  --display-weight: 400;
+  --display-tracking: -0.018em;
+  --display-tracking-xl: -0.025em;
+  --ly-scale: 1.06;
+}
+</style>
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<link rel="modulepreload" href="assets/moments/moments.js">
+<link rel="modulepreload" href="assets/moments/lib.js">
+<link rel="modulepreload" href="assets/moments/photo-chapters/moment.js">
+<link rel="modulepreload" href="assets/moments/word-highlight/moment.js">
+<!-- page CSS: the photographs' frames and the control-pause test (inside its visual only) -->
+<style>
+  .photo-frame { position: relative; overflow: hidden; border-radius: var(--r-lg); background: var(--surface); height: min(600px, var(--ly-fit, 600px)); }
+  .photo-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .photo-frame--tall { height: min(640px, var(--ly-fit, 640px)); }
+  @media (max-width: 1023px) { .photo-frame, .photo-frame--tall { height: auto; aspect-ratio: 4 / 3; margin-top: var(--s-7); } }
+  .rows .rows__name small { display: block; font-weight: 400; color: var(--muted); font-size: var(--t-small); margin-top: 2px; }
+  .facts-list { list-style: none; padding: 0; margin: var(--s-6) 0; display: grid; gap: var(--s-4); }
+  .facts-list li { padding-left: var(--s-6); position: relative; font-size: var(--t-body); line-height: 1.6; }
+  .facts-list li::before { content: ""; position: absolute; left: 0; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .price-line { display: flex; align-items: baseline; gap: var(--s-4); margin: var(--s-6) 0 var(--s-5); flex-wrap: wrap; }
+  .price-line .t-stat { margin: 0; }
+
+  /* control-pause test: a ring that fills over 60 seconds, started and stopped by the visitor */
+  .cp { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; gap: var(--s-6); padding: var(--s-8) var(--s-6); border-radius: var(--r-lg); background: var(--bg); border: 1px solid var(--line); }
+  .cp__ring { --p: 0; position: relative; width: 260px; height: 260px; border-radius: 50%;
+    background: conic-gradient(var(--accent) calc(var(--p) * 1turn), color-mix(in oklab, var(--accent) 12%, transparent) 0);
+    display: grid; place-items: center; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .cp__ring::after { content: ""; position: absolute; inset: 14px; border-radius: 50%; background: var(--bg); }
+  .cp__num { position: relative; z-index: 1; text-align: center; }
+  .cp__sec { display: block; font-family: var(--font-display); font-size: 88px; line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+  .cp__unit { display: block; font-size: var(--t-small); color: var(--muted); margin-top: var(--s-2); }
+  .cp.is-running .cp__ring { transform: scale(1.03); }
+  .cp__step { text-align: center; max-width: 36ch; min-height: 3.2em; margin: 0; font-size: var(--t-body); line-height: 1.6; }
+  .cp__result { text-align: center; max-width: 42ch; margin: 0; font-size: var(--t-body); line-height: 1.6; }
+  .cp__result[hidden] { display: none; }
+  .cp__scale { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; width: 100%; max-width: 420px; }
+  .cp__scale span { height: 6px; border-radius: 3px; background: color-mix(in oklab, var(--accent) 14%, transparent); transition: background .3s; }
+  .cp__scale span.is-on { background: var(--accent); }
+  .cp__scale-labels { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); width: 100%; max-width: 420px; font-size: var(--t-label); color: var(--muted); text-align: center; margin-top: calc(-1 * var(--s-5)); }
+  @media (max-width: 639px) { .cp__ring { width: 200px; height: 200px; } .cp__sec { font-size: 64px; } .cp { padding: var(--s-7) var(--s-4); } }
+  @media (prefers-reduced-motion: reduce) { .cp__ring { transition: none; } .cp.is-running .cp__ring { transform: none; } }
+
+  .creds { list-style: none; padding: 0; margin: 0; }
+  .creds li { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: var(--s-5); padding: var(--s-5) 0; border-top: 1px solid var(--line); }
+  .creds li:last-child { border-bottom: 1px solid var(--line); }
+  .creds .yr { font-family: var(--font-display); font-size: 20px; color: var(--muted); }
+  .creds p { margin: 0; font-size: var(--t-body); line-height: 1.55; }
+  .big-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-6); margin-top: var(--s-7); }
+  .big-stats .t-stat { margin: 0; }
+  .big-stats div { border-top: 1px solid var(--line-strong); padding-top: var(--s-5); }
+  .big-stats p:not(.t-stat) { margin: var(--s-2) 0 0; font-size: var(--t-body); line-height: 1.5; }
+  @media (max-width: 639px) { .big-stats { grid-template-columns: minmax(0, 1fr); gap: var(--s-5); } }
+  .big-stats { grid-template-columns: minmax(0, 1fr); margin-top: 0; }
+  .dg-panel { --p-h: 420px; height: var(--p-h); background: var(--surface); }
+  .icon-panel { --p-h: 180px; height: var(--p-h); display: grid; place-items: center; background: var(--bg); }
+  .icon-panel img { width: 72px; height: 72px; }
+  #start .card p { color: var(--ink); }
+  .yt-card { display: flex; gap: var(--s-5); align-items: center; margin-top: var(--s-8); padding: var(--s-6); border: 1px solid var(--line); border-radius: var(--r-lg); color: var(--ink); text-decoration: none; }
+  .yt-card span span { display: block; }
+  .yt-card__line { font-size: var(--t-body); line-height: 1.5; margin-top: var(--s-1); }
+  @media (max-width: 639px) { .dg-panel { --p-h: 320px; } .icon-panel { --p-h: 96px; } .icon-panel img { width: 48px; height: 48px; } }
+  /* under 640 the bar holds the logo and the menu; the main action stays in the hero, the sheet and the close */
+  @media (max-width: 639px) { .nav:not(.is-open) .nav__actions { display: none; } .nav:not(.is-open) .nav__actions + .nav__toggle { margin-left: auto; } }
+  .socials a { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; color: var(--ink); }
+  .socials .ic { width: 20px; height: 20px; }
+</style>
+</head>
+<body>
+<!-- type: service
+     deal: hero split, nav nav-split, close close-photo, footer footer-columns, rhythm surface-pairs, buttons block, mark stack, grounds none (kind other)
+     palette teal-on-paper (a calm off-white ground and deep teal: clean air and water, the colours of a breathing practice), type newsreader
+     moments: photo-chapters (#month: the month of the course in three chapters), word-highlight (#goal: the course's one aim) -->
+
+<header class="nav nav--split">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">До змісту</a>
+    <nav class="nav__links" aria-label="Головне меню">
+      <div class="nav__item">
+        <a class="nav__link" href="#course">Курс <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav__menu">
+          <div class="wrap grid">
+            <div class="menu-col span-3">
+              <p class="t-label">Для себе</p>
+              <a href="#course">Індивідуальний курс<span>10 занять у Zoom за місяць</span></a>
+              <a href="#month">Як проходить місяць<span>Від першого заміру до самостійної практики</span></a>
+              <a href="#test">Тест контрольної паузи<span>Хвилина, секундомір і шкала Бутейка</span></a>
+            </div>
+            <div class="menu-col span-3">
+              <p class="t-label">Для фахівців</p>
+              <a href="#instructors">Навчання методистів ВЛГД<span>Теорія, практика, супровід</span></a>
+              <a href="#start">Безкоштовні уроки<span>Базовий курс у Telegram-боті</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item"><a class="nav__link" href="#method">Метод</a></div>
+      <div class="nav__item"><a class="nav__link" href="#about">Про мене</a></div>
+      <div class="nav__item"><a class="nav__link" href="#instructors">Методистам</a></div>
+    </nav>
+    <a class="nav__logo" href="#top"><span class="mark" data-mark="stack" aria-hidden="true"></span>Алік Муллахметов</a>
+    <div class="nav__actions">
+      <a class="btn btn--primary" href="https://t.me/alikmullahmetov">Записатися на консультацію</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Меню"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+  </div>
+</header>
+
+<main id="top">
+  <p><a class="link" href="index.html">Метод Бутейка онлайн</a></p>
+  <section class="credits-list" id="credits" aria-labelledby="credits-h">
+    <h1 id="credits-h">Photograph credits</h1>
+    <ul>
+      <li><a href="https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%82%D1%83%D0%BC%D0%B0%D0%BD%D0%BD%D0%B8%D0%B9_%D1%80%D0%B0%D0%BD%D0%BE%D0%BA.jpg">Vian</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D1%83%D1%82%D1%80%D0%BE_%D0%B2_%D0%9A%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D0%B0%D1%85.jpg">Dolnikov Denys</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:%D0%A3%D1%82%D1%80%D0%BE_%D0%B2_%D0%9A%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D0%B0%D1%85.jpg">Dolnikov Denys</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Dawn_in_the_Carpathian_Mountains.jpg">Danyil Solovchuk</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a></li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Older_woman_enjoying_a_video_call_at_home_while_smiling_and_expressing_gratitude.jpg">Shixart1985</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a></li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Morning_mist_over_lake_Doxa.jpg">Giannismanthosg</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Morning_Mist_(53028682830).jpg">Enoch Leung</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="footer closing" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--photo">
+      <div class="section-head--split">
+        <div><h2 id="close-h">Почніть з безкоштовної консультації</h2><p class="t-lead">Напишіть «Консультація» в Telegram, і Алік відповість особисто.</p></div>
+        <a class="btn btn--primary" href="https://t.me/alikmullahmetov">Записатися на консультацію<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+      </div>
+      <div class="close__media"><img src="assets/img/photo-f107081822.jpg" srcset="assets/img/photo-f107081822-500.jpg 500w, assets/img/photo-f107081822-960.jpg 960w, assets/img/photo-f107081822.jpg 1280w" sizes="(max-width: 639px) 200vw, 100vw" width="1280" height="853" alt="Тихе озеро в сутінках, над водою легкий туман" loading="lazy" decoding="async" data-source="stand-in" data-subject="lake at dusk"></div>
+    </div>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <a class="nav__logo" href="#top"><span class="mark" data-mark="stack" aria-hidden="true"></span>Алік Муллахметов</a>
+          <p class="footer__lede">Академія здоров’я: дихання за Бутейком.</p>
+        </div>
+        <div class="span-2 footer__col"><h3>Курс</h3><ul><li><a href="#course">Програма</a></li><li><a href="#month">Місяць навчання</a></li><li><a href="#test">Тест паузи</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Метод</h3><ul><li><a href="#method">Що це</a></li><li><a href="#faq">Питання</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Про мене</h3><ul><li><a href="#about">Освіта</a></li><li><a href="#instructors">Методистам</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Контакти</h3><ul><li><a href="https://t.me/alikmullahmetov">Telegram</a></li><li><a href="https://t.me/buteyko_bot">Безкоштовні уроки</a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; 2026 Академія здоров’я Аліка Муллахметова &nbsp; <a href="https://www.buteyko.com.ua/public-offer">Оферта</a> &nbsp; <a href="https://www.buteyko.com.ua/privacy-policy">Конфіденційність</a></span>
+        <div class="socials">
+          <a href="https://www.youtube.com/@buteykolive" aria-label="YouTube"><svg class="ic ic-svg" aria-hidden="true" viewBox="-0.48 3.065 24.96 17.87" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="https://t.me/alikmullahmetov" aria-label="Telegram"><svg class="ic ic-svg" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+          <a href="https://www.instagram.com/noastmakrop" aria-label="Instagram"><svg class="ic ic-svg" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.2-.1 1.6-.1 4.8-.1M12 0C8.7 0 8.3 0 7.1.1 5.8.1 4.9.3 4.1.6c-.8.3-1.5.7-2.1 1.4C1.3 2.6.9 3.3.6 4.1.3 4.9.1 5.8.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.1 1.3.3 2.2.6 2.9.3.8.7 1.5 1.4 2.1.6.7 1.3 1.1 2.1 1.4.8.3 1.6.5 2.9.6 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c1.3-.1 2.2-.3 2.9-.6.8-.3 1.5-.7 2.1-1.4.7-.6 1.1-1.3 1.4-2.1.3-.8.5-1.6.6-2.9.1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.1-1.3-.3-2.2-.6-2.9-.3-.8-.7-1.5-1.4-2.1C21.4 1.3 20.7.9 19.9.6 19.1.3 18.2.1 16.9.1 15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></a>
+          <a href="https://www.tiktok.com/@noastma" aria-label="TikTok"><svg class="ic ic-svg" aria-hidden="true" viewBox="1.084 -0.481 21.823 25.033" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.090 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.920.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.130 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.120-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+        </div>
+        <span class="credits">Фото-замінники: Wikimedia Commons</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+/* the control-pause test: a stopwatch the visitor starts after an exhale and stops at the first urge to breathe */
+(() => {
+  const root = document.querySelector('[data-cp]'); if (!root) return;
+  const ring = root.querySelector('.cp__ring'), sec = root.querySelector('[data-cp-sec]'), step = root.querySelector('[data-cp-step]');
+  const btn = root.querySelector('[data-cp-btn]'), res = root.querySelector('[data-cp-result]'), cta = root.querySelector('[data-cp-cta]');
+  const bars = root.querySelectorAll('.cp__scale span');
+  const bands = [
+    [10, 'Дуже коротка пауза. У методі Бутейка це ознака вираженої гіпервентиляції. Варто почати під наглядом методиста.'],
+    [20, 'Коротка пауза: ви дихаєте помітно більше норми. Саме з такими цифрами найчастіше приходять на курс.'],
+    [40, 'Середній рівень. Є куди рости: за курс учні зазвичай вчаться стабільно подовжувати паузу.'],
+    [60, 'Добрий результат, близький до норми Бутейка. Курс допоможе закріпити його в повсякденні.'],
+    [Infinity, 'Норма за Бутейком: 60 секунд і більше. Вам може бути цікаве навчання на методиста.']
+  ];
+  let t0 = 0, raf = 0, running = false;
+  const tick = () => { const s = (performance.now() - t0) / 1000; sec.textContent = Math.floor(s); ring.style.setProperty('--p', Math.min(s / 60, 1)); raf = requestAnimationFrame(tick); };
+  btn.addEventListener('click', () => {
+    if (!running) {
+      running = true; root.classList.add('is-running'); res.hidden = true; cta.hidden = true; bars.forEach(b => b.classList.remove('is-on'));
+      step.textContent = 'Тримайте паузу. При першому бажанні вдихнути тисніть «Стоп».';
+      btn.textContent = 'Стоп'; t0 = performance.now(); tick();
+    } else {
+      running = false; cancelAnimationFrame(raf); root.classList.remove('is-running');
+      const s = Math.round((performance.now() - t0) / 1000); sec.textContent = s;
+      const i = bands.findIndex(b => s < b[0]); bars[i].classList.add('is-on');
+      step.textContent = 'Ваша контрольна пауза: ' + s + ' с. Зробіть спокійний вдих носом.';
+      res.textContent = bands[i][1]; res.hidden = false; cta.hidden = false; btn.textContent = 'Ще раз';
+    }
+  });
+})();
+</script>
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="assets/layout/layout.js"></script>
+<script type="module" src="assets/diagrams/mount.js"></script>
+</body>
+</html>
