@@ -62,6 +62,8 @@ header,section{display:grid;gap:18px;min-width:0}
 .who{font:600 11px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-left:6px}
 .decide{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:18px 20px;display:grid;gap:10px}
 .decide ul{margin:0;padding-left:20px;display:grid;gap:8px}
+.tight-steps{margin:0;padding-left:22px;display:grid;gap:8px;font-size:15px}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--soft);padding:1px 5px;border-radius:3px;word-break:break-all}
 .links{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:15px}
 footer{font-size:13px;color:var(--muted);border-top:1px solid var(--rule);padding-top:18px}
 @media (prefers-reduced-motion: no-preference){ .breath path{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.4s ease-out .2s forwards} @keyframes draw{to{stroke-dashoffset:0}} }
@@ -125,8 +127,9 @@ footer{font-size:13px;color:var(--muted);border-top:1px solid var(--rule);paddin
       <li>Адрес остаётся тем же: <b>www.buteyko.com.ua</b>.</li>
       <li>Все статьи переносятся и открываются по своим прежним ссылкам. Ссылки, которые вы уже разослали, продолжают работать.</li>
       <li>Старые адреса страниц курса и обучения методистов автоматически ведут на новые страницы.</li>
-      <li>Сайт на Google Sites не удаляется. Он остаётся в вашем аккаунте Google по своему внутреннему адресу Google Sites, просто домен buteyko.com.ua начинает показывать новый сайт.</li>
-      <li>Если что-то пойдёт не так, домен можно за несколько минут вернуть на старый сайт.</li>
+      <li>Сайт на Google Sites не удаляется и остаётся в вашем аккаунте Google. Просто адрес buteyko.com.ua начинает показывать новый сайт.</li>
+      <li>Если что-то пойдёт не так, адрес за несколько минут возвращается на старый сайт.</li>
+      <li>Пароли и доступы никому передавать не нужно.</li>
       <li>Telegram, бот, YouTube и приложение работают как раньше.</li>
     </ul>
   </div>
@@ -134,16 +137,30 @@ footer{font-size:13px;color:var(--muted);border-top:1px solid var(--rule);paddin
 
 <section>
   <h2>Как перейти, шаг за шагом</h2>
-  <p class="muted">Если вы согласны, делаем по порядку. До шага 6 посетители ничего не замечают: всё готовится на тестовом адресе.</p>
+  <p class="muted">Всё, что можно сделать без вас, уже сделано. До шага 4 посетители ничего не замечают: новый сайт лежит на тестовом адресе.</p>
   <ol class="steps">
-    <li><div><b>Вы смотрите новый сайт и говорите, что поменять <span class="who">вы</span></b><p>Предложение уже готово: курс, обучение методистов и детская книга на украинском и русском.</p></div></li>
-    <li><div><b>Вы даёте доступы <span class="who">вы</span></b><p>Google Search Console и Google Analytics (добавить Виталия), доступ к настройкам домена в Cloudflare. И ссылки, которые указаны в Google Play и App Store для политики конфиденциальности приложения.</p></div></li>
-    <li><div><b>Смотрим, что Google уже знает о сайте <span class="who">мы</span></b><p>2–3 дня Search Console собирает данные: какие статьи уже приносят посетителей и по каким запросам. С ними обращаемся особенно бережно.</p></div></li>
-    <li><div><b>Переносим все страницы и статьи <span class="who">мы</span></b><p>Обо мне, контакты, методисты, урок, оферта и другие юридические страницы, страницы приложения и все 147 статей. Вы проверяете на тестовом адресе.</p></div></li>
-    <li><div><b>Вы решаете спорные вопросы <span class="who">вы</span></b><p>Два вопроса, они в блоке ниже.</p></div></li>
-    <li><div><b>Переключаем домен <span class="who">мы</span></b><p>Несколько минут работы, сайт не пропадает. Сразу отправляем в Google карту сайта и проверяем главные страницы.</p></div></li>
+    <li><div><b>Вы смотрите новый сайт и говорите, что поменять <span class="who">вы</span></b><p>Все 173 страницы старого сайта уже перенесены: 147 статей, «Про мене», контакты, методисты, урок, оферта и другие юридические страницы, страницы приложения. Плюс новые страницы курса, обучения методистов и детской книги.</p></div></li>
+    <li><div><b>Вы решаете два вопроса <span class="who">вы</span></b><p>Они в блоке ниже.</p></div></li>
+    <li><div><b>Договариваемся о дне запуска, мы выкладываем финальную версию <span class="who">мы</span></b><p>Перед этим ещё раз забираем со старого сайта всё, что вы успели добавить.</p></div></li>
+    <li><div><b>Вы меняете одну запись в Cloudflare <span class="who">вы</span></b><p>5 минут по инструкции ниже или на созвоне с показом экрана. Пароли никому не передаются.</p></div></li>
+    <li><div><b>Проверяем сайт вместе <span class="who">вместе</span></b><p>Главная, статьи, оферта, кнопки Telegram, старые ссылки.</p></div></li>
+    <li><div><b>По желанию подключаете Google Search Console <span class="who">вы</span></b><p>Чтобы видеть, по каким запросам вас находят. Подключается в вашем аккаунте Google, доступ давать не обязательно.</p></div></li>
     <li><div><b>Месяц наблюдаем и улучшаем статьи <span class="who">мы</span></b><p>Следим, чтобы Google принял новые страницы. Затем переводы на украинский, объединение похожих статей, видео в статьях.</p></div></li>
   </ol>
+</section>
+
+<section>
+  <h2>Инструкция для шага 4</h2>
+  <div class="decide">
+    <ol class="tight-steps">
+      <li>Войти на dash.cloudflare.com и выбрать домен <b>buteyko.com.ua</b>.</li>
+      <li>Слева <b>DNS → Records</b>. Найти запись <b>CNAME</b> с именем <b>www</b>. Сейчас в ней <code>ghs.googlehosted.com</code>.</li>
+      <li>Нажать <b>Edit</b>. В поле <b>Target</b> написать <code>mohax86.github.io</code>. <b>Proxy status</b> включить, облачко станет оранжевым. Нажать <b>Save</b>.</li>
+      <li>Слева <b>SSL/TLS → Overview</b>: выбрать режим <b>Full</b> (не «Full (strict)»).</li>
+      <li><b>SSL/TLS → Edge Certificates</b>: включить <b>Always Use HTTPS</b>. Это заодно чинит адрес без www, который сейчас открывает ошибку.</li>
+    </ol>
+    <p class="muted">Через 1–5 минут www.buteyko.com.ua показывает новый сайт. <b>Как вернуть старый:</b> в той же записи www написать обратно <code>ghs.googlehosted.com</code> и выключить облачко (серое, «DNS only»).</p>
+  </div>
 </section>
 
 <section>
