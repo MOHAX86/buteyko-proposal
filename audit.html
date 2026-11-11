@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>SEO-аудит buteyko.com.ua</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: sticky table of contents on the left, one reading column; priority queue first, evidence after */
+:root{
+ --ground:#F1F4F4; --surface:#FFFFFF; --ink:#18222A; --muted:#56646C; --rule:#D5DDDF; --soft:#E6ECED;
+ --accent:#1F6E78; --data:#2D5F8A; --data-soft:#DDE7F0;
+ --p1:#B42318; --p1-bg:#FBE9E7; --p2:#94580A; --p2-bg:#FCEFD9; --p3:#56606A; --p3-bg:#E7EAED;
+ --ok:#2F6B3F; --ok-bg:#E2F0E5;
+ --display:"Manrope",system-ui,sans-serif;
+ --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+ --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+ :root:not([data-theme="light"]){
+ --ground:#11181B; --surface:#182226; --ink:#E4EBEC; --muted:#98A7AC; --rule:#2B383D; --soft:#1F2B2F;
+ --accent:#6CC3CC; --data:#8DB6DD; --data-soft:#21303C;
+ --p1:#F2837A; --p1-bg:#3A1F1C; --p2:#E7A64E; --p2-bg:#382A16; --p3:#A3ADB6; --p3-bg:#2A3035;
+ --ok:#7CC68F; --ok-bg:#1D3224; color-scheme:dark;
+ }
+}
+:root[data-theme="dark"]{
+ --ground:#11181B; --surface:#182226; --ink:#E4EBEC; --muted:#98A7AC; --rule:#2B383D; --soft:#1F2B2F;
+ --accent:#6CC3CC; --data:#8DB6DD; --data-soft:#21303C;
+ --p1:#F2837A; --p1-bg:#3A1F1C; --p2:#E7A64E; --p2-bg:#382A16; --p3:#A3ADB6; --p3-bg:#2A3035;
+ --ok:#7CC68F; --ok-bg:#1D3224; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font:15px/1.6 var(--body);margin:0}
+a{color:var(--data)}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding-block:32px 80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
+@media(min-width:1080px){.wrap{grid-template-columns:200px minmax(0,1fr);gap:48px}}
+nav.toc{display:none}
+@media(min-width:1080px){
+ nav.toc{display:block;position:sticky;top:24px;align-self:start;font-size:13px}
+ nav.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:6px;border-left:1px solid var(--rule)}
+ nav.toc a{color:var(--muted);text-decoration:none;display:block;padding:2px 0 2px 12px}
+ nav.toc a:hover{color:var(--ink)}
+ nav.toc .lbl{font:700 11px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+}
+main{min-width:0;display:grid;gap:56px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.2}
+h1{font-size:clamp(28px,4.4vw,42px);font-weight:800;letter-spacing:-.015em}
+h2{font-size:24px;font-weight:800;letter-spacing:-.01em}
+h3{font-size:16px;font-weight:700}
+p{margin:0;max-width:70ch}
+.eyebrow{font:700 11px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.muted{color:var(--muted)}
+section{display:grid;gap:20px;scroll-margin-top:20px;min-width:0}
+.sec-head{display:grid;gap:8px}
+header.top{display:grid;gap:18px}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--muted)}
+.breath{display:block;width:100%;height:30px;color:var(--accent)}
+.verdict{font-size:17px;line-height:1.6;max-width:72ch}
+.verdict strong{font-weight:600}
+.figs{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.fig-group{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:18px 20px;display:grid;gap:12px;align-content:start}
+.fig-group h3{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.kv{display:grid;grid-template-columns:1fr auto;gap:6px 12px;margin:0}
+.kv dt{color:var(--muted);font-size:14px}
+.kv dd{margin:0;font:500 15px/1.5 var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+.kv dd.bad{color:var(--p1)}
+.kv dd.good{color:var(--ok)}
+.src{font-size:12px;color:var(--muted);border-top:1px dashed var(--rule);padding-top:10px}
+.queue{display:grid;gap:28px}
+.tier{display:grid;gap:10px}
+.tier-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;font:700 11px/1 var(--display);letter-spacing:.06em;padding:5px 8px;border-radius:3px;white-space:nowrap}
+.chip.p1{color:var(--p1);background:var(--p1-bg)}
+.chip.p2{color:var(--p2);background:var(--p2-bg)}
+.chip.p3{color:var(--p3);background:var(--p3-bg)}
+.chip.ok{color:var(--ok);background:var(--ok-bg)}
+.tasks{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--rule);border-radius:6px}
+.tasks li{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;padding:14px 18px;border-top:1px solid var(--rule)}
+.tasks li:first-child{border-top:0}
+@media(min-width:720px){.tasks li{grid-template-columns:104px minmax(0,1fr)}}
+.area{font:700 11px/1.3 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.task-body{display:grid;gap:5px;min-width:0}
+.task-body b{font-weight:600}
+.task-body .how{color:var(--muted);font-size:14px;max-width:none}
+.task-body .ev{font-size:13px;color:var(--muted)}
+.tbl-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--rule);border-radius:6px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{text-align:left;padding:10px 14px;border-top:1px solid var(--rule);vertical-align:top}
+thead th{border-top:0;font:700 11px/1.3 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--soft)}
+td.n{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td .len{font:12px var(--mono);color:var(--muted)}
+.two{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:18px 20px;display:grid;gap:10px;align-content:start;min-width:0}
+.panel ul,.panel ol{margin:0;padding-left:18px;display:grid;gap:6px}
+.plus{color:var(--ok);font-weight:700}
+.minus{color:var(--p1);font-weight:700}
+.note{border-left:3px solid var(--accent);padding:4px 0 4px 14px;max-width:74ch}
+.disc{border-left:3px solid var(--p2);padding:8px 0 8px 14px;max-width:74ch;font-size:14px}
+ul.tight,ol.tight{margin:0;padding-left:20px;display:grid;gap:6px;max-width:74ch}
+pre{margin:0;background:var(--soft);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;overflow-x:auto;font:13px/1.55 var(--mono)}
+code{font-family:var(--mono);font-size:.88em;background:var(--soft);padding:1px 5px;border-radius:3px;word-break:break-word}
+pre code{background:none;padding:0;word-break:normal}
+details{background:var(--surface);border:1px solid var(--rule);border-radius:6px}
+details>summary{cursor:pointer;padding:14px 18px;font:700 15px/1.3 var(--display)}
+details>div{padding:0 18px 18px;display:grid;gap:10px}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.check li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;align-items:start}
+.check li::before{content:"";width:14px;height:14px;border:1.5px solid var(--accent);border-radius:3px;margin-top:4px}
+footer{font-size:13px;color:var(--muted);display:grid;gap:6px;border-top:1px solid var(--rule);padding-top:20px}
+@media (prefers-reduced-motion: no-preference){ .breath path{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.4s ease-out .2s forwards} @keyframes draw{to{stroke-dashoffset:0}} }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+<nav class="toc" aria-label="Содержание">
+  <div class="lbl">Разделы</div>
+  <ol>
+    <li><a href="#verdict">Вердикт</a></li>
+    <li><a href="#numbers">Цифры</a></li>
+    <li><a href="#queue">Что делать</a></li>
+    <li><a href="#migration">Переезд на новый сайт</a></li>
+    <li><a href="#tech">Техническое SEO</a></li>
+    <li><a href="#keys">Title и description</a></li>
+    <li><a href="#content">Статьи</a></li>
+    <li><a href="#eeat">Доверие и медтема</a></li>
+    <li><a href="#schema">Разметка</a></li>
+    <li><a href="#geo">ИИ-поиск</a></li>
+    <li><a href="#links">Ссылки и YouTube</a></li>
+    <li><a href="#method">Методика</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="top" id="verdict">
+  <div class="eyebrow">SEO + GEO аудит · 11.11.2026</div>
+  <h1>buteyko.com.ua</h1>
+  <svg class="breath" viewBox="0 0 1000 30" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 15 C60 3 120 3 180 15 S300 27 360 15 C420 5 480 5 540 15 S650 25 710 15 C770 7 830 7 890 15 S960 21 1000 15" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+  </svg>
+  <div class="meta-row">
+    <span>Алик Муллахметов · обучение методу Бутейко онлайн</span>
+    <span>≈180 URL · 146 статей RU · 1 статья UA</span>
+    <span>Google Sites за Cloudflare</span>
+    <span>GA4 подключён (G-ERE2330W4R)</span>
+  </div>
+  <p class="verdict">
+    Контент у сайта сильный: 146 статей, 30 лет практики, YouTube на 100 000 подписчиков. Но <strong>движок не даёт поиску этим воспользоваться</strong>.
+    Google Sites не позволяет задать meta description, canonical, язык страницы и разметку Schema. Поэтому у всех страниц <code>lang="en-US"</code>, в title сначала 60 символов названия академии и лишь потом тема статьи, а в превью ссылки в Telegram и Viber вместо описания стоит <code>УКР | РУС</code>.
+    У главной нет H1, у 85 статей из 146 тоже. По-украински написана одна статья из 147.
+    <strong>Главное решение — перенести сайт на новый движок</strong>, который уже подготовлен (<a href="./">посмотреть предложение</a>), и при переезде сохранить адреса статей. Ниже чек-лист переезда, готовые title/description и порядок работ.
+  </p>
+</header>
+
+<section id="numbers">
+  <div class="sec-head"><h2>Цифры</h2></div>
+  <div class="figs">
+    <div class="fig-group">
+      <h3>Структура</h3>
+      <dl class="kv">
+        <dt>Служебные и продающие страницы</dt><dd>≈20</dd>
+        <dt>Статьи на русском</dt><dd>146</dd>
+        <dt>Статьи на украинском</dt><dd class="bad">1</dd>
+        <dt>Рубрики RU</dt><dd>11</dd>
+        <dt>Русские страницы с суффиксом ru в URL</dt><dd>/homeru, /aboutru…</dd>
+      </dl>
+      <p class="src">Обход сайта скриптом, 120 страниц + списки всех 11 рубрик</p>
+    </div>
+    <div class="fig-group">
+      <h3>Технические дефекты</h3>
+      <dl class="kv">
+        <dt>meta description</dt><dd class="bad">0 из 180</dd>
+        <dt>canonical</dt><dd class="bad">0 из 180</dd>
+        <dt>Язык страниц</dt><dd class="bad">en-US везде</dd>
+        <dt>hreflang UA↔RU</dt><dd class="bad">нет</dd>
+        <dt>JSON-LD разметка</dt><dd class="bad">нет</dd>
+        <dt>sitemap.xml</dt><dd class="bad">404</dd>
+        <dt>http://buteyko.com.ua</dt><dd class="bad">522</dd>
+      </dl>
+      <p class="src">curl + разбор HTML</p>
+    </div>
+    <div class="fig-group">
+      <h3>Страница и контент</h3>
+      <dl class="kv">
+        <dt>H1 на главной</dt><dd class="bad">нет</dd>
+        <dt>Статьи без H1</dt><dd class="bad">85 из 146</dd>
+        <dt>Объём статьи, слов</dt><dd>≈230–650</dd>
+        <dt>Картинки без alt (главная)</dt><dd>4 из 16</dd>
+        <dt>HTTPS, 404, www-редирект</dt><dd class="good">в порядке</dd>
+        <dt>Ответ сервера (TTFB)</dt><dd class="good">0,25 с</dd>
+      </dl>
+      <p class="src">Объём без меню и подвала, приблизительно</p>
+    </div>
+  </div>
+</section>
+
+<section id="queue">
+  <div class="sec-head">
+    <h2>Что делать</h2>
+    <p class="muted">По порядку. Пункты P1 закрывают то, что мешает Google увидеть сайт, P2 дают рост, P3 закрепляют результат.</p>
+  </div>
+  <div class="queue">
+    <div class="tier">
+      <div class="tier-head"><span class="chip p1">P1</span><h3>Сразу, на этой неделе</h3></div>
+      <ul class="tasks">
+        <li><span class="area">Данные</span><div class="task-body">
+          <b>Подключить Google Search Console как ресурс домена</b>
+          <p class="how">Добавить ресурс <code>buteyko.com.ua</code> (тип «Домен»), подтвердить TXT-записью в DNS Cloudflare. Через 2–3 дня станет видно, какие страницы в индексе, по каким запросам сайт показывается и какие статьи приносят клики. Без этих данных при переезде нельзя решить, какие статьи сохранять как есть, а какие объединять. Заодно импортировать ресурс в Bing Webmaster Tools: Bing питает ChatGPT Search и Copilot.</p>
+          <p class="ev">Обычный веб-поиск по <code>site:buteyko.com.ua</code> не вернул ни одной страницы сайта. Это не доказывает, что сайт вне индекса, но точную картину даст только Search Console.</p>
+        </div></li>
+        <li><span class="area">Тех SEO</span><div class="task-body">
+          <b>http://buteyko.com.ua без www и без https выдаёт ошибку 522</b>
+          <p class="how">В Cloudflare: Rules → Redirect Rules → правило «hostname равен buteyko.com.ua → 301 на https://www.buteyko.com.ua${path}». Плюс включить SSL/TLS → Edge Certificates → Always Use HTTPS. Пять минут работы. Сейчас такой адрес из старых визиток, книг и сообщений открывает страницу ошибки.</p>
+          <p class="ev"><code>curl -I http://buteyko.com.ua</code> → <code>HTTP 522</code>. Варианты <code>https://buteyko.com.ua</code> и <code>http://www…</code> редиректят правильно.</p>
+        </div></li>
+        <li><span class="area">Медтема</span><div class="task-body">
+          <b>Убрать с главной список из ~70 диагнозов</b>
+          <p class="how">Блок «Які захворювання пов’язували з хронічною гіпервентиляцією» перечисляет диабет, эпилепсию, рассеянный склероз, псориаз и ещё около 65 состояний. Для Google это тема «здоровье» (YMYL), где он строже всего оценивает доверие. Список болезней на продающей странице без источников выглядит как обещание вылечить. Перенести в историческую статью «Перелік захворювань з робіт К. П. Бутейка» со ссылкой на первоисточник (инструкции 1984 и 1988 годов) и пометкой, что это исторический документ, а не медицинская рекомендация. На главной вместо списка дать 3–4 строки о том, что известно из исследований по астме, со ссылками.</p>
+        </div></li>
+        <li><span class="area">Решение</span><div class="task-body">
+          <b>Окончательно решить переезд с Google Sites на новый сайт</b>
+          <p class="how">Почти все дефекты из блока «Цифры» на Google Sites исправить нельзя: там не задаются description, canonical, язык, hreflang, разметка и 301-редиректы. Новый сайт уже правильно собран по title, description, H1 и alt. Переносить по чек-листу из раздела «Переезд», иначе потеряются статьи и страницы, которые нужны магазинам приложений.</p>
+        </div></li>
+      </ul>
+    </div>
+
+    <div class="tier">
+      <div class="tier-head"><span class="chip p2">P2</span><h3>В этом месяце</h3></div>
+      <ul class="tasks">
+        <li><span class="area">Google Sites</span><div class="task-body">
+          <b>Если переезд займёт больше месяца, сделать быстрые правки на текущем сайте</b>
+          <p class="how">1) Название сайта (Настройки → Бренд) сократить до «Метод Бутейка · Муллахметов». Сейчас 62 символа названия стоят в начале каждого title, и тему статьи Google обрезает. 2) Переименовать страницы с английскими названиями (Home, Lesson, About, Homeru, Butey…) в украинские и русские: имя страницы попадает в title и в верхнее меню, адрес при этом можно не менять. 3) На главной и в 85 статьях переключить заголовок со стиля «Заголовок»/обычного текста на стиль «Название» — Google Sites делает из него H1. 4) Добавить alt к картинкам (меню картинки → «Альтернативный текст»). 5) Первым абзацем главной поставить описание, а не переключатель «УКР | РУС»: Google Sites берёт первый текст страницы в og:description, отсюда «УКР | РУС» в превью ссылки.</p>
+        </div></li>
+        <li><span class="area">Статьи</span><div class="task-body">
+          <b>Объединить пересекающиеся статьи в сильные опорные</b>
+          <p class="how">Пример: про контрольную паузу 11 отдельных статей по 350–560 слов. Они конкурируют друг с другом за один запрос. Собрать из них одну опорную страницу «Контрольная пауза по Бутейко: как измерить и что значит» на 2 000–2 500 слов с таблицей норм и видео, остальные оставить короткими ответами на узкие вопросы со ссылкой на опорную или склеить 301-редиректом. Подробности в разделе «Статьи».</p>
+        </div></li>
+        <li><span class="area">Доверие</span><div class="task-body">
+          <b>Добавить в каждую статью блок автора, дату и видео</b>
+          <p class="how">Над текстом: «Автор: Алик Муллахметов, методист-ревизор ВЛГД, практикует с 1990-х · обновлено 11.11.2026», ссылка на страницу «Обо мне» с дипломами. В ключевые статьи встроить подходящее видео с канала @buteykolive. Это самый сильный сигнал опыта (буква E в E-E-A-T), который есть только у вас.</p>
+        </div></li>
+        <li><span class="area">Язык</span><div class="task-body">
+          <b>Перевести на украинский 20 главных статей</b>
+          <p class="how">Сейчас украиноязычный поиск получает одну статью. Начать с опорных: что такое метод, контрольная пауза, базовые упражнения, носовое дыхание, ВЛГД, для начинающих, CO₂ и гипервентиляция, при астме, для детей. Перевод вычитать вручную: машинный перевод без правки Google считает малоценным.</p>
+        </div></li>
+        <li><span class="area">Разметка</span><div class="task-body">
+          <b>На новом сайте добавить JSON-LD: Person, Course, Book, Article, BreadcrumbList</b>
+          <p class="how">Готовый пример в разделе «Разметка».</p>
+        </div></li>
+      </ul>
+    </div>
+
+    <div class="tier">
+      <div class="tier-head"><span class="chip p3">P3</span><h3>Потом, постоянно</h3></div>
+      <ul class="tasks">
+        <li><span class="area">Ссылки</span><div class="task-body">
+          <b>Связать YouTube и сайт</b>
+          <p class="how">В описании каждого видео первой строкой ставить ссылку на статью сайта по той же теме, а не только на Telegram. 100 000 подписчиков — главный источник трафика и упоминаний бренда, сейчас он почти не работает на сайт.</p>
+        </div></li>
+        <li><span class="area">Ссылки</span><div class="task-body">
+          <b>Попросить выпускников-методистов поставить ссылку</b>
+          <p class="how">Методисты в 9 странах. Дать им бейдж «Сертифікований методист ВЛГД · навчався в А. Муллахметова» со ссылкой на страницу «Методисти ВЛГД». Это естественные тематические ссылки из разных стран.</p>
+        </div></li>
+        <li><span class="area">Контент</span><div class="task-body">
+          <b>Статьи-сравнения</b>
+          <p class="how">Люди часто ищут сравнения: «Бутейко или Стрельникова», «Бутейко и Вим Хоф», «Бутейко и Oxygen Advantage (Патрик Маккеон)», «Бутейко или йога-пранаяма». Таких статей на сайте нет, а ответ эксперта с 30-летним опытом здесь сильнее любого обзорного сайта.</p>
+        </div></li>
+        <li><span class="area">Замеры</span><div class="task-body">
+          <b>Раз в месяц проверять показы, клики и ответы ИИ</b>
+          <p class="how">Search Console: топ-20 запросов и страниц. GA4: ключевые события «клик в Telegram», «клик в WhatsApp/Viber», «открыл бота». Плюс 10 контрольных вопросов в ChatGPT, Perplexity и Google AI Mode (список в разделе «ИИ-поиск»).</p>
+        </div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="migration">
+  <div class="sec-head">
+    <h2>Переезд на новый сайт</h2>
+    <p class="muted">Новый сайт-предложение (<code>mohax86.github.io/buteyko-proposal</code>) сделан хорошо: title до 60 символов, description под 155, один H1, у всех картинок есть alt, lang uk/ru. Но в нём пока 4 пары страниц, а у старого сайта около 180 адресов. При переезде они должны либо открыться по тем же адресам, либо отдавать 301.</p>
+  </div>
+
+  <div class="two">
+    <div class="panel">
+      <h3><span class="plus">Уже правильно</span> в новом сайте</h3>
+      <ul>
+        <li>Title с ключом в начале: «Метод Бутейка онлайн: курс дихання з Аліком Муллахметовим»</li>
+        <li>Уникальные description с офером и ценой</li>
+        <li>Один H1, логичные H2</li>
+        <li>alt у всех картинок, <code>loading="lazy"</code></li>
+        <li>Отдельные UA и RU версии, связанные hreflang</li>
+        <li>noindex и <code>Disallow: /</code> закрывают черновик от индексации, пока он на github.io</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3><span class="minus">Исправить до запуска</span></h3>
+      <ul>
+        <li>hreflang относительный (<code>href="ru.html"</code>). Нужны абсолютные адреса и <code>x-default</code></li>
+        <li>Нет canonical</li>
+        <li><code>og:image</code> = <code>share.jpg</code>. Мессенджеры не поймут относительный путь, нужен полный URL</li>
+        <li>Нет GA4: перенести тот же <code>G-ERE2330W4R</code>, чтобы не потерять историю</li>
+        <li>Нет разметки JSON-LD, sitemap.xml</li>
+        <li>Страница методистов: 426 слов против 1 663 на старой. Детская книга: 205 против 401. Не терять глубину текста</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Чек-лист запуска</h3>
+  <ul class="check">
+    <li><span><b>Хостинг: Cloudflare Pages, а не GitHub Pages.</b> DNS уже в Cloudflare. GitHub Pages не умеет серверные 301-редиректы, а без них старые адреса превратятся в 404. В Cloudflare Pages редиректы задаются файлом <code>_redirects</code>.</span></li>
+    <li><span><b>Чистые адреса:</b> <code>/</code>, <code>/ru/</code>, <code>/metodystam/</code>, <code>/ru/metodistam/</code>, <code>/dity/</code>, <code>/ru/deti/</code> вместо <code>ru.html</code> и <code>metodystam.html</code>.</span></li>
+    <li><span><b>Все 147 статей переносятся по тем же адресам</b> (<code>/статьи/рубрика/статья</code>, <code>/статті/…</code>). Кириллические URL Google понимает нормально, менять их ради красоты не стоит: каждая смена адреса временно стоит позиций.</span></li>
+    <li><span><b>Не потерять страницы, которых нет в предложении:</b> «Про мене» с дипломами, «Контакти», «Методисти ВЛГД», «Урок», 4 юридические страницы (оферта, конфиденциальность, возврат, способы оплаты — их проверяют платёжные системы).</span></li>
+    <li><span><b><code>/app/app-privacy</code> и <code>/app/data-deletion</code> оставить строго по тем же адресам.</b> Скорее всего, эти ссылки указаны в Google Play и App Store. Если они станут 404, магазин может снять приложение.</span></li>
+    <li><span><b>Убрать noindex и <code>Disallow: /</code></b> только на боевом домене, в день запуска. В robots.txt добавить <code>Sitemap: https://www.buteyko.com.ua/sitemap.xml</code>.</span></li>
+    <li><span><b>sitemap.xml</b> со всеми страницами и парами hreflang. Отправить в Search Console в день запуска.</span></li>
+    <li><span><b>Проверить после запуска:</b> в Search Console → «Проверка URL» для 10 главных страниц, отчёт «Индексирование страниц» через неделю и через месяц.</span></li>
+  </ul>
+
+  <h3>Карта 301-редиректов</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Старый адрес</th><th>Новый адрес</th><th>Комментарий</th></tr></thead>
+    <tbody>
+      <tr><td><code>/home</code></td><td><code>/</code></td><td>Сейчас дубль главной без canonical</td></tr>
+      <tr><td><code>/homeru</code></td><td><code>/ru/</code></td><td></td></tr>
+      <tr><td><code>/buteyko-method-training</code></td><td><code>/</code></td><td>Новая главная и есть страница курса. Текст старой (1 218 слов) влить в неё</td></tr>
+      <tr><td><code>/buteyko-method-trainingru</code></td><td><code>/ru/</code></td><td></td></tr>
+      <tr><td><code>/buteyko-instructor-training</code></td><td><code>/metodystam/</code></td><td></td></tr>
+      <tr><td><code>/buteyko-instructor-trainingru</code></td><td><code>/ru/metodistam/</code></td><td></td></tr>
+      <tr><td><code>/breathing-for-kids</code></td><td><code>/dity/</code></td><td></td></tr>
+      <tr><td><code>/about</code>, <code>/aboutru</code></td><td><code>/pro-mene/</code>, <code>/ru/obo-mne/</code></td><td>Страницы надо сделать, в предложении их нет</td></tr>
+      <tr><td><code>/contacts</code>, <code>/contactsru</code></td><td><code>/kontakty/</code>, <code>/ru/kontakty/</code></td><td>Или блок контактов в подвале + 301 на главную</td></tr>
+      <tr><td><code>/статьи/…</code>, <code>/статті/…</code></td><td>без изменений</td><td>Только если статью объединили с другой — 301 на опорную</td></tr>
+      <tr><td><code>/app/app-privacy</code>, <code>/app/data-deletion</code></td><td>без изменений</td><td>Ссылки из магазинов приложений</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="tech">
+  <div class="sec-head"><h2>Техническое SEO</h2></div>
+  <div class="two">
+    <div class="panel">
+      <h3><span class="plus">В порядке</span></h3>
+      <ul>
+        <li>HTTPS, валидный сертификат, http://www → https://www по 301</li>
+        <li>https без www → www по 301, адрес сайта единый</li>
+        <li>Несуществующий адрес отдаёт честный 404</li>
+        <li>Сервер отвечает за 0,25 с (Google + Cloudflare)</li>
+        <li>Есть viewport, мобильная вёрстка Google Sites</li>
+        <li>GA4 установлен</li>
+        <li>robots.txt нет (404), значит роботы Google, Bing и ИИ-поисковиков не заблокированы</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3><span class="minus">Мешает</span></h3>
+      <ul>
+        <li><code>lang="en-US"</code> на украинских и русских страницах: Google определяет язык по тексту, но сигнал противоречивый</li>
+        <li>Нет hreflang: Google не знает, что <code>/homeru</code> — русская версия <code>/</code>, и может показать украинцу русскую страницу или наоборот</li>
+        <li>Нет sitemap.xml: 146 статей Google находит только по внутренним ссылкам через рубрики</li>
+        <li>Нет canonical: <code>/</code> и <code>/home</code> отдают одну и ту же страницу</li>
+        <li>Верхнее меню Google Sites показывает английские названия страниц (Home, Lesson, App, app-privacy, data-deletion), служебные страницы торчат в навигации</li>
+        <li>Ссылки на соцсети идут через <code>google.com/url?q=</code> — особенность Google Sites, на SEO не влияет</li>
+        <li>Скорость в PageSpeed не замерена: суточная квота API исчерпана. Проверить вручную на pagespeed.web.dev</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="keys">
+  <div class="sec-head">
+    <h2>Title и description для главных страниц</h2>
+    <p class="muted">Готовые тексты для нового сайта. Title до 60 символов, ключ в начале, имя в конце. Description до 155 символов, с конкретикой и действием. Частотность запросов не проверялась (нет доступа к Keyword Planner и Search Console), ключи выбраны по смыслу. После месяца данных в Search Console скорректировать.</p>
+  </div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Страница</th><th>Главный запрос</th><th>Title</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td>Главная / курс, UA</td><td>метод Бутейка навчання онлайн</td><td>Метод Бутейка онлайн — навчання з Аліком Муллахметовим <span class="len">54</span></td><td>Індивідуальне навчання методу Бутейка в Zoom: 10 занять за місяць з методистом-ревізором ВЛГД, 30+ років досвіду. Перша консультація безкоштовна.</td></tr>
+      <tr><td>Главная / курс, RU</td><td>метод Бутейко обучение онлайн</td><td>Метод Бутейко онлайн — обучение с Аликом Муллахметовым <span class="len">54</span></td><td>Индивидуальное обучение методу Бутейко в Zoom: 10 занятий за месяц с методистом-ревизором ВЛГД, 30+ лет опыта. Первая консультация бесплатно.</td></tr>
+      <tr><td>Методисты, UA</td><td>навчання на методиста Бутейка</td><td>Навчання методистів ВЛГД Бутейка онлайн · диплом <span class="len">49</span></td><td>Станьте методистом ВЛГД за 2 місяці: 10 зустрічей у Zoom, стажування, безстроковий диплом. Випускники працюють у 9 країнах. Оплата частинами.</td></tr>
+      <tr><td>Методисты, RU</td><td>обучение на методиста Бутейко</td><td>Обучение на методиста Бутейко (ВЛГД) онлайн · диплом <span class="len">52</span></td><td>Станьте методистом ВЛГД за 2 месяца: 10 встреч в Zoom, стажировка, бессрочный диплом. Выпускники работают в 9 странах. Оплата частями.</td></tr>
+      <tr><td>Дети, UA</td><td>метод Бутейка для дітей</td><td>Метод Бутейка для дітей — книга і 10 вправ-ігор <span class="len">47</span></td><td>Книга для батьків: основи методу Бутейка, контрольна пауза і 10 дихальних ігор для дитини. PDF 400 грн, друкована книга 25 €.</td></tr>
+      <tr><td>Дети, RU</td><td>метод Бутейко для детей</td><td>Метод Бутейко для детей — книга и 10 упражнений-игр <span class="len">51</span></td><td>Книга для родителей: основы метода Бутейко, контрольная пауза и 10 дыхательных игр для ребёнка. PDF 400 грн, печатная книга 25 €.</td></tr>
+      <tr><td>Обо мне</td><td>Алик Муллахметов</td><td>Алік Муллахметов — методист-ревізор ВЛГД, метод Бутейка <span class="len">55</span></td><td>30+ років практики й викладання методу Бутейка, дипломи, робота в лабораторії, 100 000 підписників на YouTube. Як я працюю з учнями.</td></tr>
+      <tr><td>Опорная статья, RU</td><td>контрольная пауза Бутейко</td><td>Контрольная пауза по Бутейко: как измерить и что значит <span class="len">55</span></td><td>Как правильно измерить контрольную паузу, таблица норм К. П. Бутейко, частые ошибки и почему КП меняется в течение дня. Объясняет методист ВЛГД.</td></tr>
+      <tr><td>Опорная статья, RU</td><td>упражнения Бутейко</td><td>Упражнения по методу Бутейко: базовый комплекс для начала <span class="len">57</span></td><td>Базовые упражнения Бутейко шаг за шагом: уменьшение глубины дыхания, расслабление, практика утром и вечером. С видео и типичными ошибками.</td></tr>
+      <tr><td>Приложение</td><td>тренажёр Бутейко приложение</td><td>Інтервальна ВЛГД — застосунок-тренажер методу Бутейка <span class="len">53</span></td><td>Тренажер для щоденної практики методу Бутейка: таймер контрольної паузи, інтервали, щоденник. iOS та Android.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="content">
+  <div class="sec-head">
+    <h2>Статьи: 146 штук, но слабее, чем могли бы быть</h2>
+    <p class="muted">Рубрики продуманы, темы закрыты широко. Проблемы в повторяющемся шаблоне, малом объёме и пересечениях.</p>
+  </div>
+  <div class="two">
+    <div class="panel">
+      <h3>Что видно</h3>
+      <ul>
+        <li>Рубрики 1–4 (основы, упражнения, физиология, носовое дыхание): H1 есть, 350–650 слов</li>
+        <li>Рубрики 5–11 (расслабление, нагрузка, сон, наука, история, безопасность, обучение): <b>H1 нет ни в одной</b>, 230–470 слов</li>
+        <li>Все статьи одного объёма и одной структуры. С 2024 года Google прямо наказывает массовые однотипные тексты без своей ценности («scaled content abuse»)</li>
+        <li>11 статей про контрольную паузу соревнуются друг с другом за один запрос</li>
+        <li>Сильные исключения: «Таблица критериев вентиляции лёгких К. П. Бутейко» (1 500 слов) и «Дыхательные тренажёры: 11 замечаний» (1 950). Это и есть нужный формат</li>
+        <li>Украинский раздел: одна статья</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Как сделать сильнее</h3>
+      <ol>
+        <li>Выбрать 10–12 опорных тем, по одной на рубрику, и сделать из них страницы на 2 000+ слов: определение в первых двух предложениях, таблица, видео Алика, случаи из практики без имён, источники, FAQ внизу</li>
+        <li>Мелкие статьи по той же теме оставить как ответы на узкий вопрос (300–500 слов) со ссылкой на опорную. Дубли склеить 301</li>
+        <li>В каждую статью добавить один фрагмент, который может написать только практик: «на занятиях чаще всего вижу…», «ученики с КП 15 секунд обычно…»</li>
+        <li>Сделать H1 у всех статей</li>
+        <li>Внизу каждой статьи — 3 связанные статьи и один призыв к действию по теме: тест КП, бесплатные уроки или курс</li>
+      </ol>
+    </div>
+  </div>
+  <h3>Опорные темы и что в них собрать</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Опорная страница</th><th>Влить из существующих</th></tr></thead>
+    <tbody>
+      <tr><td>Контрольная пауза по Бутейко: как измерить и что значит</td><td>11 статей про КП из «Основ» + таблица критериев вентиляции</td></tr>
+      <tr><td>Метод Бутейко: что это и как он работает</td><td>«Что это такое и в чём суть», «Основные принципы», «Что такое ВЛГД», «Глубокое дыхание в понимании…», «Чем отличается от гимнастики»</td></tr>
+      <tr><td>Упражнения Бутейко для начинающих</td><td>12 статей рубрики «Упражнения» + «Для начинающих», «Можно ли освоить самостоятельно»</td></tr>
+      <tr><td>CO₂ и гипервентиляция простыми словами</td><td>«Углекислый газ», «CO₂ и дыхание», «Гипервентиляция», «Эффект Бора», «Кислотно-щелочное равновесие»</td></tr>
+      <tr><td>Носовое дыхание: зачем и как перейти</td><td>12 статей рубрики «Носовое дыхание»</td></tr>
+      <tr><td>Дыхание при стрессе и тревоге</td><td>12 статей рубрики «Расслабление и стресс» + «Как стресс меняет дыхательный паттерн»</td></tr>
+      <tr><td>Метод Бутейко и сон</td><td>Рубрика «Сон» + «Дыхание во сне», «Сон с закрытым ртом»</td></tr>
+      <tr><td>Безопасность и противопоказания</td><td>13 статей рубрики «Безопасность»</td></tr>
+      <tr><td>Что говорят исследования о методе Бутейко</td><td>12 статей рубрики «Наука» — обязательно со ссылками на сами исследования</td></tr>
+      <tr><td>Константин Бутейко и история метода</td><td>Рубрика «История»</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="eeat">
+  <div class="sec-head">
+    <h2>Доверие и медицинская тема</h2>
+    <p class="muted">Дыхание и болезни Google относит к YMYL («ваши деньги или ваша жизнь»). Здесь он сильнее всего смотрит, кто автор, на чём основаны утверждения и не обещает ли сайт лечение.</p>
+  </div>
+  <div class="two">
+    <div class="panel">
+      <h3><span class="plus">Сильное, но спрятано</span></h3>
+      <ul>
+        <li>30+ лет практики, статус методиста-ревизора ВЛГД</li>
+        <li>Дипломы и фото из лаборатории на странице «Про мене»</li>
+        <li>Серебряная кнопка YouTube, 100 000 подписчиков (упомянута только на русской главной)</li>
+        <li>Методисты-выпускники в 9 странах</li>
+        <li>В статьях уже есть осторожные формулировки («дыхательные упражнения не заменяют диагностику апноэ»). Это правильно</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3><span class="minus">Чего не хватает</span></h3>
+      <ul>
+        <li>Автора с датой над статьёй</li>
+        <li>Ссылок на источники в статьях по физиологии и науке</li>
+        <li>Короткой медицинской оговорки в подвале: «Метод Бутейка не замінює лікування. Перед зміною терапії порадьтеся з лікарем»</li>
+        <li>Отзывов учеников с именами и фото (с согласия) на страницах курсов</li>
+        <li>Серебряной кнопки и числа подписчиков на украинской главной и в «Про мене»</li>
+      </ul>
+    </div>
+  </div>
+  <p class="disc">Отдельно про список диагнозов на главной (около 70 болезней). Кроме SEO-риска, рекламное законодательство Украины ограничивает утверждения о лечении для немедицинских услуг. Решение о формулировках лучше принять Алику, понимая этот риск.</p>
+</section>
+
+<section id="schema">
+  <div class="sec-head">
+    <h2>Разметка JSON-LD</h2>
+    <p class="muted">Google Sites её не поддерживает, на новом сайте вставить в <code>&lt;head&gt;</code>. Разметка помогает Google и ИИ-поисковикам понять, кто такой Алик, что продаётся и сколько стоит. Расширенный сниппет FAQ Google с 2023 года показывает только государственным и медицинским сайтам, но для ИИ-ответов блок FAQ на странице всё равно полезен.</p>
+  </div>
+<pre><code>&lt;script type="application/ld+json"&gt;
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://www.buteyko.com.ua/#alik",
+   "name": "Алік Муллахметов",
+   "alternateName": ["Алик Муллахметов", "Alik Mullakhmetov"],
+   "jobTitle": "Методист-ревізор ВЛГД за методом Бутейка",
+   "url": "https://www.buteyko.com.ua/pro-mene/",
+   "image": "https://www.buteyko.com.ua/assets/img/alik.jpg",
+   "knowsAbout": ["метод Бутейка", "ВЛГД", "контрольна пауза", "дихальні практики"],
+   "sameAs": [
+    "https://www.youtube.com/@buteykolive",
+    "https://www.instagram.com/noastmakrop",
+    "https://www.tiktok.com/@noastma",
+    "https://www.facebook.com/sistemadyhaniya",
+    "https://t.me/alikmullahmetov"
+   ]
+  },
+  {
+   "@type": "Course",
+   "name": "Навчання методистів ВЛГД за методом Бутейка",
+   "description": "2 місяці онлайн: 10 зустрічей у Zoom, стажування, безстроковий диплом.",
+   "inLanguage": ["uk", "ru"],
+   "provider": { "@id": "https://www.buteyko.com.ua/#alik" },
+   "offers": { "@type": "Offer", "price": "46000", "priceCurrency": "UAH", "category": "Paid" },
+   "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "online", "courseWorkload": "P2M" }
+  }
+ ]
+}
+&lt;/script&gt;</code></pre>
+  <ul class="tight">
+    <li><b>Book</b> на странице детской книги: название, автор (ссылка на <code>#alik</code>), два Offer: PDF 400 UAH и печатная 25 EUR</li>
+    <li><b>Article</b> в каждой статье: headline, author = <code>#alik</code>, datePublished, dateModified, inLanguage</li>
+    <li><b>BreadcrumbList</b>: Головна → Статті → Рубрика → Стаття</li>
+    <li><b>VideoObject</b> там, где встроено видео YouTube (даёт шанс на показ во вкладке «Видео»)</li>
+    <li><b>MobileApplication</b> на странице приложения</li>
+    <li>Проверять в <a href="https://search.google.com/test/rich-results">Rich Results Test</a> после запуска</li>
+  </ul>
+</section>
+
+<section id="geo">
+  <div class="sec-head">
+    <h2>ИИ-поиск: Google AI Mode, ChatGPT, Perplexity</h2>
+    <p class="muted">В 2026 году на вопросы вроде «что такое контрольная пауза» многие получают ответ от ИИ, не переходя на сайты. Цель — чтобы ИИ цитировал buteyko.com.ua как источник и называл Алика.</p>
+  </div>
+  <div class="two">
+    <div class="panel">
+      <h3>Что даёт цитируемость</h3>
+      <ul>
+        <li>Короткое определение в первых 1–2 предложениях опорной статьи: ИИ берёт именно его</li>
+        <li>Таблицы и цифры (нормы КП, этапы обучения, цены): их цитируют охотнее всего</li>
+        <li>Блок «Часті питання» из 5–7 реальных вопросов учеников</li>
+        <li>Единообразное имя и должность Алика на сайте, YouTube, в соцсетях и разметке Person</li>
+        <li>Не блокировать GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot в robots.txt нового сайта</li>
+        <li>Индекс Bing (через Bing Webmaster Tools): на нём работает ChatGPT Search</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>10 контрольных вопросов для ежемесячной проверки</h3>
+      <ol>
+        <li>Что такое метод Бутейко простыми словами?</li>
+        <li>Как правильно измерить контрольную паузу?</li>
+        <li>Где пройти обучение методу Бутейко онлайн?</li>
+        <li>Як стати методистом Бутейка?</li>
+        <li>Метод Бутейка для дітей: з чого почати?</li>
+        <li>Бутейко или Стрельникова — в чём разница?</li>
+        <li>Кто такой Алик Муллахметов?</li>
+        <li>Есть ли приложение для тренировки по Бутейко?</li>
+        <li>Безопасен ли метод Бутейко?</li>
+        <li>Упражнения Бутейко для начинающих</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="links">
+  <div class="sec-head"><h2>Ссылки и YouTube</h2></div>
+  <div class="two">
+    <div class="panel">
+      <h3>Что видно</h3>
+      <ul>
+        <li>С сайта есть ссылки на YouTube, Instagram, TikTok, Facebook, Telegram</li>
+        <li>Все кнопки «Записаться» ведут в Telegram. Для конверсии это нормально, но в GA4 эти клики пока не размечены как ключевые события</li>
+        <li>Бот <code>t.me/buteyko_bot?start=…</code> уже получает метку источника. Хорошо, использовать такие метки на всех кнопках</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Что делать</h3>
+      <ul>
+        <li>YouTube: ссылка на тематическую статью первой строкой описания, ссылка на сайт в шапке канала, закреплённый комментарий под популярными видео</li>
+        <li>Выпускники: бейдж со ссылкой на «Методисти ВЛГД»</li>
+        <li>Интервью и подкасты о дыхании (UA, RU, диаспора в Европе): каждое даёт ссылку и упоминание имени</li>
+        <li>Google Business Profile не нужен: обучение онлайн, без адреса для приёма клиентов профиль не подходит под правила Google</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="method">
+  <div class="sec-head"><h2>Методика и ограничения</h2></div>
+  <ul class="tight">
+    <li>Обход живого сайта скриптом: 120 страниц полностью (title, H1–H3, объём текста, картинки, alt, og), плюс списки статей всех 11 рубрик. Выборочная проверка статей рубрик 7–11</li>
+    <li>Заголовки ответов сервера, robots.txt, sitemap.xml, редиректы http/https/www, код 404 — через curl</li>
+    <li>Новый сайт проверен по исходным файлам (главная, методисты, книга для детей; украинская и русская версии)</li>
+    <li>Не замерено: PageSpeed и Core Web Vitals (квота API исчерпана), реальный индекс и запросы (нужен доступ к Search Console), частотность ключей (нужен Keyword Planner), ссылочный профиль (нужен Ahrefs или Semrush)</li>
+  </ul>
+  <footer>
+    <span>Подготовил Виталий Беккер, 11.11.2026. Данные о сайте на дату проверки.</span>
+  </footer>
+</section>
+</main>
+</div>
+
+</body>
+</html>

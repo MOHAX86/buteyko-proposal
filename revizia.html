@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Сайт buteyko.com.ua: ревизия</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one calm reading column; findings as paired "now / after" rows, the plan as a numbered sequence */
+:root{
+ --ground:#F1F4F4; --surface:#FFFFFF; --ink:#18222A; --muted:#56646C; --rule:#D5DDDF; --soft:#E6ECED;
+ --accent:#1F6E78; --accent-bg:#DCEEEF; --warn:#94580A; --warn-bg:#FCEFD9; --ok:#2F6B3F; --ok-bg:#E2F0E5;
+ --display:"Manrope",system-ui,sans-serif;
+ --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+ :root:not([data-theme="light"]){
+ --ground:#11181B; --surface:#182226; --ink:#E4EBEC; --muted:#98A7AC; --rule:#2B383D; --soft:#1F2B2F;
+ --accent:#6CC3CC; --accent-bg:#1B3236; --warn:#E7A64E; --warn-bg:#382A16; --ok:#7CC68F; --ok-bg:#1D3224; color-scheme:dark;
+ }
+}
+:root[data-theme="dark"]{
+ --ground:#11181B; --surface:#182226; --ink:#E4EBEC; --muted:#98A7AC; --rule:#2B383D; --soft:#1F2B2F;
+ --accent:#6CC3CC; --accent-bg:#1B3236; --warn:#E7A64E; --warn-bg:#382A16; --ok:#7CC68F; --ok-bg:#1D3224; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font:16px/1.65 var(--body);margin:0}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:780px;margin:0 auto;padding-block:40px 80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:48px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.2}
+h1{font-size:clamp(28px,5vw,40px);font-weight:800;letter-spacing:-.015em}
+h2{font-size:23px;font-weight:800}
+h3{font-size:16px;font-weight:700}
+p{margin:0;max-width:66ch}
+.eyebrow{font:700 11px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.muted{color:var(--muted)}
+header,section{display:grid;gap:18px;min-width:0}
+.breath{display:block;width:100%;height:28px;color:var(--accent)}
+.lead{font-size:18px;line-height:1.6}
+.lead strong{font-weight:600}
+.rows{display:grid;gap:0;background:var(--surface);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.row{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding:16px 18px;border-top:1px solid var(--rule)}
+.row:first-child{border-top:0}
+@media(min-width:640px){.row{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}}
+.tag{display:inline-block;font:700 10px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;padding:4px 7px;border-radius:3px;margin-bottom:6px}
+.tag.now{color:var(--warn);background:var(--warn-bg)}
+.tag.new{color:var(--ok);background:var(--ok-bg)}
+.row p{font-size:15px}
+.safe{background:var(--accent-bg);border-radius:8px;padding:20px 22px;display:grid;gap:12px}
+.safe ul{margin:0;padding-left:20px;display:grid;gap:8px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;padding:16px 0;border-top:1px solid var(--rule)}
+.steps li:first-child{border-top:0}
+.steps li::before{content:counter(s);font:800 18px/1 var(--display);color:var(--accent);width:34px;height:34px;border:1.5px solid var(--accent);border-radius:50%;display:grid;place-items:center}
+.steps b{font-weight:600;display:block;margin-bottom:2px}
+.steps p{font-size:15px;color:var(--muted)}
+.who{font:600 11px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-left:6px}
+.decide{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:18px 20px;display:grid;gap:10px}
+.decide ul{margin:0;padding-left:20px;display:grid;gap:8px}
+.links{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:15px}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--rule);padding-top:18px}
+@media (prefers-reduced-motion: no-preference){ .breath path{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.4s ease-out .2s forwards} @keyframes draw{to{stroke-dashoffset:0}} }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Ревизия сайта · ноябрь 2026</div>
+  <h1>buteyko.com.ua: что мешает сайту в Google и как это исправить</h1>
+  <svg class="breath" viewBox="0 0 1000 28" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 14 C60 3 120 3 180 14 S300 25 360 14 C420 5 480 5 540 14 S650 23 710 14 C770 7 830 7 890 14 S960 20 1000 14" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+  </svg>
+  <p class="lead">Содержание сайта сильное: 146 статей, 30 лет практики, канал на 100 000 подписчиков. Но <strong>Google видит из этого мало</strong>. Причина не в текстах, а в конструкторе Google Sites: в нём нельзя настроить то, по чему поисковик понимает страницу. Поэтому мы предлагаем перенести сайт на новую основу. Адрес остаётся тем же, статьи переносятся все.</p>
+</header>
+
+<section>
+  <h2>Что нашли и что изменится</h2>
+  <div class="rows">
+    <div class="row">
+      <div><span class="tag now">Сейчас</span><p>Google считает, что сайт на английском языке. Так записано на каждой странице, а изменить это в Google Sites нельзя.</p></div>
+      <div><span class="tag new">После</span><p>Google видит украинскую и русскую версии и показывает каждому человеку страницу на его языке.</p></div>
+    </div>
+    <div class="row">
+      <div><span class="tag now">Сейчас</span><p>В результатах поиска у каждой статьи сначала длинное название академии, а сама тема статьи обрезана.</p></div>
+      <div><span class="tag new">После</span><p>Название статьи стоит первым: «Контрольная пауза по Бутейко: как измерить и что значит».</p></div>
+    </div>
+    <div class="row">
+      <div><span class="tag now">Сейчас</span><p>Когда отправляешь ссылку на сайт в Telegram или Viber, вместо описания видно «УКР | РУС».</p></div>
+      <div><span class="tag new">После</span><p>В превью видны фото, понятный заголовок и одна фраза о курсе.</p></div>
+    </div>
+    <div class="row">
+      <div><span class="tag now">Сейчас</span><p>У страниц нет описаний для Google, нет карты сайта. На главной и в 85 статьях из 146 нет главного заголовка.</p></div>
+      <div><span class="tag new">После</span><p>У каждой страницы есть описание, заголовок и место в карте сайта. Google находит новые статьи быстрее.</p></div>
+    </div>
+    <div class="row">
+      <div><span class="tag now">Сейчас</span><p>Google не знает, кто вы, сколько стоит курс и что есть книга для детей.</p></div>
+      <div><span class="tag new">После</span><p>На страницах есть служебная разметка: ваше имя и звание, YouTube, курс с ценой, книга. Это читают Google, ChatGPT и другие ИИ-поисковики.</p></div>
+    </div>
+    <div class="row">
+      <div><span class="tag now">Сейчас</span><p>Статистика показывает посещения, но не видно, сколько людей нажали «Написать в Telegram».</p></div>
+      <div><span class="tag new">После</span><p>Видно каждое нажатие на Telegram, WhatsApp и бота, а также сколько людей прошли тест контрольной паузы.</p></div>
+    </div>
+    <div class="row">
+      <div><span class="tag now">Сейчас</span><p>Адрес buteyko.com.ua, набранный без www, у части людей открывает страницу ошибки.</p></div>
+      <div><span class="tag new">После</span><p>Любой вариант адреса ведёт на сайт.</p></div>
+    </div>
+    <div class="row">
+      <div><span class="tag now">Сейчас</span><p>На украинском одна статья, на русском 146.</p></div>
+      <div><span class="tag new">После переезда</span><p>Постепенно переводим 20 главных статей на украинский, объединяем похожие статьи в сильные и добавляем к ним ваши видео.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="safe">
+    <h2>Ваш сайт никуда не пропадает</h2>
+    <ul>
+      <li>Адрес остаётся тем же: <b>www.buteyko.com.ua</b>.</li>
+      <li>Все статьи переносятся и открываются по своим прежним ссылкам. Ссылки, которые вы уже разослали, продолжают работать.</li>
+      <li>Старые адреса страниц курса и обучения методистов автоматически ведут на новые страницы.</li>
+      <li>Сайт на Google Sites не удаляется. Он остаётся в вашем аккаунте Google по своему внутреннему адресу Google Sites, просто домен buteyko.com.ua начинает показывать новый сайт.</li>
+      <li>Если что-то пойдёт не так, домен можно за несколько минут вернуть на старый сайт.</li>
+      <li>Telegram, бот, YouTube и приложение работают как раньше.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Как перейти, шаг за шагом</h2>
+  <p class="muted">Если вы согласны, делаем по порядку. До шага 6 посетители ничего не замечают: всё готовится на тестовом адресе.</p>
+  <ol class="steps">
+    <li><div><b>Вы смотрите новый сайт и говорите, что поменять <span class="who">вы</span></b><p>Предложение уже готово: курс, обучение методистов и детская книга на украинском и русском.</p></div></li>
+    <li><div><b>Вы даёте доступы <span class="who">вы</span></b><p>Google Search Console и Google Analytics (добавить Виталия), доступ к настройкам домена в Cloudflare. И ссылки, которые указаны в Google Play и App Store для политики конфиденциальности приложения.</p></div></li>
+    <li><div><b>Смотрим, что Google уже знает о сайте <span class="who">мы</span></b><p>2–3 дня Search Console собирает данные: какие статьи уже приносят посетителей и по каким запросам. С ними обращаемся особенно бережно.</p></div></li>
+    <li><div><b>Переносим все страницы и статьи <span class="who">мы</span></b><p>Обо мне, контакты, методисты, урок, оферта и другие юридические страницы, страницы приложения и все 147 статей. Вы проверяете на тестовом адресе.</p></div></li>
+    <li><div><b>Вы решаете спорные вопросы <span class="who">вы</span></b><p>Два вопроса, они в блоке ниже.</p></div></li>
+    <li><div><b>Переключаем домен <span class="who">мы</span></b><p>Несколько минут работы, сайт не пропадает. Сразу отправляем в Google карту сайта и проверяем главные страницы.</p></div></li>
+    <li><div><b>Месяц наблюдаем и улучшаем статьи <span class="who">мы</span></b><p>Следим, чтобы Google принял новые страницы. Затем переводы на украинский, объединение похожих статей, видео в статьях.</p></div></li>
+  </ol>
+</section>
+
+<section>
+  <div class="decide">
+    <h3>Что решаете только вы</h3>
+    <ul>
+      <li><b>Список заболеваний на главной.</b> Около 70 диагнозов на продающей странице Google считает рискованными для темы здоровья. Мы предлагаем перенести список в отдельную статью об истории метода, со ссылкой на работы К. П. Бутейко. На главной оставить короткий абзац о том, что известно из исследований.</li>
+      <li><b>Как заказывать книгу для детей.</b> Сейчас на новом сайте кнопка «Заказать» ведёт к вам в Telegram. На старой странице есть ссылка на оплату через банк. Если она для PDF, её можно поставить прямо на кнопку.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Посмотреть</h2>
+  <div class="links">
+    <a href="./">Новый сайт (предложение)</a>
+    <a href="audit.html">Подробный технический отчёт</a>
+  </div>
+  <footer>Подготовил Виталий Беккер, 11.11.2026. Сайт проверен на дату подготовки.</footer>
+</section>
+</div>
+
+</body>
+</html>
