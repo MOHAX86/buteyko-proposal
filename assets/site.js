@@ -26,7 +26,8 @@
 
   /* tracking: events go to dataLayer (GA4 / GTM) and Meta Pixel when the client adds their IDs in the page head */
   const track = (name, params = {}) => {
-    try { (window.dataLayer = window.dataLayer || []).push({ event: name, ...params }); } catch (e) {}
+    /* gtag.js ignores GTM-style {event:…} pushes, so with plain GA4 send through gtag; otherwise leave it for GTM */
+    try { if (window.gtag) window.gtag('event', name, params); else (window.dataLayer = window.dataLayer || []).push({ event: name, ...params }); } catch (e) {}
     try { if (window.fbq) window.fbq('trackCustom', name, params); } catch (e) {}
   };
   document.addEventListener('click', e => {
