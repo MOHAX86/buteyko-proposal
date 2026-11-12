@@ -124,11 +124,12 @@ footer{font-size:13px;color:var(--muted);border-top:1px solid var(--rule);paddin
   <div class="safe">
     <h2>Ваш сайт никуда не пропадает</h2>
     <ul>
-      <li>Адрес остаётся тем же: <b>www.buteyko.com.ua</b>.</li>
-      <li>Все статьи переносятся и открываются по своим прежним ссылкам. Ссылки, которые вы уже разослали, продолжают работать.</li>
+      <li>Новый основной адрес: <b>buteykolive.com</b>. Он уже ваш (с 2022 года) и совпадает с YouTube-каналом @buteykolive.</li>
+      <li>Старый адрес <b>buteyko.com.ua</b> продолжает работать и ведёт на ту же страницу нового сайта: <code>buteyko.com.ua/about</code> → <code>buteykolive.com/about</code>, и так для каждой статьи. Ссылки, которые вы уже разослали, продолжают работать, а Google переносит позиции на новый адрес.</li>
       <li>Старые адреса страниц курса и обучения методистов автоматически ведут на новые страницы.</li>
-      <li>Сайт на Google Sites не удаляется и остаётся в вашем аккаунте Google. Просто адрес buteyko.com.ua начинает показывать новый сайт.</li>
-      <li>Если что-то пойдёт не так, адрес за несколько минут возвращается на старый сайт.</li>
+      <li>Сайт на Google Sites не удаляется и остаётся в вашем аккаунте Google.</li>
+      <li>Если что-то пойдёт не так, buteyko.com.ua за несколько минут возвращается на старый сайт.</li>
+      <li>Важно: buteyko.com.ua оплачен до 09.01.2027. Его нужно продлить, лучше сразу на 3 года.</li>
       <li>Пароли и доступы никому передавать не нужно.</li>
       <li>Telegram, бот, YouTube и приложение работают как раньше.</li>
     </ul>
@@ -142,9 +143,9 @@ footer{font-size:13px;color:var(--muted);border-top:1px solid var(--rule);paddin
     <li><div><b>Вы смотрите новый сайт и говорите, что поменять <span class="who">вы</span></b><p>Все 173 страницы старого сайта уже перенесены: 147 статей, «Про мене», контакты, методисты, урок, оферта и другие юридические страницы, страницы приложения. Плюс новые страницы курса, обучения методистов и детской книги.</p></div></li>
     <li><div><b>Вы решаете два вопроса <span class="who">вы</span></b><p>Они в блоке ниже.</p></div></li>
     <li><div><b>Договариваемся о дне запуска, мы выкладываем финальную версию <span class="who">мы</span></b><p>Перед этим ещё раз забираем со старого сайта всё, что вы успели добавить.</p></div></li>
-    <li><div><b>Вы меняете одну запись в Cloudflare <span class="who">вы</span></b><p>5 минут по инструкции ниже или на созвоне с показом экрана. Пароли никому не передаются.</p></div></li>
+    <li><div><b>Вы делаете несколько настроек в Cloudflare <span class="who">вы</span></b><p>Около 15 минут по инструкции ниже или на созвоне с показом экрана. Пароли никому не передаются.</p></div></li>
     <li><div><b>Проверяем сайт вместе <span class="who">вместе</span></b><p>Главная, статьи, оферта, кнопки Telegram, старые ссылки.</p></div></li>
-    <li><div><b>По желанию подключаете Google Search Console <span class="who">вы</span></b><p>Чтобы видеть, по каким запросам вас находят. Подключается в вашем аккаунте Google, доступ давать не обязательно.</p></div></li>
+    <li><div><b>Сообщаете Google и подписчикам о новом адресе <span class="who">вы</span></b><p>В Google Search Console подтверждаете оба домена и включаете «Изменение адреса» с buteyko.com.ua на buteykolive.com. Ставите buteykolive.com в YouTube, Telegram, Instagram, TikTok, Facebook и в бот. Всё в ваших аккаунтах, доступ давать не обязательно.</p></div></li>
     <li><div><b>Месяц наблюдаем и улучшаем статьи <span class="who">мы</span></b><p>Следим, чтобы Google принял новые страницы. Затем переводы на украинский, объединение похожих статей, видео в статьях.</p></div></li>
   </ol>
 </section>
@@ -152,14 +153,19 @@ footer{font-size:13px;color:var(--muted);border-top:1px solid var(--rule);paddin
 <section>
   <h2>Инструкция для шага 4</h2>
   <div class="decide">
+    <p><b>Домен buteykolive.com</b> (dash.cloudflare.com → buteykolive.com)</p>
     <ol class="tight-steps">
-      <li>Войти на dash.cloudflare.com и выбрать домен <b>buteyko.com.ua</b>.</li>
-      <li>Слева <b>DNS → Records</b>. Найти запись <b>CNAME</b> с именем <b>www</b>. Сейчас в ней <code>ghs.googlehosted.com</code>.</li>
-      <li>Нажать <b>Edit</b>. В поле <b>Target</b> написать <code>mohax86.github.io</code>. <b>Proxy status</b> включить, облачко станет оранжевым. Нажать <b>Save</b>.</li>
-      <li>Слева <b>SSL/TLS → Overview</b>: выбрать режим <b>Full</b> (не «Full (strict)»).</li>
-      <li><b>SSL/TLS → Edge Certificates</b>: включить <b>Always Use HTTPS</b>. Это заодно чинит адрес без www, который сейчас открывает ошибку.</li>
+      <li><b>Rules</b>: выключить правило, которое сейчас отправляет buteykolive.com на buteyko.com.ua.</li>
+      <li><b>DNS → Records</b>: удалить записи A/AAAA для <code>@</code>, если есть. Добавить <b>CNAME</b> <code>@</code> → <code>mohax86.github.io</code> и <b>CNAME</b> <code>www</code> → <code>buteykolive.com</code>, обе с оранжевым облачком.</li>
+      <li><b>SSL/TLS → Overview</b>: режим <b>Full</b>. <b>Edge Certificates</b>: включить <b>Always Use HTTPS</b>.</li>
+      <li><b>Rules → Redirect Rules</b>: www.buteykolive.com → buteykolive.com с сохранением пути (301).</li>
     </ol>
-    <p class="muted">Через 1–5 минут www.buteyko.com.ua показывает новый сайт. <b>Как вернуть старый:</b> в той же записи www написать обратно <code>ghs.googlehosted.com</code> и выключить облачко (серое, «DNS only»).</p>
+    <p><b>Домен buteyko.com.ua</b></p>
+    <ol class="tight-steps" start="5">
+      <li><b>DNS → Records</b>: в записи <b>CNAME www</b> вместо <code>ghs.googlehosted.com</code> написать <code>buteykolive.com</code> и включить оранжевое облачко.</li>
+      <li><b>Rules → Redirect Rules</b>: правило «Всё на buteykolive.com». Тип <b>Dynamic</b>, выражение <code>concat("https://buteykolive.com", http.request.uri.path)</code>, код <b>301</b>, с сохранением параметров.</li>
+    </ol>
+    <p class="muted">Через 1–5 минут buteykolive.com показывает новый сайт, а каждая старая ссылка на buteyko.com.ua ведёт на ту же страницу нового. Подробная инструкция с каждым полем у нас есть, пройдём её вместе. <b>Как вернуть старый:</b> выключить правило в buteyko.com.ua, а в записи www написать обратно <code>ghs.googlehosted.com</code> с серым облачком.</p>
   </div>
 </section>
 
