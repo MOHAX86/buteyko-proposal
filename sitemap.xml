@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://buteykolive.com/</loc>
+    <loc>https://buteykolive.com/uk</loc>
     <lastmod>2026-11-25</lastmod>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://buteykolive.com/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://buteykolive.com/ru"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://buteykolive.com/uk"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://buteykolive.com/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://buteykolive.com/"/>
   </url>
   <url>
-    <loc>https://buteykolive.com/ru</loc>
+    <loc>https://buteykolive.com/</loc>
     <lastmod>2026-11-25</lastmod>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://buteykolive.com/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://buteykolive.com/ru"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://buteykolive.com/uk"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://buteykolive.com/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://buteykolive.com/"/>
   </url>
   <url>
@@ -19,28 +19,28 @@
     <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="uk" href="https://buteykolive.com/metodystam"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://buteykolive.com/ru-metodistam"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://buteykolive.com/metodystam"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://buteykolive.com/ru-metodistam"/>
   </url>
   <url>
     <loc>https://buteykolive.com/ru-metodistam</loc>
     <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="uk" href="https://buteykolive.com/metodystam"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://buteykolive.com/ru-metodistam"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://buteykolive.com/metodystam"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://buteykolive.com/ru-metodistam"/>
   </url>
   <url>
     <loc>https://buteykolive.com/dity</loc>
     <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="uk" href="https://buteykolive.com/dity"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://buteykolive.com/ru-deti"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://buteykolive.com/dity"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://buteykolive.com/ru-deti"/>
   </url>
   <url>
     <loc>https://buteykolive.com/ru-deti</loc>
     <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="uk" href="https://buteykolive.com/dity"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://buteykolive.com/ru-deti"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://buteykolive.com/dity"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://buteykolive.com/ru-deti"/>
   </url>
   <url>
     <loc>https://buteykolive.com/about</loc>
