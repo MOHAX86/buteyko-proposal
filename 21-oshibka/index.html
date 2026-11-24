@@ -10,6 +10,14 @@
 <meta property="og:title" content="21 критическая ошибка новичка в методе Бутейко">
 <meta property="og:description" content="Бесплатная книга в PDF: что мешает увеличить контрольную паузу и получить результат.">
 <meta property="og:type" content="book">
+<meta property="og:url" content="https://buteykolive.com/21-oshibka/">
+<meta property="og:image" content="https://buteykolive.com/21-oshibka/img/cover.jpg">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="1250">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<!-- Google Analytics: only on the live domain, the github.io preview is not counted -->
+<script>if(location.hostname==="buteykolive.com"){var g=document.createElement("script");g.async=true;g.src="https://www.googletagmanager.com/gtag/js?id=G-ERE2330W4R";document.head.appendChild(g);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag("js",new Date());gtag("config","G-ERE2330W4R");}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Onest:wght@400;500;600&display=swap">
@@ -267,15 +275,34 @@ footer .legal { border-top: 1px solid var(--line); padding-top: 24px; font-size:
   .pages img { transition: none; }
   .btn { transition: none; }
 }
+/* phone: button on the first screen, folded contents, button pinned at the bottom */
+[hidden] { display: none !important; }
+.more, .stick { display: none; }
+@media (max-width: 900px) {
+  .hero { padding-block: 20px 40px; }
+  .hero .wrap { gap: 16px; }
+  .cover-img { width: min(40%, 150px); }
+  .hero-copy { gap: 14px; }
+  .hero-copy > .lead { order: 1; }
+  .hero-copy > .facts { order: 2; }
+  .hero h1 .sub { margin-top: 8px; }
+}
+@media (max-width: 760px) {
+  .contents:not(.open) .errors li:nth-child(n+8), .contents:not(.open) .topics li:nth-child(n+5) { display: none; }
+  .more { display: flex; width: 100%; justify-content: center; margin-top: 20px; }
+  .stick { display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: var(--bg); border-top: 1px solid var(--line); transform: translateY(110%); visibility: hidden; transition: transform .25s, visibility .25s; }
+  .stick.show { transform: none; visibility: visible; }
+  .stick .btn { width: 100%; justify-content: center; }
+}
 </style>
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top">Бутейко<span>Live</span></a>
+    <a class="brand" href="../ru.html" title="На главную">Бутейко<span>Live</span></a>
     <nav aria-label="Разделы страницы">
-      <a href="#video">Видео</a>
+      <a href="#video" data-video hidden>Видео</a>
       <a href="#rule">Правило левой руки</a>
       <a href="#inside">Что внутри</a>
       <a href="#author">Автор</a>
@@ -331,7 +358,7 @@ footer .legal { border-top: 1px solid var(--line); padding-top: 24px; font-size:
     </div>
   </section>
 
-  <section id="video">
+  <section id="video" data-video hidden>
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Видео</p>
@@ -435,6 +462,7 @@ footer .legal { border-top: 1px solid var(--line); padding-top: 24px; font-size:
           <li><span>Индивидуальные условия, безопасность и ограничения</span><span class="p">стр. 119</span></li>
         </ul>
       </div>
+      <button class="btn ghost more" id="more" type="button" aria-expanded="false">Показать всё оглавление</button>
     </div>
   </section>
 
@@ -498,7 +526,7 @@ footer .legal { border-top: 1px solid var(--line); padding-top: 24px; font-size:
         <div class="links">
           <a href="https://www.youtube.com/@buteykolive" target="_blank" rel="noopener">YouTube: Академия здоровья</a>
           <a href="https://www.youtube.com/@primefitguru" target="_blank" rel="noopener">YouTube: Prime Fit Guru</a>
-          <a href="https://buteykolive.com/" target="_blank" rel="noopener">buteyko.com.ua</a>
+          <a href="../ru.html">Сайт buteykolive.com</a>
         </div>
       </div>
     </div>
@@ -568,6 +596,10 @@ footer .legal { border-top: 1px solid var(--line); padding-top: 24px; font-size:
   </section>
 </main>
 
+<div class="stick" id="stick">
+  <a class="btn" href="https://t.me/buteyko_bot?start=6b0427357f24747de80c9dcc" data-cta target="_blank" rel="noopener">Скачать книгу в Telegram</a>
+</div>
+
 <footer class="contacts">
   <div class="wrap">
     <div class="contact-grid">
@@ -598,7 +630,7 @@ footer .legal { border-top: 1px solid var(--line); padding-top: 24px; font-size:
 (function () {
   // 1) Ссылка на Telegram-бота. Замените на адрес вашего бота, например "https://t.me/имя_бота".
   var BOT_URL = "https://t.me/buteyko_bot?start=6b0427357f24747de80c9dcc";
-  // 2) ID видео YouTube (часть ссылки после v=). Пока пусто, показывается заглушка со ссылкой на канал.
+  // 2) ID видео YouTube (часть ссылки после v=). Пока пусто, блок «Видео» скрыт.
   var VIDEO_ID = "";
 
   var lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img");
@@ -612,6 +644,31 @@ footer .legal { border-top: 1px solid var(--line); padding-top: 24px; font-size:
   if (lb) lb.addEventListener("click", function () { lb.close(); });
 
   document.querySelectorAll("[data-cta]").forEach(function (a) { a.href = BOT_URL; });
+
+  if (VIDEO_ID) document.querySelectorAll("[data-video]").forEach(function (el) { el.hidden = false; });
+
+  // 3) нажатия «Скачать» в Google Analytics
+  document.querySelectorAll("[data-cta]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      if (window.gtag) gtag("event", "book_download_click", { place: a.closest(".stick") ? "bottom_bar" : a.closest(".hero") ? "hero" : "final" });
+    });
+  });
+
+  var more = document.getElementById("more");
+  more.addEventListener("click", function () {
+    var open = document.getElementById("inside").classList.toggle("open");
+    more.textContent = open ? "Свернуть оглавление" : "Показать всё оглавление";
+    more.setAttribute("aria-expanded", open);
+    if (!open) document.getElementById("inside").scrollIntoView();
+  });
+
+  // нижняя кнопка: видна, пока на экране нет ни первой, ни последней кнопки
+  var bar = document.getElementById("stick"), seen = new Map();
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { seen.set(e.target, e.isIntersecting || (e.target.classList.contains("cta-row") && e.boundingClientRect.top > 0)); });
+    bar.classList.toggle("show", ![].concat(Array.from(seen.values())).some(Boolean));
+  });
+  [document.querySelector(".hero .cta-row"), document.querySelector(".final"), document.querySelector("footer")].forEach(function (el) { if (el) io.observe(el); });
 
   var box = document.getElementById("video-box");
   if (box && VIDEO_ID) {
