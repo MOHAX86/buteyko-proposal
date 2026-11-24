@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>21 ошибка новичка в методе Бутейко</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="canonical" href="https://buteykolive.com/21-oshibka/">
+<meta name="description" content="Бесплатная книга Алика Муллахметова: 21 типичная ошибка при освоении метода Бутейко и 121 ответ на частые вопросы. PDF, 130 страниц.">
+<meta property="og:title" content="21 критическая ошибка новичка в методе Бутейко">
+<meta property="og:description" content="Бесплатная книга в PDF: что мешает увеличить контрольную паузу и получить результат.">
+<meta property="og:type" content="book">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Onest:wght@400;500;600&display=swap">
+<style>
+/* Layout: sky-blue air from the cover, navy type, gold for the "21" and the main action. */
+:root {
+  --bg: #EEF6FD;
+  --sky: #D6EAF9;
+  --band: #E0EDF9;
+  --surface: #FFFFFF;
+  --ink: #0B2A4A;
+  --muted: #3F5F7F;
+  --line: #BCD4EA;
+  --accent: #14609F;
+  --accent-soft: #D3E6F7;
+  --cta: #EBA818;
+  --on-cta: #0B2A4A;
+  --navy: #0B2A4A;
+  --on-navy: #FFFFFF;
+  --signal: #9A6000;
+  --font-display: "Montserrat", "Arial Black", system-ui, sans-serif;
+  --font-body: "Onest", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #071A2E; --sky: #0C2A47; --band: #0A2036; --surface: #0E2640; --ink: #E7F2FC; --muted: #9DB9D4; --line: #21415F;
+    --accent: #6DB6F2; --accent-soft: #123556; --cta: #F2B422; --on-cta: #0B2A4A; --navy: #0E2640; --on-navy: #FFFFFF; --signal: #F2B422;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #071A2E; --sky: #0C2A47; --band: #0A2036; --surface: #0E2640; --ink: #E7F2FC; --muted: #9DB9D4; --line: #21415F;
+  --accent: #6DB6F2; --accent-soft: #123556; --cta: #F2B422; --on-cta: #0B2A4A; --navy: #0E2640; --on-navy: #FFFFFF; --signal: #F2B422;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 17px/1.65 var(--font-body);
+  -webkit-text-size-adjust: 100%;
+}
+img { max-width: 100%; }
+a { color: var(--accent); }
+a:focus-visible, summary:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+.wrap {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+section { padding-block: 72px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.15; margin: 0; text-wrap: balance; letter-spacing: -0.015em; }
+h1 { font-size: clamp(1.9rem, 4.6vw, 3.1rem); }
+h2 { font-size: clamp(1.45rem, 3vw, 2.1rem); }
+h3 { font-size: 1.1rem; font-weight: 700; }
+p { margin: 0; }
+.eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.lead { font-size: 1.2rem; color: var(--muted); max-width: 60ch; }
+.section-head { display: grid; gap: 14px; margin-bottom: 40px; max-width: 760px; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 26px; border-radius: 10px;
+  background: var(--cta); color: var(--on-cta);
+  font: 600 1.05rem/1.2 var(--font-body); text-decoration: none;
+  border: 2px solid var(--cta);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -10px var(--cta); }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.ghost:hover { border-color: var(--accent); box-shadow: none; }
+.btn svg { width: 20px; height: 20px; flex: none; }
+
+/* Header */
+.top { padding-block: 18px; border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.brand { font: 600 1.05rem var(--font-display); color: var(--ink); text-decoration: none; }
+.brand span { color: var(--accent); }
+.top nav { display: flex; gap: 22px; flex-wrap: wrap; }
+.top nav a { color: var(--muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
+.top nav a:hover { color: var(--ink); }
+
+/* Hero */
+.hero { padding-block: 56px 72px; background: linear-gradient(180deg, var(--sky) 0%, var(--bg) 100%); }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: 56px; align-items: center; }
+.hero-copy { display: grid; gap: 24px; justify-items: start; }
+.hero h1 .sub { display: block; margin-top: 18px; font: 500 clamp(1.1rem, 2vw, 1.4rem)/1.4 var(--font-body); color: var(--muted); letter-spacing: 0; }
+.cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.note { font-size: 0.95rem; color: var(--muted); margin-top: -8px; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 0.92rem; color: var(--muted); padding: 0; margin: 0; list-style: none; }
+.facts li { display: flex; gap: 6px; }
+.facts b { color: var(--ink); font-weight: 600; }
+
+/* Cover */
+.cover-wrap { display: grid; justify-items: center; }
+.cover-img { width: min(100%, 440px); height: auto; display: block; border-radius: 18px; box-shadow: 0 30px 60px -30px rgba(11, 42, 74, 0.55); }
+
+/* QR for desktop visitors */
+.qr-card { display: flex; align-items: center; gap: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 18px 12px 12px; max-width: 420px; }
+.qr-card svg { width: 96px; height: 96px; flex: none; border-radius: 6px; }
+.qr-card p { font-size: 0.92rem; line-height: 1.45; color: var(--muted); }
+.qr-card b { color: var(--ink); font-weight: 600; display: block; }
+
+/* How to get */
+.steps { padding-block: 56px 24px; }
+.step-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding: 0; margin: 0; list-style: none; counter-reset: s; }
+.step-list li { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: grid; gap: 8px; align-content: start; }
+.step-list .n { width: 36px; height: 36px; border-radius: 50%; background: var(--cta); color: var(--on-cta); display: grid; place-items: center; font: 800 1rem var(--font-display); }
+.step-list b { font: 700 1.05rem/1.3 var(--font-display); }
+.step-list span.d { color: var(--muted); font-size: 0.97rem; line-height: 1.55; }
+
+/* Video */
+.video { position: relative; max-width: 860px; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: var(--navy); color: var(--on-navy); display: grid; place-items: center; text-align: center; box-shadow: 0 24px 50px -30px rgba(11, 42, 74, 0.6); }
+.video iframe, .video img { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+.video .play { position: relative; appearance: none; border: 0; cursor: pointer; width: 76px; height: 76px; border-radius: 50%; background: var(--cta); color: var(--on-cta); display: grid; place-items: center; }
+.video .play svg { width: 30px; height: 30px; margin-left: 4px; }
+.video .ph { display: grid; gap: 14px; justify-items: center; padding: 24px; }
+.video .ph p { max-width: 36ch; opacity: .9; }
+.video .ph a { color: var(--cta); font-weight: 600; }
+
+/* Problem */
+.problem { background: var(--band); }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(185px, 1fr)); gap: 16px; padding: 0; margin: 0; list-style: none; }
+.cards li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; font-size: 1rem; line-height: 1.5; }
+.cards li b { display: block; margin-bottom: 6px; font-family: var(--font-display); font-size: 1.05rem; }
+.problem .after { margin-top: 32px; max-width: 62ch; font-size: 1.1rem; }
+
+/* Rule of the left hand */
+.fingers { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; align-items: end; padding: 0; margin: 0 0 32px; list-style: none; }
+.finger {
+  background: var(--accent-soft); border: 1px solid var(--line);
+  border-radius: 999px 999px 14px 14px;
+  padding: 28px 12px 20px; text-align: center;
+  display: grid; align-content: space-between; justify-items: center; gap: 14px;
+  font: 700 0.98rem/1.3 var(--font-display);
+}
+.finger:nth-child(1) { min-height: 190px; }
+.finger:nth-child(2) { min-height: 230px; }
+.finger:nth-child(3) { min-height: 250px; }
+.finger:nth-child(4) { min-height: 225px; }
+.finger:nth-child(5) { min-height: 180px; }
+.finger .n { font: 800 1rem var(--font-display); color: var(--signal); letter-spacing: 0.08em; }
+.check { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px 28px; max-width: 760px; }
+.check p + p { margin-top: 10px; }
+.check b { font-family: var(--font-display); }
+
+/* Contents */
+.contents { background: var(--band); }
+.part { margin-bottom: 56px; }
+.part:last-child { margin-bottom: 0; }
+.part-title { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
+.part-title .tag { font: 600 0.8rem var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.errors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; padding: 0; margin: 0; list-style: none; }
+.errors li { display: grid; grid-template-columns: 2.2rem minmax(0, 1fr) auto; gap: 12px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 0.98rem; line-height: 1.45; }
+.errors .n { font: 800 1.05rem var(--font-display); color: var(--signal); font-variant-numeric: tabular-nums; }
+.errors .p, .topics .p { font-size: 0.82rem; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.topics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; padding: 0; margin: 0; list-style: none; }
+.topics li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 0.98rem; line-height: 1.45; }
+
+/* Book pages */
+.pages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 0; padding: 0; list-style: none; }
+.pages figure { margin: 0; display: grid; gap: 12px; align-content: start; }
+.pages button { appearance: none; border: 0; padding: 0; background: none; cursor: zoom-in; border-radius: 10px; display: block; width: 100%; }
+.pages img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); box-shadow: 0 24px 40px -28px rgba(11, 42, 74, 0.6); transition: transform .2s ease; }
+.pages button:hover img { transform: translateY(-4px); }
+.pages button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.pages figcaption { font-size: 0.92rem; color: var(--muted); line-height: 1.45; }
+.pages figcaption b { color: var(--ink); font-weight: 600; }
+dialog.lb { border: 0; padding: 0; background: transparent; max-width: 94vw; max-height: 94vh; overflow: visible; }
+dialog.lb::backdrop { background: rgba(7, 26, 46, 0.82); }
+dialog.lb img { display: block; max-width: 94vw; max-height: 92vh; width: auto; height: auto; border-radius: 8px; cursor: zoom-out; }
+
+/* Excerpt */
+.excerpt .wrap { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; }
+.excerpt figure { margin: 0; max-width: 760px; }
+.excerpt blockquote { margin: 0; font: 500 clamp(1.25rem, 2.4vw, 1.65rem)/1.5 var(--font-body); text-wrap: pretty; }
+.excerpt blockquote p + p { margin-top: 16px; }
+.excerpt figcaption { margin-top: 22px; color: var(--muted); font-size: 0.95rem; }
+
+/* Audience */
+.audience { background: var(--band); }
+.who { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; padding: 0; margin: 0; list-style: none; }
+.who li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+.who b { display: block; font: 600 1.1rem var(--font-display); margin-bottom: 6px; }
+.who span { color: var(--muted); font-size: 0.98rem; display: block; line-height: 1.55; }
+
+/* Author */
+.author .wrap { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 48px; align-items: start; }
+.portrait { width: 260px; max-width: 100%; height: auto; display: block; border-radius: 18px; border: 1px solid var(--line); box-shadow: 0 24px 50px -32px rgba(11, 42, 74, 0.6); }
+.author-copy { display: grid; gap: 18px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; padding: 0; margin: 8px 0 0; list-style: none; }
+.stats li { border-top: 2px solid var(--accent); padding-top: 12px; font-size: 0.92rem; color: var(--muted); line-height: 1.4; }
+.stats b { display: block; font: 800 1.8rem/1.1 var(--font-display); color: var(--ink); margin-bottom: 4px; }
+.links { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 4px; }
+
+/* FAQ */
+.faq { background: var(--band); }
+.faq-list { max-width: 820px; display: grid; gap: 10px; }
+details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+summary { cursor: pointer; list-style: none; padding: 18px 22px; font: 700 1rem/1.4 var(--font-display); display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font: 400 1.6rem/1 var(--font-body); color: var(--accent); flex: none; }
+details[open] summary::after { content: "\2212"; }
+details p { padding: 0 22px 20px; color: var(--muted); max-width: 68ch; }
+
+/* Safety */
+.safety .box { border: 1px solid var(--line); border-left: 6px solid var(--signal); background: var(--surface); border-radius: 12px; padding: 32px; display: grid; gap: 18px; max-width: 900px; }
+.safety ul { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; }
+.safety ul li::marker { color: var(--signal); }
+.safety .small { font-size: 0.92rem; color: var(--muted); }
+
+/* Final CTA */
+.final { background: var(--navy); color: var(--on-navy); text-align: center; }
+.final .wrap { display: grid; gap: 22px; justify-items: center; }
+.final h2 { max-width: 20ch; }
+.final p { max-width: 54ch; opacity: .92; }
+.final .btn:focus-visible { outline-color: var(--on-navy); }
+
+/* Contacts + footer */
+.contacts { padding-block: 56px 32px; }
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; margin-bottom: 40px; }
+.contact-grid h3 { font-size: 0.8rem; font-family: var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 8px; }
+.contact-grid p, .contact-grid a { overflow-wrap: anywhere; }
+footer .legal { border-top: 1px solid var(--line); padding-top: 24px; font-size: 0.85rem; color: var(--muted); display: grid; gap: 8px; max-width: 900px; }
+
+@media (max-width: 900px) {
+  section { padding-block: 56px; }
+  .hero { padding-block: 40px 56px; }
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .cover-wrap { order: -1; }
+  .cover-img { width: min(100%, 320px); }
+  .errors, .topics { grid-template-columns: minmax(0, 1fr); }
+  .author .wrap { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .portrait { width: 180px; }
+  .step-list { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 900px) {
+  .qr-card { display: none; }
+}
+@media (max-width: 760px) {
+  .pages { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 78%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 16px; }
+  .pages li { scroll-snap-align: center; }
+  .fingers { grid-template-columns: minmax(0, 1fr); }
+  .finger, .finger:nth-child(n) { min-height: 0; border-radius: 14px; grid-template-columns: auto minmax(0, 1fr); text-align: left; justify-items: start; align-content: center; padding: 16px 18px; }
+  .top nav { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .pages img { transition: none; }
+  .btn { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Бутейко<span>Live</span></a>
+    <nav aria-label="Разделы страницы">
+      <a href="#video">Видео</a>
+      <a href="#rule">Правило левой руки</a>
+      <a href="#inside">Что внутри</a>
+      <a href="#author">Автор</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Бесплатная книга · PDF · 130 страниц</p>
+        <h1>
+          21 критическая ошибка новичка в методе Бутейко
+          <span class="sub">Что мешает увеличить контрольную паузу и получить результат</span>
+        </h1>
+        <p class="lead">Разбор самых частых ошибок при освоении метода волевой ликвидации глубокого дыхания и 121 ответ на вопросы, которые чаще всего задают начинающие.</p>
+        <div class="cta-row">
+          <a class="btn" href="https://t.me/buteyko_bot?start=6b0427357f24747de80c9dcc" data-cta target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            Скачать книгу в Telegram
+          </a>
+          <a class="btn ghost" href="#inside">Что внутри</a>
+        </div>
+        <p class="note">Книга бесплатная. Кнопка откроет Telegram-бот, он пришлёт вам PDF.</p>
+        <div class="qr-card"><svg viewBox="0 0 37 37" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="QR-код: открыть бота с книгой в Telegram" shape-rendering="crispEdges"><rect width="37" height="37" fill="#fff"/><path d="M2 2h7v1h-7zM12 2h1v1h-1zM14 2h4v1h-4zM21 2h1v1h-1zM23 2h1v1h-1zM25 2h1v1h-1zM28 2h7v1h-7zM2 3h1v1h-1zM8 3h1v1h-1zM10 3h1v1h-1zM12 3h1v1h-1zM15 3h5v1h-5zM23 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM34 3h1v1h-1zM2 4h1v1h-1zM4 4h3v1h-3zM8 4h1v1h-1zM14 4h2v1h-2zM17 4h1v1h-1zM22 4h3v1h-3zM28 4h1v1h-1zM30 4h3v1h-3zM34 4h1v1h-1zM2 5h1v1h-1zM4 5h3v1h-3zM8 5h1v1h-1zM10 5h3v1h-3zM14 5h1v1h-1zM16 5h2v1h-2zM19 5h2v1h-2zM22 5h1v1h-1zM24 5h1v1h-1zM28 5h1v1h-1zM30 5h3v1h-3zM34 5h1v1h-1zM2 6h1v1h-1zM4 6h3v1h-3zM8 6h1v1h-1zM11 6h1v1h-1zM17 6h2v1h-2zM21 6h1v1h-1zM23 6h3v1h-3zM28 6h1v1h-1zM30 6h3v1h-3zM34 6h1v1h-1zM2 7h1v1h-1zM8 7h1v1h-1zM10 7h2v1h-2zM13 7h2v1h-2zM28 7h1v1h-1zM34 7h1v1h-1zM2 8h7v1h-7zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h1v1h-1zM26 8h1v1h-1zM28 8h7v1h-7zM11 9h3v1h-3zM16 9h1v1h-1zM18 9h1v1h-1zM20 9h2v1h-2zM23 9h1v1h-1zM25 9h2v1h-2zM2 10h5v1h-5zM8 10h4v1h-4zM13 10h1v1h-1zM18 10h3v1h-3zM22 10h1v1h-1zM24 10h1v1h-1zM27 10h1v1h-1zM29 10h1v1h-1zM31 10h1v1h-1zM33 10h1v1h-1zM5 11h1v1h-1zM12 11h1v1h-1zM14 11h4v1h-4zM21 11h1v1h-1zM23 11h3v1h-3zM27 11h2v1h-2zM32 11h3v1h-3zM3 12h2v1h-2zM6 12h1v1h-1zM8 12h1v1h-1zM10 12h1v1h-1zM12 12h1v1h-1zM15 12h5v1h-5zM23 12h2v1h-2zM27 12h1v1h-1zM31 12h1v1h-1zM33 12h1v1h-1zM3 13h1v1h-1zM6 13h2v1h-2zM10 13h1v1h-1zM14 13h2v1h-2zM17 13h1v1h-1zM21 13h3v1h-3zM25 13h1v1h-1zM32 13h1v1h-1zM3 14h2v1h-2zM6 14h4v1h-4zM11 14h2v1h-2zM14 14h1v1h-1zM16 14h2v1h-2zM19 14h1v1h-1zM25 14h1v1h-1zM27 14h1v1h-1zM30 14h2v1h-2zM3 15h1v1h-1zM17 15h2v1h-2zM20 15h3v1h-3zM24 15h3v1h-3zM28 15h1v1h-1zM33 15h2v1h-2zM2 16h1v1h-1zM5 16h2v1h-2zM8 16h7v1h-7zM22 16h3v1h-3zM26 16h2v1h-2zM29 16h2v1h-2zM33 16h1v1h-1zM2 17h1v1h-1zM4 17h2v1h-2zM9 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM18 17h1v1h-1zM20 17h5v1h-5zM27 17h1v1h-1zM29 17h1v1h-1zM32 17h1v1h-1zM2 18h4v1h-4zM7 18h2v1h-2zM11 18h3v1h-3zM19 18h1v1h-1zM22 18h1v1h-1zM27 18h1v1h-1zM29 18h2v1h-2zM33 18h1v1h-1zM2 19h1v1h-1zM5 19h1v1h-1zM11 19h2v1h-2zM14 19h4v1h-4zM20 19h2v1h-2zM23 19h3v1h-3zM27 19h2v1h-2zM31 19h1v1h-1zM33 19h2v1h-2zM3 20h1v1h-1zM6 20h3v1h-3zM10 20h1v1h-1zM12 20h1v1h-1zM15 20h4v1h-4zM22 20h1v1h-1zM24 20h1v1h-1zM28 20h1v1h-1zM30 20h2v1h-2zM33 20h1v1h-1zM3 21h1v1h-1zM6 21h2v1h-2zM9 21h4v1h-4zM14 21h2v1h-2zM22 21h2v1h-2zM25 21h1v1h-1zM27 21h1v1h-1zM30 21h1v1h-1zM32 21h1v1h-1zM3 22h1v1h-1zM5 22h1v1h-1zM8 22h1v1h-1zM11 22h1v1h-1zM14 22h1v1h-1zM16 22h2v1h-2zM19 22h2v1h-2zM22 22h1v1h-1zM24 22h4v1h-4zM29 22h2v1h-2zM33 22h1v1h-1zM2 23h1v1h-1zM4 23h3v1h-3zM9 23h1v1h-1zM11 23h2v1h-2zM18 23h2v1h-2zM21 23h1v1h-1zM23 23h1v1h-1zM25 23h1v1h-1zM28 23h2v1h-2zM31 23h1v1h-1zM33 23h2v1h-2zM2 24h1v1h-1zM4 24h3v1h-3zM8 24h2v1h-2zM11 24h1v1h-1zM13 24h2v1h-2zM17 24h2v1h-2zM20 24h1v1h-1zM22 24h1v1h-1zM26 24h1v1h-1zM28 24h1v1h-1zM31 24h1v1h-1zM33 24h1v1h-1zM2 25h1v1h-1zM7 25h1v1h-1zM9 25h5v1h-5zM16 25h1v1h-1zM20 25h2v1h-2zM23 25h1v1h-1zM25 25h4v1h-4zM31 25h2v1h-2zM2 26h2v1h-2zM8 26h1v1h-1zM10 26h1v1h-1zM13 26h1v1h-1zM17 26h1v1h-1zM19 26h2v1h-2zM22 26h1v1h-1zM26 26h6v1h-6zM34 26h1v1h-1zM10 27h1v1h-1zM14 27h3v1h-3zM18 27h1v1h-1zM21 27h1v1h-1zM23 27h2v1h-2zM26 27h1v1h-1zM30 27h3v1h-3zM34 27h1v1h-1zM2 28h7v1h-7zM10 28h1v1h-1zM12 28h1v1h-1zM15 28h3v1h-3zM20 28h1v1h-1zM22 28h2v1h-2zM25 28h2v1h-2zM28 28h1v1h-1zM30 28h1v1h-1zM32 28h2v1h-2zM2 29h1v1h-1zM8 29h1v1h-1zM14 29h2v1h-2zM17 29h2v1h-2zM20 29h4v1h-4zM25 29h2v1h-2zM30 29h1v1h-1zM32 29h3v1h-3zM2 30h1v1h-1zM4 30h3v1h-3zM8 30h1v1h-1zM10 30h2v1h-2zM14 30h1v1h-1zM16 30h2v1h-2zM19 30h1v1h-1zM22 30h1v1h-1zM26 30h5v1h-5zM33 30h1v1h-1zM2 31h1v1h-1zM4 31h3v1h-3zM8 31h1v1h-1zM10 31h3v1h-3zM18 31h1v1h-1zM20 31h2v1h-2zM23 31h3v1h-3zM27 31h1v1h-1zM29 31h3v1h-3zM33 31h2v1h-2zM2 32h1v1h-1zM4 32h3v1h-3zM8 32h1v1h-1zM10 32h1v1h-1zM12 32h3v1h-3zM17 32h4v1h-4zM23 32h3v1h-3zM28 32h1v1h-1zM2 33h1v1h-1zM8 33h1v1h-1zM10 33h2v1h-2zM13 33h1v1h-1zM16 33h2v1h-2zM21 33h1v1h-1zM23 33h1v1h-1zM25 33h4v1h-4zM31 33h2v1h-2zM2 34h7v1h-7zM10 34h1v1h-1zM12 34h2v1h-2zM18 34h3v1h-3zM22 34h1v1h-1zM25 34h4v1h-4zM30 34h1v1h-1zM33 34h1v1h-1z" fill="#0B2A4A"/></svg><p><b>Открыли сайт с компьютера?</b>Наведите камеру телефона на код, и бот откроется в Telegram.</p></div>
+        <ul class="facts">
+          <li>Автор: <b>Алик Муллахметов</b></li>
+          <li>Формат: <b>PDF, A4</b></li>
+          <li>Размер: <b>около 9,3 МБ</b></li>
+          <li>Год: <b>2026</b></li>
+          <li>Помощь в создании: <b>Аленький Цветочек</b></li>
+        </ul>
+      </div>
+      <div class="cover-wrap">
+        <img class="cover-img" src="img/cover.jpg" width="1000" height="1250" alt="Обложка книги «21 критическая ошибка новичка в методе Бутейко»">
+      </div>
+    </div>
+  </section>
+
+  <section class="steps" id="get">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:24px">
+        <p class="eyebrow">Как получить книгу</p>
+        <h2>Три шага, меньше минуты</h2>
+      </div>
+      <ol class="step-list">
+        <li><span class="n">1</span><b>Нажмите «Скачать книгу в Telegram»</b><span class="d">Откроется Telegram с ботом. Нужно приложение или веб-версия Telegram.</span></li>
+        <li><span class="n">2</span><b>Нажмите «Старт» в боте</b><span class="d">Бот ответит сообщением и подскажет, что делать дальше.</span></li>
+        <li><span class="n">3</span><b>Получите PDF</b><span class="d">Книга придёт файлом прямо в чат. Сохраните её и читайте на телефоне или компьютере.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="video">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Видео</p>
+        <h2>Посмотрите видео о книге</h2>
+      </div>
+      <div class="video" id="video-box">
+        <div class="ph">
+          <p>Здесь будет видео. Пока его можно посмотреть на YouTube-канале автора.</p>
+          <a href="https://www.youtube.com/@buteykolive" target="_blank" rel="noopener">Открыть канал на YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="problem">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Знакомая ситуация</p>
+        <h2>Вы занимаетесь регулярно, а контрольная пауза не растёт</h2>
+        <p class="lead">Человек может заниматься неделями и месяцами и не понимать, почему показатели не улучшаются. Чаще всего причина в деталях, которые трудно заметить самому.</p>
+      </div>
+      <ul class="cards">
+        <li><b>Дышат реже</b>Вместо того чтобы уменьшать глубину дыхания, начинают уменьшать его частоту.</li>
+        <li><b>Растягивают задержки</b>Считают, что чем дольше терпишь, тем лучше, и делают задержки главным упражнением.</li>
+        <li><b>Напрягаются</b>Вместо расслабления зажимают дыхательные мышцы, грудную клетку и живот.</li>
+        <li><b>Неверно меряют КП</b>Контрольную паузу «выжимают» терпением или срываются в глубокий вдох.</li>
+        <li><b>Меняют упражнения</b>Ищут «самое эффективное» и не доводят до результата базовую тренировку.</li>
+      </ul>
+      <p class="after">Книга учит находить такие ошибки, понимать их причины и вовремя поправлять практику.</p>
+    </div>
+  </section>
+
+  <section id="rule">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Ошибка №2 из книги</p>
+        <h2>Весь метод умещается на пальцах левой руки</h2>
+        <p class="lead">К. П. Бутейко предлагал запоминать суть метода по пяти пальцам. Новички часто помнят упражнения, но забывают принцип, ради которого их выполняют.</p>
+      </div>
+      <ol class="fingers" aria-label="Правило левой руки">
+        <li class="finger"><span class="n">1</span>уменьшение</li>
+        <li class="finger"><span class="n">2</span>глубины</li>
+        <li class="finger"><span class="n">3</span>дыхания</li>
+        <li class="finger"><span class="n">4</span>расслаблением диафрагмы</li>
+        <li class="finger"><span class="n">5</span>до недостатка воздуха</li>
+      </ol>
+      <div class="check">
+        <p><b>Проверка любого упражнения.</b> Если сомневаетесь, правильно ли вы дышите, задайте себе три вопроса:</p>
+        <p>Уменьшаю ли я именно глубину дыхания? Происходит ли это через расслабление? Появляется ли необходимое ощущение недостатка воздуха?</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="inside" class="contents">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Что внутри</p>
+        <h2>Две части: разбор ошибок и справочник на 121 вопрос</h2>
+        <p class="lead">Оглавление в PDF кликабельно: из него можно перейти сразу к нужной главе и так же вернуться.</p>
+      </div>
+
+      <div class="part">
+        <div class="part-title"><span class="tag">Часть I</span><h3>21 критическая ошибка новичка</h3></div>
+        <ol class="errors">
+          <li><span class="n">1</span><span>Учиться методу Бутейко по роликам в Интернете</span><span class="p">стр. 16</span></li>
+          <li><span class="n">2</span><span>Не знать наизусть «правило левой руки»</span><span class="p">стр. 19</span></li>
+          <li><span class="n">3</span><span>Не изучать теорию метода и основы физиологии дыхания</span><span class="p">стр. 22</span></li>
+          <li><span class="n">4</span><span>Практиковать метод, не прочувствовав на себе глубокодыхательную пробу</span><span class="p">стр. 25</span></li>
+          <li><span class="n">5</span><span>Считать задержки дыхания главным упражнением метода</span><span class="p">стр. 28</span></li>
+          <li><span class="n">6</span><span>Стараться уменьшать частоту дыхания вместо глубины дыхания</span><span class="p">стр. 31</span></li>
+          <li><span class="n">7</span><span>Не отслеживать динамику контрольной паузы до и после тренировки и по утрам раз в неделю</span><span class="p">стр. 34</span></li>
+          <li><span class="n">8</span><span>Гнаться за ростом контрольной паузы любой ценой</span><span class="p">стр. 37</span></li>
+          <li><span class="n">9</span><span>При ощущении недостатка воздуха забывать давать себе команду расслабиться</span><span class="p">стр. 40</span></li>
+          <li><span class="n">10</span><span>Не сохранять лёгкое чувство недостатка воздуха на протяжении всей тренировки</span><span class="p">стр. 43</span></li>
+          <li><span class="n">11</span><span>Игнорировать упражнения на осанку</span><span class="p">стр. 47</span></li>
+          <li><span class="n">12</span><span>При заложенности носа не использовать специальные упражнения для его освобождения</span><span class="p">стр. 50</span></li>
+          <li><span class="n">13</span><span>Не обращать внимания на влагу и слизь в носу во время тренировки</span><span class="p">стр. 53</span></li>
+          <li><span class="n">14</span><span>Не использовать физические нагрузки при освоении метода</span><span class="p">стр. 55</span></li>
+          <li><span class="n">15</span><span>Игнорировать дыхание ртом во время речи</span><span class="p">стр. 58</span></li>
+          <li><span class="n">16</span><span>Переедать, не учитывая, что это сильный раздышивающий фактор</span><span class="p">стр. 61</span></li>
+          <li><span class="n">17</span><span>Не искать свои раздышивающие факторы и не устранять их</span><span class="p">стр. 64</span></li>
+          <li><span class="n">18</span><span>Игнорировать консультации с методистом</span><span class="p">стр. 67</span></li>
+          <li><span class="n">19</span><span>Игнорировать закаливание и водные процедуры</span><span class="p">стр. 70</span></li>
+          <li><span class="n">20</span><span>Искать новые упражнения, когда уже работают текущие</span><span class="p">стр. 73</span></li>
+          <li><span class="n">21</span><span>Не искать новое упражнение, если текущее не работает</span><span class="p">стр. 76</span></li>
+        </ol>
+      </div>
+
+      <div class="part">
+        <div class="part-title"><span class="tag">Часть II</span><h3>121 популярный вопрос и ответ, 10 разделов</h3></div>
+        <ul class="topics">
+          <li><span>Понимание метода и обучение</span><span class="p">стр. 80</span></li>
+          <li><span>Контрольная пауза и оценка результата</span><span class="p">стр. 83</span></li>
+          <li><span>Расслабление, внимание и удобное положение</span><span class="p">стр. 88</span></li>
+          <li><span>Дыхание в повседневных действиях и речи</span><span class="p">стр. 94</span></li>
+          <li><span>Движение, ходьба и физическая нагрузка</span><span class="p">стр. 96</span></li>
+          <li><span>Упражнения, ритмы и утомление</span><span class="p">стр. 100</span></li>
+          <li><span>Режим, регулярность и восстановление</span><span class="p">стр. 104</span></li>
+          <li><span>Физиология дыхания и газообмена</span><span class="p">стр. 108</span></li>
+          <li><span>Питание и наблюдение за состоянием</span><span class="p">стр. 116</span></li>
+          <li><span>Индивидуальные условия, безопасность и ограничения</span><span class="p">стр. 119</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="pages-sec" aria-labelledby="pages-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Загляните внутрь</p>
+        <h2 id="pages-title">Так выглядят страницы книги</h2>
+        <p class="lead">Схемы, иллюстрации и живой язык. Нажмите на страницу, чтобы рассмотреть её крупнее.</p>
+      </div>
+      <ul class="pages">
+        <li><figure><button type="button" data-zoom="img/page-19.jpg" aria-label="Открыть страницу 19 крупнее"><img src="img/page-19.jpg" width="1000" height="1414" loading="lazy" alt="Страница 19: ошибка №2, схема «правило левой руки» на пяти пальцах"></button><figcaption><b>Стр. 19.</b> Ошибка №2: правило левой руки</figcaption></figure></li>
+        <li><figure><button type="button" data-zoom="img/page-28.jpg" aria-label="Открыть страницу 28 крупнее"><img src="img/page-28.jpg" width="1000" height="1414" loading="lazy" alt="Страница 28: ошибка №5, секундомер и вывод «задержка — инструмент, а не суть метода»"></button><figcaption><b>Стр. 28.</b> Ошибка №5: задержка — инструмент, а не суть метода</figcaption></figure></li>
+        <li><figure><button type="button" data-zoom="img/page-11.jpg" aria-label="Открыть страницу 11 крупнее"><img src="img/page-11.jpg" width="1000" height="1414" loading="lazy" alt="Страница 11 из введения: автор рассказывает о пути к методу Бутейко"></button><figcaption><b>Стр. 11.</b> Введение: путь автора к методу</figcaption></figure></li>
+      </ul>
+    </div>
+  </section>
+  <dialog class="lb" id="lb" aria-label="Страница книги"><img alt="" id="lb-img"></dialog>
+
+  <section class="excerpt" aria-label="Отрывок из книги">
+    <div class="wrap">
+      <figure>
+        <blockquote>
+          <p>Метод Бутейко — это не коллекция дыхательных упражнений. Это система.</p>
+          <p>Изменения происходят не потому, что Вы посмотрели много роликов. Они происходят тогда, когда Вы правильно и регулярно выполняете то, что уже поняли.</p>
+        </blockquote>
+        <figcaption>Алик Муллахметов, «21 критическая ошибка новичка в методе Бутейко», ошибка №1</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="audience">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Для кого</p>
+        <h2>Кому пригодится книга</h2>
+      </div>
+      <ul class="who">
+        <li><b>Начинающим</b><span>Поможет сложить верное представление о методе и избежать типичных ошибок с первых занятий.</span></li>
+        <li><b>Тем, кто уже практикует ВЛГД</b><span>Позволит разобрать собственные занятия и лучше понимать динамику контрольной паузы.</span></li>
+        <li><b>Изучающим дыхательные техники самостоятельно</b><span>Объяснит, чем отличаются дыхательные упражнения, задержки дыхания и метод Бутейко.</span></li>
+        <li><b>Методистам и преподавателям</b><span>Станет дополнительным материалом для объяснения частых ошибок и ответов на вопросы учеников.</span></li>
+        <li><b>Интересующимся физиологией дыхания</b><span>Знакомит с регуляцией лёгочной вентиляции, ролью углекислого газа и самонаблюдением.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="author" class="author">
+    <div class="wrap">
+      <img class="portrait" src="img/author.jpg" width="379" height="473" alt="Алик Муллахметов">
+      <div class="author-copy">
+        <p class="eyebrow">Об авторе</p>
+        <h2>Алик Муллахметов</h2>
+        <p class="lead">Биолог, преподаватель, специалист по физической терапии и эрготерапии, методист-ревизор ВЛГД по методу Бутейко. Магистр образования по специальности «Биология и здоровье человека».</p>
+        <ul class="stats">
+          <li><b>30 лет</b>исследовательской и преподавательской деятельности</li>
+          <li><b>20+</b>научных публикаций, в том числе в международных изданиях</li>
+          <li><b>150+</b>методистов ВЛГД в Европе, Азии, Африке и Америке</li>
+        </ul>
+        <p>Основатель Академии здоровья Алика Муллахметова. Ведёт два YouTube-канала: об основах дыхания и здоровья и о применении метода Бутейко в спорте.</p>
+        <div class="links">
+          <a href="https://www.youtube.com/@buteykolive" target="_blank" rel="noopener">YouTube: Академия здоровья</a>
+          <a href="https://www.youtube.com/@primefitguru" target="_blank" rel="noopener">YouTube: Prime Fit Guru</a>
+          <a href="https://buteykolive.com/" target="_blank" rel="noopener">buteyko.com.ua</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Вопросы</p>
+        <h2>Коротко о книге</h2>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>Как получить книгу?</summary>
+          <p>Нажмите кнопку «Скачать книгу в Telegram». Откроется Telegram-бот: нажмите «Старт», и бот пришлёт PDF прямо в чат.</p>
+        </details>
+        <details>
+          <summary>Книга действительно бесплатная?</summary>
+          <p>Да. Скачивание бесплатное. Автор разрешает копировать и распространять книгу целиком или частями в печатном и электронном виде, при условии что указаны имя автора и название книги.</p>
+        </details>
+        <details>
+          <summary>Это курс с упражнениями?</summary>
+          <p>Нет. Это книга о том, как избегать типичных ошибок: она объясняет принципы метода, физиологию дыхания и отвечает на частые вопросы. Автор рекомендует консультации с подготовленным методистом, потому что со стороны ошибки видны лучше.</p>
+        </details>
+        <details>
+          <summary>Подойдёт ли книга, если я только начинаю?</summary>
+          <p>Да. Первая часть написана для новичков, а справочник из 121 вопроса удобно открывать по мере практики.</p>
+        </details>
+        <details>
+          <summary>Можно ли переводить и пересказывать книгу?</summary>
+          <p>Да, переводить, сокращать и перерабатывать можно. Нужно указать автора и название книги и пометить внесённые изменения.</p>
+        </details>
+        <details>
+          <summary>Заменяет ли книга консультацию врача?</summary>
+          <p>Нет. Книга образовательная и не содержит диагнозов и назначений. Подробнее в блоке о безопасности ниже.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="safety" aria-labelledby="safety-title">
+    <div class="wrap">
+      <div class="box">
+        <h2 id="safety-title">Важно о безопасности</h2>
+        <p>Книга предназначена для образовательных и информационных целей. Она не заменяет обследование, наблюдение и лечение у квалифицированных специалистов.</p>
+        <ul>
+          <li>Людям с заболеваниями сердца и сосудов, органов дыхания, неврологическими и другими хроническими заболеваниями, а также беременным перед занятиями нужно поговорить с лечащим врачом.</li>
+          <li>При головокружении, предобморочном состоянии или заметном ухудшении самочувствия упражнение нужно прекратить.</li>
+          <li>При боли в груди, выраженном затруднении дыхания или потере сознания нужно сразу вызвать скорую помощь.</li>
+          <li>Задержки дыхания нельзя выполнять в воде, за рулём и в любых ситуациях, где возможная потеря сознания опасна.</li>
+          <li>Информация из книги не основание отменять лекарства, менять дозировки или отказываться от назначенного лечения.</li>
+        </ul>
+        <p class="small">Реакция организма на дыхательные упражнения индивидуальна. Автор не гарантирует определённых лечебных или оздоровительных результатов.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>Не повторяйте ошибки, которые уже совершили сотни людей</h2>
+      <p>Скачайте книгу и сверьте с ней свою практику. Это займёт один вечер, а заметить свои ошибки можно уже на первых главах.</p>
+      <a class="btn" href="https://t.me/buteyko_bot?start=6b0427357f24747de80c9dcc" data-cta target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        Скачать книгу в Telegram
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="contacts">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <h3>Автор</h3>
+        <p>Алик Муллахметов<br>Методист-ревизор ВЛГД по методу Бутейко</p>
+      </div>
+      <div>
+        <h3>Консультации и обучение</h3>
+        <p>Индивидуальные консультации, обучение методу Бутейко, подготовка и аттестация методистов ВЛГД.</p>
+      </div>
+      <div>
+        <h3>Связаться</h3>
+        <p><a href="https://t.me/alikmullahmetov" target="_blank" rel="noopener">Telegram @alikmullahmetov</a><br>
+        Viber, WhatsApp: <a href="tel:+380997173275">+380 99 717 3275</a><br>
+        <a href="mailto:noastma@gmail.com">noastma@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="legal">
+      <p>Автор: Алик Муллахметов. В создании книги помогала Аленький Цветочек.</p>
+      <p>© 2026 Алик Муллахметов. Книга «21 критическая ошибка новичка в методе Бутейко» распространяется свободно и бесплатно при условии указания имени автора и названия книги. При переводе, сокращении или переработке нужно обозначать внесённые изменения.</p>
+      <p>Материалы носят образовательный характер и не заменяют консультацию врача. Результаты индивидуальны.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // 1) Ссылка на Telegram-бота. Замените на адрес вашего бота, например "https://t.me/имя_бота".
+  var BOT_URL = "https://t.me/buteyko_bot?start=6b0427357f24747de80c9dcc";
+  // 2) ID видео YouTube (часть ссылки после v=). Пока пусто, показывается заглушка со ссылкой на канал.
+  var VIDEO_ID = "";
+
+  var lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img");
+  document.querySelectorAll("[data-zoom]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      lbImg.src = b.getAttribute("data-zoom");
+      lbImg.alt = b.querySelector("img").alt;
+      if (lb.showModal) lb.showModal();
+    });
+  });
+  if (lb) lb.addEventListener("click", function () { lb.close(); });
+
+  document.querySelectorAll("[data-cta]").forEach(function (a) { a.href = BOT_URL; });
+
+  var box = document.getElementById("video-box");
+  if (box && VIDEO_ID) {
+    box.innerHTML = '<img src="https://i.ytimg.com/vi/' + VIDEO_ID + '/hqdefault.jpg" alt="">' +
+      '<button class="play" type="button" aria-label="Смотреть видео">' +
+      '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></button>';
+    box.querySelector("button").addEventListener("click", function () {
+      box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + VIDEO_ID +
+        '?autoplay=1&rel=0" title="Видео о книге" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+    });
+  }
+})();
+</script>
+</body>
+</html>
