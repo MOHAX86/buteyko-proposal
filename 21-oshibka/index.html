@@ -137,6 +137,7 @@ p { margin: 0; }
 
 /* Video */
 .video { position: relative; max-width: 860px; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: var(--navy); color: var(--on-navy); display: grid; place-items: center; text-align: center; box-shadow: 0 24px 50px -30px rgba(11, 42, 74, 0.6); }
+.video { aspect-ratio: 9 / 16; max-width: 340px; margin-inline: auto; }
 .video iframe, .video img { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
 .video .play { position: relative; appearance: none; border: 0; cursor: pointer; width: 76px; height: 76px; border-radius: 50%; background: var(--cta); color: var(--on-cta); display: grid; place-items: center; }
 .video .play svg { width: 30px; height: 30px; margin-left: 4px; }
@@ -630,8 +631,8 @@ footer .legal { border-top: 1px solid var(--line); padding-top: 24px; font-size:
 (function () {
   // 1) Ссылка на Telegram-бота. Замените на адрес вашего бота, например "https://t.me/имя_бота".
   var BOT_URL = "https://t.me/buteyko_bot?start=6b0427357f24747de80c9dcc";
-  // 2) ID видео YouTube (часть ссылки после v=). Пока пусто, блок «Видео» скрыт.
-  var VIDEO_ID = "";
+  // 2) ID видео YouTube (часть ссылки после v=). Если пусто, блок «Видео» скрыт.
+  var VIDEO_ID = "IZ28L6FG39s";   // вертикальный ролик 80 с, обложка img/video.jpg
 
   var lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img");
   document.querySelectorAll("[data-zoom]").forEach(function (b) {
@@ -668,16 +669,16 @@ footer .legal { border-top: 1px solid var(--line); padding-top: 24px; font-size:
     es.forEach(function (e) { seen.set(e.target, e.isIntersecting || (e.target.classList.contains("cta-row") && e.boundingClientRect.top > 0)); });
     bar.classList.toggle("show", ![].concat(Array.from(seen.values())).some(Boolean));
   });
-  [document.querySelector(".hero .cta-row"), document.querySelector(".final"), document.querySelector("footer")].forEach(function (el) { if (el) io.observe(el); });
+  [document.querySelector(".hero .cta-row"), document.getElementById("video-box"), document.querySelector(".final"), document.querySelector("footer")].forEach(function (el) { if (el) io.observe(el); });
 
   var box = document.getElementById("video-box");
   if (box && VIDEO_ID) {
-    box.innerHTML = '<img src="https://i.ytimg.com/vi/' + VIDEO_ID + '/hqdefault.jpg" alt="">' +
+    box.innerHTML = '<img src="img/video.jpg" alt="">' +
       '<button class="play" type="button" aria-label="Смотреть видео">' +
       '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></button>';
     box.querySelector("button").addEventListener("click", function () {
       box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + VIDEO_ID +
-        '?autoplay=1&rel=0" title="Видео о книге" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+        '?autoplay=1&rel=0" title="Видео о книге" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
     });
   }
 })();
