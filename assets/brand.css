@@ -1,0 +1,43 @@
+/* Брендбук Академії здоров’я Аліка Муллахметова (отримано 25.11.2026):
+   сині #001048 #404F87 #9DA7C9, коричневі #4F3127 #836A62 #C6B4AF, білий; Roboto Condensed.
+   Підключається після site2.css і лише перевизначає змінні та кілька деталей. */
+:root {
+  --p-bg: #ffffff; --p-surface: #f2f3f9; --p-ink: #001048; --p-muted: #404f87;
+  --p-accent: #001048; --p-accent-ink: #ffffff; --p-action: #001048; --p-action-ink: #ffffff;
+  --p-inv-bg: #001048; --p-inv-surface: #17265f; --p-inv-ink: #ffffff; --p-inv-muted: #c3c9e0;
+  --p-inv-accent: #ffffff; --p-inv-accent-ink: #001048; --p-inv-action: #ffffff; --p-inv-action-ink: #001048;
+  --font-display: "Roboto Condensed", system-ui, sans-serif;
+  --font-text: "Roboto Condensed", system-ui, sans-serif;
+  --font-mono: "Roboto Condensed", system-ui, sans-serif;
+  --gold: #c6b4af; --gold-soft: #e8dfdc;
+  --display-tracking: -0.005em;
+  --display-tracking-xl: -0.01em;
+}
+body { font-size: 17px; }
+.kick { color: #836a62; border-color: #c6b4af; }
+.kick--plain { color: #836a62; }
+.ground-inverse .kick, .ground-inverse .kick--plain { color: #c6b4af; }
+
+/* знак (вихор) і назва академії у шапці та підвалі */
+.nav__logo.brand { display: inline-flex; align-items: center; gap: 10px; line-height: 1.1; text-decoration: none; }
+.brand img { width: 40px; height: 40px; flex: none; }
+.brand b { display: block; font-weight: 700; font-size: 18px; font-style: italic; letter-spacing: 0; }
+.brand small { display: block; font-weight: 400; font-size: 13px; color: var(--p-muted); }
+footer .brand small { color: inherit; opacity: .8; }
+
+/* фото в тон: синій градієнт знизу, як у брендбуку */
+.close__media { position: relative; }
+.close__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,16,72,0) 35%, rgba(0,16,72,.55) 100%); pointer-events: none; border-radius: inherit; }
+.close__media, .closing__cta > .close__media { height: clamp(300px, 34vw, 400px); min-height: clamp(300px, 28vw, 400px); overflow: hidden; }
+.close__media img, .close__media > img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 19%; }
+.rt__pic--num .rt__mark { width: 46%; max-width: 200px; height: auto; position: static; opacity: .9; }
+.rt__pic--num { background: var(--p-surface); }
+
+/* пояснення біля тесту паузи та консультації */
+.hero__note { margin-top: 14px; max-width: 44ch; color: var(--p-muted); font-size: 16px; }
+
+h1, h2, h3, .t-display { hyphens: manual; -webkit-hyphens: manual; }
+.prose figure img { width: 100%; max-width: 420px; height: auto; margin-inline: auto; display: block; }
+.prose-wrap > *, .prose > * { min-width: 0; }
+.prose-wrap h1 { overflow-wrap: break-word; }
+.prose .btn { white-space: normal; text-align: center; max-width: 100%; height: auto; min-height: var(--btn-h); line-height: 1.25; padding-block: 11px; }
