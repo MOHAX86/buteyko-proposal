@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 715" width="1200" height="715" font-family="'Roboto Condensed', Arial, sans-serif" fill="#001048">
+<rect width="1200" height="715" fill="#fff"/>
+<text x="600" y="72" font-size="32" text-anchor="middle">Breathing pattern: gradual reduction of breathing depth</text>
+<line x1="110" y1="380" x2="1130" y2="380" stroke="#9DA7C9" stroke-width="3"/>
+<path d="M115 378 C150 250 190 135 250 135 S350 260 390 380 S460 535 515 535 S610 440 650 380 S710 300 760 300 S840 355 885 380 S950 435 1000 435 S1090 400 1125 378" fill="none" stroke="#404F87" stroke-width="14" stroke-linecap="round"/>
+<text transform="translate(62 380) rotate(-90)" font-size="34" text-anchor="middle">Depth of breathing</text>
+<text x="600" y="650" font-size="34" text-anchor="middle">Time</text>
+</svg>
