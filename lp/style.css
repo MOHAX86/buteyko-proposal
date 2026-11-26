@@ -513,3 +513,7 @@ details p{padding:0 24px 24px;color:var(--brown);max-width:680px}
   .m-note{text-align:center}
 }
 @media (prefers-reduced-motion:reduce){.m-slide,.mentor{transition:none}.m-text.fade,#m-role.fade{animation:none}}
+
+/* en */
+.nav-right .lang + .lang{margin-left:-4px}
+@media (max-width:420px){.nav-right{gap:6px}.nav-right .lang{min-width:40px;padding-inline:6px}.brand-name{font-size:14px}}

@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<base href="https://buteykolive.com/21-oshibka/">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>21 beginner mistakes in the Buteyko method</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A free book by Alik Mullakhmetov: 21 typical mistakes made while mastering the Buteyko method and 121 answers to frequent questions. PDF, 130 pages.">
+<meta property="og:title" content="21 critical beginner mistakes in the Buteyko method">
+<meta property="og:description" content="A free PDF book: what keeps you from increasing your control pause and getting results.">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://buteykolive.com/en/21-mistakes">
+<meta property="og:image" content="https://buteykolive.com/21-oshibka/img/cover.jpg">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="1250">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="https://buteykolive.com/favicon.svg">
+<!-- Google Analytics: only on the live domain, the github.io preview is not counted -->
+<script>if(location.hostname==="buteykolive.com"){var g=document.createElement("script");g.async=true;g.src="https://www.googletagmanager.com/gtag/js?id=G-ERE2330W4R";document.head.appendChild(g);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag("js",new Date());gtag("config","G-ERE2330W4R");}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Onest:wght@400;500;600&display=swap">
+<style>
+/* Layout: sky-blue air from the cover, navy type, gold for the "21" and the main action. */
+:root {
+  --bg: #EEF6FD;
+  --sky: #D6EAF9;
+  --band: #E0EDF9;
+  --surface: #FFFFFF;
+  --ink: #0B2A4A;
+  --muted: #3F5F7F;
+  --line: #BCD4EA;
+  --accent: #14609F;
+  --accent-soft: #D3E6F7;
+  --cta: #EBA818;
+  --on-cta: #0B2A4A;
+  --navy: #0B2A4A;
+  --on-navy: #FFFFFF;
+  --signal: #9A6000;
+  --font-display: "Montserrat", "Arial Black", system-ui, sans-serif;
+  --font-body: "Onest", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #071A2E; --sky: #0C2A47; --band: #0A2036; --surface: #0E2640; --ink: #E7F2FC; --muted: #9DB9D4; --line: #21415F;
+    --accent: #6DB6F2; --accent-soft: #123556; --cta: #F2B422; --on-cta: #0B2A4A; --navy: #0E2640; --on-navy: #FFFFFF; --signal: #F2B422;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #071A2E; --sky: #0C2A47; --band: #0A2036; --surface: #0E2640; --ink: #E7F2FC; --muted: #9DB9D4; --line: #21415F;
+  --accent: #6DB6F2; --accent-soft: #123556; --cta: #F2B422; --on-cta: #0B2A4A; --navy: #0E2640; --on-navy: #FFFFFF; --signal: #F2B422;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 17px/1.65 var(--font-body);
+  -webkit-text-size-adjust: 100%;
+}
+img { max-width: 100%; }
+a { color: var(--accent); }
+a:focus-visible, summary:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+.wrap {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+section { padding-block: 72px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.15; margin: 0; text-wrap: balance; letter-spacing: -0.015em; }
+h1 { font-size: clamp(1.9rem, 4.6vw, 3.1rem); }
+h2 { font-size: clamp(1.45rem, 3vw, 2.1rem); }
+h3 { font-size: 1.1rem; font-weight: 700; }
+p { margin: 0; }
+.eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.lead { font-size: 1.2rem; color: var(--muted); max-width: 60ch; }
+.section-head { display: grid; gap: 14px; margin-bottom: 40px; max-width: 760px; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 26px; border-radius: 10px;
+  background: var(--cta); color: var(--on-cta);
+  font: 600 1.05rem/1.2 var(--font-body); text-decoration: none;
+  border: 2px solid var(--cta);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -10px var(--cta); }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.ghost:hover { border-color: var(--accent); box-shadow: none; }
+.btn svg { width: 20px; height: 20px; flex: none; }
+
+/* Header */
+.top { padding-block: 18px; border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.brand { font: 600 1.05rem var(--font-display); color: var(--ink); text-decoration: none; }
+.brand span { color: var(--accent); }
+.top nav { display: flex; gap: 22px; flex-wrap: wrap; }
+.top nav a { color: var(--muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
+.top nav a:hover { color: var(--ink); }
+
+/* Hero */
+.hero { padding-block: 56px 72px; background: linear-gradient(180deg, var(--sky) 0%, var(--bg) 100%); }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: 56px; align-items: center; }
+.hero-copy { display: grid; gap: 24px; justify-items: start; }
+.hero h1 .sub { display: block; margin-top: 18px; font: 500 clamp(1.1rem, 2vw, 1.4rem)/1.4 var(--font-body); color: var(--muted); letter-spacing: 0; }
+.cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.note { font-size: 0.95rem; color: var(--muted); margin-top: -8px; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 0.92rem; color: var(--muted); padding: 0; margin: 0; list-style: none; }
+.facts li { display: flex; gap: 6px; }
+.facts b { color: var(--ink); font-weight: 600; }
+
+/* Cover */
+.cover-wrap { display: grid; justify-items: center; }
+.cover-img { width: min(100%, 440px); height: auto; display: block; border-radius: 18px; box-shadow: 0 30px 60px -30px rgba(11, 42, 74, 0.55); }
+
+/* QR for desktop visitors */
+.qr-card { display: flex; align-items: center; gap: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 18px 12px 12px; max-width: 420px; }
+.qr-card svg { width: 96px; height: 96px; flex: none; border-radius: 6px; }
+.qr-card p { font-size: 0.92rem; line-height: 1.45; color: var(--muted); }
+.qr-card b { color: var(--ink); font-weight: 600; display: block; }
+
+/* How to get */
+.steps { padding-block: 56px 24px; }
+.step-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding: 0; margin: 0; list-style: none; counter-reset: s; }
+.step-list li { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: grid; gap: 8px; align-content: start; }
+.step-list .n { width: 36px; height: 36px; border-radius: 50%; background: var(--cta); color: var(--on-cta); display: grid; place-items: center; font: 800 1rem var(--font-display); }
+.step-list b { font: 700 1.05rem/1.3 var(--font-display); }
+.step-list span.d { color: var(--muted); font-size: 0.97rem; line-height: 1.55; }
+
+/* Video */
+.video { position: relative; max-width: 860px; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: var(--navy); color: var(--on-navy); display: grid; place-items: center; text-align: center; box-shadow: 0 24px 50px -30px rgba(11, 42, 74, 0.6); }
+.video { aspect-ratio: 9 / 16; max-width: 340px; margin-inline: auto; }
+.video iframe, .video img { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+.video .play { position: relative; appearance: none; border: 0; cursor: pointer; width: 76px; height: 76px; border-radius: 50%; background: var(--cta); color: var(--on-cta); display: grid; place-items: center; }
+.video .play svg { width: 30px; height: 30px; margin-left: 4px; }
+.video .ph { display: grid; gap: 14px; justify-items: center; padding: 24px; }
+.video .ph p { max-width: 36ch; opacity: .9; }
+.video .ph a { color: var(--cta); font-weight: 600; }
+
+/* Problem */
+.problem { background: var(--band); }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(185px, 1fr)); gap: 16px; padding: 0; margin: 0; list-style: none; }
+.cards li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; font-size: 1rem; line-height: 1.5; }
+.cards li b { display: block; margin-bottom: 6px; font-family: var(--font-display); font-size: 1.05rem; }
+.problem .after { margin-top: 32px; max-width: 62ch; font-size: 1.1rem; }
+
+/* Rule of the left hand */
+.fingers { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; align-items: end; padding: 0; margin: 0 0 32px; list-style: none; }
+.finger {
+  background: var(--accent-soft); border: 1px solid var(--line);
+  border-radius: 999px 999px 14px 14px;
+  padding: 28px 12px 20px; text-align: center;
+  display: grid; align-content: space-between; justify-items: center; gap: 14px;
+  font: 700 0.98rem/1.3 var(--font-display);
+}
+.finger:nth-child(1) { min-height: 190px; }
+.finger:nth-child(2) { min-height: 230px; }
+.finger:nth-child(3) { min-height: 250px; }
+.finger:nth-child(4) { min-height: 225px; }
+.finger:nth-child(5) { min-height: 180px; }
+.finger .n { font: 800 1rem var(--font-display); color: var(--signal); letter-spacing: 0.08em; }
+.check { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px 28px; max-width: 760px; }
+.check p + p { margin-top: 10px; }
+.check b { font-family: var(--font-display); }
+
+/* Contents */
+.contents { background: var(--band); }
+.part { margin-bottom: 56px; }
+.part:last-child { margin-bottom: 0; }
+.part-title { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
+.part-title .tag { font: 600 0.8rem var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.errors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; padding: 0; margin: 0; list-style: none; }
+.errors li { display: grid; grid-template-columns: 2.2rem minmax(0, 1fr) auto; gap: 12px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 0.98rem; line-height: 1.45; }
+.errors .n { font: 800 1.05rem var(--font-display); color: var(--signal); font-variant-numeric: tabular-nums; }
+.errors .p, .topics .p { font-size: 0.82rem; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.topics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; padding: 0; margin: 0; list-style: none; }
+.topics li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 0.98rem; line-height: 1.45; }
+
+/* Book pages */
+.pages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 0; padding: 0; list-style: none; }
+.pages figure { margin: 0; display: grid; gap: 12px; align-content: start; }
+.pages button { appearance: none; border: 0; padding: 0; background: none; cursor: zoom-in; border-radius: 10px; display: block; width: 100%; }
+.pages img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); box-shadow: 0 24px 40px -28px rgba(11, 42, 74, 0.6); transition: transform .2s ease; }
+.pages button:hover img { transform: translateY(-4px); }
+.pages button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.pages figcaption { font-size: 0.92rem; color: var(--muted); line-height: 1.45; }
+.pages figcaption b { color: var(--ink); font-weight: 600; }
+dialog.lb { border: 0; padding: 0; background: transparent; max-width: 94vw; max-height: 94vh; overflow: visible; }
+dialog.lb::backdrop { background: rgba(7, 26, 46, 0.82); }
+dialog.lb img { display: block; max-width: 94vw; max-height: 92vh; width: auto; height: auto; border-radius: 8px; cursor: zoom-out; }
+
+/* Excerpt */
+.excerpt .wrap { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; }
+.excerpt figure { margin: 0; max-width: 760px; }
+.excerpt blockquote { margin: 0; font: 500 clamp(1.25rem, 2.4vw, 1.65rem)/1.5 var(--font-body); text-wrap: pretty; }
+.excerpt blockquote p + p { margin-top: 16px; }
+.excerpt figcaption { margin-top: 22px; color: var(--muted); font-size: 0.95rem; }
+
+/* Audience */
+.audience { background: var(--band); }
+.who { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; padding: 0; margin: 0; list-style: none; }
+.who li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+.who b { display: block; font: 600 1.1rem var(--font-display); margin-bottom: 6px; }
+.who span { color: var(--muted); font-size: 0.98rem; display: block; line-height: 1.55; }
+
+/* Author */
+.author .wrap { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 48px; align-items: start; }
+.portrait { width: 260px; max-width: 100%; height: auto; display: block; border-radius: 18px; border: 1px solid var(--line); box-shadow: 0 24px 50px -32px rgba(11, 42, 74, 0.6); }
+.author-copy { display: grid; gap: 18px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; padding: 0; margin: 8px 0 0; list-style: none; }
+.stats li { border-top: 2px solid var(--accent); padding-top: 12px; font-size: 0.92rem; color: var(--muted); line-height: 1.4; }
+.stats b { display: block; font: 800 1.8rem/1.1 var(--font-display); color: var(--ink); margin-bottom: 4px; }
+.links { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 4px; }
+
+/* FAQ */
+.faq { background: var(--band); }
+.faq-list { max-width: 820px; display: grid; gap: 10px; }
+details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+summary { cursor: pointer; list-style: none; padding: 18px 22px; font: 700 1rem/1.4 var(--font-display); display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font: 400 1.6rem/1 var(--font-body); color: var(--accent); flex: none; }
+details[open] summary::after { content: "\2212"; }
+details p { padding: 0 22px 20px; color: var(--muted); max-width: 68ch; }
+
+/* Safety */
+.safety .box { border: 1px solid var(--line); border-left: 6px solid var(--signal); background: var(--surface); border-radius: 12px; padding: 32px; display: grid; gap: 18px; max-width: 900px; }
+.safety ul { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; }
+.safety ul li::marker { color: var(--signal); }
+.safety .small { font-size: 0.92rem; color: var(--muted); }
+
+/* Final CTA */
+.final { background: var(--navy); color: var(--on-navy); text-align: center; }
+.final .wrap { display: grid; gap: 22px; justify-items: center; }
+.final h2 { max-width: 20ch; }
+.final p { max-width: 54ch; opacity: .92; }
+.final .btn:focus-visible { outline-color: var(--on-navy); }
+
+/* Contacts + footer */
+.contacts { padding-block: 56px 32px; }
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; margin-bottom: 40px; }
+.contact-grid h3 { font-size: 0.8rem; font-family: var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 8px; }
+.contact-grid p, .contact-grid a { overflow-wrap: anywhere; }
+footer .legal { border-top: 1px solid var(--line); padding-top: 24px; font-size: 0.85rem; color: var(--muted); display: grid; gap: 8px; max-width: 900px; }
+
+@media (max-width: 900px) {
+  section { padding-block: 56px; }
+  .hero { padding-block: 40px 56px; }
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .cover-wrap { order: -1; }
+  .cover-img { width: min(100%, 320px); }
+  .errors, .topics { grid-template-columns: minmax(0, 1fr); }
+  .author .wrap { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .portrait { width: 180px; }
+  .step-list { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 900px) {
+  .qr-card { display: none; }
+}
+@media (max-width: 760px) {
+  .pages { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 78%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 16px; }
+  .pages li { scroll-snap-align: center; }
+  .fingers { grid-template-columns: minmax(0, 1fr); }
+  .finger, .finger:nth-child(n) { min-height: 0; border-radius: 14px; grid-template-columns: auto minmax(0, 1fr); text-align: left; justify-items: start; align-content: center; padding: 16px 18px; }
+  .top nav { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .pages img { transition: none; }
+  .btn { transition: none; }
+}
+/* phone: button on the first screen, folded contents, button pinned at the bottom */
+[hidden] { display: none !important; }
+.more, .stick { display: none; }
+@media (max-width: 900px) {
+  .hero { padding-block: 20px 40px; }
+  .hero .wrap { gap: 16px; }
+  .cover-img { width: min(40%, 150px); }
+  .hero-copy { gap: 14px; }
+  .hero-copy > .lead { order: 1; }
+  .hero-copy > .facts { order: 2; }
+  .hero h1 .sub { margin-top: 8px; }
+}
+@media (max-width: 760px) {
+  .contents:not(.open) .errors li:nth-child(n+8), .contents:not(.open) .topics li:nth-child(n+5) { display: none; }
+  .more { display: flex; width: 100%; justify-content: center; margin-top: 20px; }
+  .stick { display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: var(--bg); border-top: 1px solid var(--line); transform: translateY(110%); visibility: hidden; transition: transform .25s, visibility .25s; }
+  .stick.show { transform: none; visibility: visible; }
+  .stick .btn { width: 100%; justify-content: center; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Book","@id":"https://buteykolive.com/21-oshibka/#book","name":"21 critical beginner mistakes in the Buteyko method","inLanguage":"en","bookFormat":"https://schema.org/EBook","numberOfPages":130,"datePublished":"2026","isAccessibleForFree":true,"image":"https://buteykolive.com/21-oshibka/img/cover.jpg","url":"https://buteykolive.com/en/21-mistakes","author":{"@type":"Person","name":"Alik Mullakhmetov","url":"https://buteykolive.com/en/about"},"offers":{"@type":"Offer","price":0,"priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://buteykolive.com/en/21-mistakes"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How can I get the book?","acceptedAnswer":{"@type":"Answer","text":"Click the “Download the book in Telegram” button. The Telegram bot will open: press “Start”, and the bot will send the PDF right into the chat."}},{"@type":"Question","name":"Is the book really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Downloading is free. The author permits copying and distributing the book, in whole or in part, in print and electronic form, provided that the author’s name and the title of the book are stated."}},{"@type":"Question","name":"Is this a course with exercises?","acceptedAnswer":{"@type":"Answer","text":"No. It is a book about how to avoid typical mistakes: it explains the principles of the method and the physiology of breathing and answers frequently asked questions. The author recommends consultations with a trained instructor, because mistakes are easier to see from the outside."}},{"@type":"Question","name":"Is the book suitable if I am just starting?","acceptedAnswer":{"@type":"Answer","text":"Yes. The first part is written for beginners, and the reference section of 121 questions is handy to open as you practice."}},{"@type":"Question","name":"May I translate and retell the book?","acceptedAnswer":{"@type":"Answer","text":"Yes, you may translate, abridge and rework it. You must state the author and the title of the book and mark the changes made."}},{"@type":"Question","name":"Does the book replace a doctor’s consultation?","acceptedAnswer":{"@type":"Answer","text":"No. The book is educational and contains no diagnoses or prescriptions. See the safety section below for details."}}]}]}</script>
+<style id="brand-26-11">
+:root,:root[data-theme="dark"],:root[data-theme="light"]{--bg:#FFFFFF!important;--sky:#EEE4DC!important;--band:#F4EFEA!important;--surface:#FFFFFF!important;--ink:#001048!important;--muted:#4F3127!important;--line:#C6B4AF!important;--accent:#404F87!important;--accent-soft:#E8EAF3!important;--cta:#001048!important;--on-cta:#FFFFFF!important;--navy:#001048!important;--on-navy:#FFFFFF!important;--signal:#836A62!important;--font-display:"Roboto Condensed",system-ui,sans-serif!important;--font-body:"Roboto Condensed",system-ui,sans-serif!important}
+body,h1,h2,h3,button{font-family:"Roboto Condensed",system-ui,sans-serif!important}
+h1,h2,h3{font-weight:500!important}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;700&display=swap">
+<link rel="canonical" href="https://buteykolive.com/en/21-mistakes">
+<link rel="alternate" hreflang="en" href="https://buteykolive.com/en/21-mistakes">
+<link rel="alternate" hreflang="ru" href="https://buteykolive.com/21-oshibka/">
+<link rel="alternate" hreflang="x-default" href="https://buteykolive.com/21-oshibka/">
+<style id="lang21">.top nav{margin-left:auto}.top .lang21{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;font-weight:700;font-size:.95rem;text-decoration:none;color:inherit}</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="https://buteykolive.com/en/" title="To the home page">Buteyko<span>Live</span></a>
+    <nav aria-label="Page sections">
+      <a href="https://buteykolive.com/en/21-mistakes#video" data-video hidden>Video</a> <a href="https://buteykolive.com/en/21-mistakes#rule">The left-hand rule</a> <a href="https://buteykolive.com/en/21-mistakes#inside">What’s inside</a> <a href="https://buteykolive.com/en/21-mistakes#author">Author</a> <a href="https://buteykolive.com/en/21-mistakes#faq">Questions</a>
+    </nav>
+<a class="lang21" href="https://buteykolive.com/21-oshibka/" hreflang="ru" lang="ru">RU</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Free book · PDF · 130 pages</p>
+        <h1>
+          21 critical beginner mistakes in the Buteyko method <span class="sub">What keeps you from increasing your control pause and getting results</span>
+        </h1>
+        <p class="lead">An analysis of the most frequent mistakes made while mastering the method of Voluntary Elimination of Deep Breathing, and 121 answers to the questions beginners ask most often.</p>
+        <div class="cta-row">
+          <a class="btn" href="https://t.me/buteyko_bot?start=6b0427357f24747de80c9dcc" data-cta target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            Download the book in Telegram
+          </a>
+          <a class="btn ghost" href="https://buteykolive.com/en/21-mistakes#inside">What’s inside</a>
+        </div>
+        <p class="note">The book is free. The button will open a Telegram bot, which will send you the PDF.</p>
+        <div class="qr-card"><svg viewBox="0 0 37 37" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="QR code: open the book bot in Telegram" shape-rendering="crispEdges"><rect width="37" height="37" fill="#fff"/><path d="M2 2h7v1h-7zM12 2h1v1h-1zM14 2h4v1h-4zM21 2h1v1h-1zM23 2h1v1h-1zM25 2h1v1h-1zM28 2h7v1h-7zM2 3h1v1h-1zM8 3h1v1h-1zM10 3h1v1h-1zM12 3h1v1h-1zM15 3h5v1h-5zM23 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM34 3h1v1h-1zM2 4h1v1h-1zM4 4h3v1h-3zM8 4h1v1h-1zM14 4h2v1h-2zM17 4h1v1h-1zM22 4h3v1h-3zM28 4h1v1h-1zM30 4h3v1h-3zM34 4h1v1h-1zM2 5h1v1h-1zM4 5h3v1h-3zM8 5h1v1h-1zM10 5h3v1h-3zM14 5h1v1h-1zM16 5h2v1h-2zM19 5h2v1h-2zM22 5h1v1h-1zM24 5h1v1h-1zM28 5h1v1h-1zM30 5h3v1h-3zM34 5h1v1h-1zM2 6h1v1h-1zM4 6h3v1h-3zM8 6h1v1h-1zM11 6h1v1h-1zM17 6h2v1h-2zM21 6h1v1h-1zM23 6h3v1h-3zM28 6h1v1h-1zM30 6h3v1h-3zM34 6h1v1h-1zM2 7h1v1h-1zM8 7h1v1h-1zM10 7h2v1h-2zM13 7h2v1h-2zM28 7h1v1h-1zM34 7h1v1h-1zM2 8h7v1h-7zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h1v1h-1zM26 8h1v1h-1zM28 8h7v1h-7zM11 9h3v1h-3zM16 9h1v1h-1zM18 9h1v1h-1zM20 9h2v1h-2zM23 9h1v1h-1zM25 9h2v1h-2zM2 10h5v1h-5zM8 10h4v1h-4zM13 10h1v1h-1zM18 10h3v1h-3zM22 10h1v1h-1zM24 10h1v1h-1zM27 10h1v1h-1zM29 10h1v1h-1zM31 10h1v1h-1zM33 10h1v1h-1zM5 11h1v1h-1zM12 11h1v1h-1zM14 11h4v1h-4zM21 11h1v1h-1zM23 11h3v1h-3zM27 11h2v1h-2zM32 11h3v1h-3zM3 12h2v1h-2zM6 12h1v1h-1zM8 12h1v1h-1zM10 12h1v1h-1zM12 12h1v1h-1zM15 12h5v1h-5zM23 12h2v1h-2zM27 12h1v1h-1zM31 12h1v1h-1zM33 12h1v1h-1zM3 13h1v1h-1zM6 13h2v1h-2zM10 13h1v1h-1zM14 13h2v1h-2zM17 13h1v1h-1zM21 13h3v1h-3zM25 13h1v1h-1zM32 13h1v1h-1zM3 14h2v1h-2zM6 14h4v1h-4zM11 14h2v1h-2zM14 14h1v1h-1zM16 14h2v1h-2zM19 14h1v1h-1zM25 14h1v1h-1zM27 14h1v1h-1zM30 14h2v1h-2zM3 15h1v1h-1zM17 15h2v1h-2zM20 15h3v1h-3zM24 15h3v1h-3zM28 15h1v1h-1zM33 15h2v1h-2zM2 16h1v1h-1zM5 16h2v1h-2zM8 16h7v1h-7zM22 16h3v1h-3zM26 16h2v1h-2zM29 16h2v1h-2zM33 16h1v1h-1zM2 17h1v1h-1zM4 17h2v1h-2zM9 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM18 17h1v1h-1zM20 17h5v1h-5zM27 17h1v1h-1zM29 17h1v1h-1zM32 17h1v1h-1zM2 18h4v1h-4zM7 18h2v1h-2zM11 18h3v1h-3zM19 18h1v1h-1zM22 18h1v1h-1zM27 18h1v1h-1zM29 18h2v1h-2zM33 18h1v1h-1zM2 19h1v1h-1zM5 19h1v1h-1zM11 19h2v1h-2zM14 19h4v1h-4zM20 19h2v1h-2zM23 19h3v1h-3zM27 19h2v1h-2zM31 19h1v1h-1zM33 19h2v1h-2zM3 20h1v1h-1zM6 20h3v1h-3zM10 20h1v1h-1zM12 20h1v1h-1zM15 20h4v1h-4zM22 20h1v1h-1zM24 20h1v1h-1zM28 20h1v1h-1zM30 20h2v1h-2zM33 20h1v1h-1zM3 21h1v1h-1zM6 21h2v1h-2zM9 21h4v1h-4zM14 21h2v1h-2zM22 21h2v1h-2zM25 21h1v1h-1zM27 21h1v1h-1zM30 21h1v1h-1zM32 21h1v1h-1zM3 22h1v1h-1zM5 22h1v1h-1zM8 22h1v1h-1zM11 22h1v1h-1zM14 22h1v1h-1zM16 22h2v1h-2zM19 22h2v1h-2zM22 22h1v1h-1zM24 22h4v1h-4zM29 22h2v1h-2zM33 22h1v1h-1zM2 23h1v1h-1zM4 23h3v1h-3zM9 23h1v1h-1zM11 23h2v1h-2zM18 23h2v1h-2zM21 23h1v1h-1zM23 23h1v1h-1zM25 23h1v1h-1zM28 23h2v1h-2zM31 23h1v1h-1zM33 23h2v1h-2zM2 24h1v1h-1zM4 24h3v1h-3zM8 24h2v1h-2zM11 24h1v1h-1zM13 24h2v1h-2zM17 24h2v1h-2zM20 24h1v1h-1zM22 24h1v1h-1zM26 24h1v1h-1zM28 24h1v1h-1zM31 24h1v1h-1zM33 24h1v1h-1zM2 25h1v1h-1zM7 25h1v1h-1zM9 25h5v1h-5zM16 25h1v1h-1zM20 25h2v1h-2zM23 25h1v1h-1zM25 25h4v1h-4zM31 25h2v1h-2zM2 26h2v1h-2zM8 26h1v1h-1zM10 26h1v1h-1zM13 26h1v1h-1zM17 26h1v1h-1zM19 26h2v1h-2zM22 26h1v1h-1zM26 26h6v1h-6zM34 26h1v1h-1zM10 27h1v1h-1zM14 27h3v1h-3zM18 27h1v1h-1zM21 27h1v1h-1zM23 27h2v1h-2zM26 27h1v1h-1zM30 27h3v1h-3zM34 27h1v1h-1zM2 28h7v1h-7zM10 28h1v1h-1zM12 28h1v1h-1zM15 28h3v1h-3zM20 28h1v1h-1zM22 28h2v1h-2zM25 28h2v1h-2zM28 28h1v1h-1zM30 28h1v1h-1zM32 28h2v1h-2zM2 29h1v1h-1zM8 29h1v1h-1zM14 29h2v1h-2zM17 29h2v1h-2zM20 29h4v1h-4zM25 29h2v1h-2zM30 29h1v1h-1zM32 29h3v1h-3zM2 30h1v1h-1zM4 30h3v1h-3zM8 30h1v1h-1zM10 30h2v1h-2zM14 30h1v1h-1zM16 30h2v1h-2zM19 30h1v1h-1zM22 30h1v1h-1zM26 30h5v1h-5zM33 30h1v1h-1zM2 31h1v1h-1zM4 31h3v1h-3zM8 31h1v1h-1zM10 31h3v1h-3zM18 31h1v1h-1zM20 31h2v1h-2zM23 31h3v1h-3zM27 31h1v1h-1zM29 31h3v1h-3zM33 31h2v1h-2zM2 32h1v1h-1zM4 32h3v1h-3zM8 32h1v1h-1zM10 32h1v1h-1zM12 32h3v1h-3zM17 32h4v1h-4zM23 32h3v1h-3zM28 32h1v1h-1zM2 33h1v1h-1zM8 33h1v1h-1zM10 33h2v1h-2zM13 33h1v1h-1zM16 33h2v1h-2zM21 33h1v1h-1zM23 33h1v1h-1zM25 33h4v1h-4zM31 33h2v1h-2zM2 34h7v1h-7zM10 34h1v1h-1zM12 34h2v1h-2zM18 34h3v1h-3zM22 34h1v1h-1zM25 34h4v1h-4zM30 34h1v1h-1zM33 34h1v1h-1z" fill="#0B2A4A"/></svg><p><b>Opened the site on a computer?</b>Point your phone camera at the code, and the bot will open in Telegram.</p></div>
+        <ul class="facts">
+          <li>Author: <b>Alik Mullakhmetov</b></li>
+          <li>Format: <b>PDF, A4</b></li>
+          <li>Size: <b>about 9.3 MB</b></li>
+          <li>Year: <b>2026</b></li>
+          <li>Help in creating it: <b>Alenkiy Tsvetochek</b></li>
+        </ul>
+      </div>
+      <div class="cover-wrap">
+        <img class="cover-img" src="https://buteykolive.com/21-oshibka/img/cover.jpg" width="1000" height="1250" alt="Cover of the book “21 critical beginner mistakes in the Buteyko method”">
+      </div>
+    </div>
+  </section>
+
+  <section class="steps" id="get">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:24px">
+        <p class="eyebrow">How to get the book</p>
+        <h2>Three steps, less than a minute</h2>
+      </div>
+      <ol class="step-list">
+        <li><span class="n">1</span><b>Click “Download the book in Telegram”</b><span class="d">Telegram will open with the bot. You need the Telegram app or web version.</span></li>
+        <li><span class="n">2</span><b>Press “Start” in the bot</b><span class="d">The bot will reply with a message and tell you what to do next.</span></li>
+        <li><span class="n">3</span><b>Receive the PDF</b><span class="d">The book will arrive as a file right in the chat. Save it and read it on your phone or computer.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="video" data-video hidden>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Video</p>
+        <h2>Watch a video about the book</h2>
+      </div>
+      <div class="video" id="video-box">
+        <div class="ph">
+          <p>A video will appear here. For now you can watch it on the author’s YouTube channel.</p>
+          <a href="https://www.youtube.com/@buteykolive" target="_blank" rel="noopener">Open the YouTube channel</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="problem">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">A familiar situation</p>
+        <h2>You practice regularly, but your control pause does not grow</h2>
+        <p class="lead">A person can practice for weeks and months without understanding why their readings do not improve. Most often the reason lies in details that are hard to notice on your own.</p>
+      </div>
+      <ul class="cards">
+        <li><b>They breathe less often</b>Instead of reducing the depth of breathing, they start reducing its frequency.</li>
+        <li><b>They stretch out breath holds</b>They believe that the longer you endure, the better, and make breath holds the main exercise.</li>
+        <li><b>They tense up</b>Instead of relaxing, they clamp the breathing muscles, chest and abdomen.</li>
+        <li><b>They measure the CP incorrectly</b>They “squeeze out” the control pause by endurance or break into a deep inhalation.</li>
+        <li><b>They keep changing exercises</b>They look for “the most effective one” and do not carry the basic training through to a result.</li>
+      </ul>
+      <p class="after">The book teaches you to find such mistakes, understand their causes and correct your practice in time.</p>
+    </div>
+  </section>
+
+  <section id="rule">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Mistake No. 2 from the book</p>
+        <h2>The whole method fits on the fingers of your left hand</h2>
+        <p class="lead">K. P. Buteyko suggested memorizing the essence of the method on five fingers. Beginners often remember the exercises but forget the principle for which they are done.</p>
+      </div>
+      <ol class="fingers" aria-label="The left-hand rule">
+        <li class="finger"><span class="n">1</span>reducing</li>
+        <li class="finger"><span class="n">2</span>the depth</li>
+        <li class="finger"><span class="n">3</span>of breathing</li>
+        <li class="finger"><span class="n">4</span>by relaxing the diaphragm</li>
+        <li class="finger"><span class="n">5</span>to an air shortage</li>
+      </ol>
+      <div class="check">
+        <p><b>A check for any exercise.</b> If you doubt whether you are breathing correctly, ask yourself three questions:</p>
+        <p>Am I reducing precisely the depth of breathing? Is this happening through relaxation? Does the necessary sensation of air shortage appear?</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="inside" class="contents">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What’s inside</p>
+        <h2>Two parts: an analysis of mistakes and a reference section of 121 questions</h2>
+        <p class="lead">The table of contents in the PDF is clickable: from it you can go straight to the chapter you need and return the same way.</p>
+      </div>
+
+      <div class="part">
+        <div class="part-title"><span class="tag">Part I</span><h3>21 critical beginner mistakes</h3></div>
+        <ol class="errors">
+          <li><span class="n">1</span><span>Learning the Buteyko method from videos on the Internet</span><span class="p">p. 16</span></li>
+          <li><span class="n">2</span><span>Not knowing the “left-hand rule” by heart</span><span class="p">p. 19</span></li>
+          <li><span class="n">3</span><span>Not studying the theory of the method and the basics of breathing physiology</span><span class="p">p. 22</span></li>
+          <li><span class="n">4</span><span>Practicing the method without having experienced the deep-breathing test yourself</span><span class="p">p. 25</span></li>
+          <li><span class="n">5</span><span>Considering breath holds the main exercise of the method</span><span class="p">p. 28</span></li>
+          <li><span class="n">6</span><span>Trying to reduce the breathing rate instead of the depth of breathing</span><span class="p">p. 31</span></li>
+          <li><span class="n">7</span><span>Not tracking changes in the control pause before and after training and in the mornings once a week</span><span class="p">p. 34</span></li>
+          <li><span class="n">8</span><span>Chasing growth of the control pause at any cost</span><span class="p">p. 37</span></li>
+          <li><span class="n">9</span><span>Forgetting to tell yourself to relax when you feel an air shortage</span><span class="p">p. 40</span></li>
+          <li><span class="n">10</span><span>Not maintaining a slight feeling of air shortage throughout the whole training session</span><span class="p">p. 43</span></li>
+          <li><span class="n">11</span><span>Ignoring posture exercises</span><span class="p">p. 47</span></li>
+          <li><span class="n">12</span><span>Not using special exercises to clear the nose when it is blocked</span><span class="p">p. 50</span></li>
+          <li><span class="n">13</span><span>Not paying attention to moisture and mucus in the nose during training</span><span class="p">p. 53</span></li>
+          <li><span class="n">14</span><span>Not using physical exercise while mastering the method</span><span class="p">p. 55</span></li>
+          <li><span class="n">15</span><span>Ignoring mouth breathing during speech</span><span class="p">p. 58</span></li>
+          <li><span class="n">16</span><span>Overeating without taking into account that it is a strong factor that deepens breathing</span><span class="p">p. 61</span></li>
+          <li><span class="n">17</span><span>Not looking for your own factors that deepen breathing and not eliminating them</span><span class="p">p. 64</span></li>
+          <li><span class="n">18</span><span>Ignoring consultations with an instructor</span><span class="p">p. 67</span></li>
+          <li><span class="n">19</span><span>Ignoring cold conditioning and water procedures</span><span class="p">p. 70</span></li>
+          <li><span class="n">20</span><span>Looking for new exercises when the current ones are already working</span><span class="p">p. 73</span></li>
+          <li><span class="n">21</span><span>Not looking for a new exercise if the current one is not working</span><span class="p">p. 76</span></li>
+        </ol>
+      </div>
+
+      <div class="part">
+        <div class="part-title"><span class="tag">Part II</span><h3>121 popular questions and answers, 10 sections</h3></div>
+        <ul class="topics">
+          <li><span>Understanding the method and training</span><span class="p">p. 80</span></li>
+          <li><span>Control pause and assessing the result</span><span class="p">p. 83</span></li>
+          <li><span>Relaxation, attention and a comfortable position</span><span class="p">p. 88</span></li>
+          <li><span>Breathing in everyday activities and speech</span><span class="p">p. 94</span></li>
+          <li><span>Movement, walking and physical exercise</span><span class="p">p. 96</span></li>
+          <li><span>Exercises, rhythms and fatigue</span><span class="p">p. 100</span></li>
+          <li><span>Daily routine, regularity and recovery</span><span class="p">p. 104</span></li>
+          <li><span>Physiology of breathing and gas exchange</span><span class="p">p. 108</span></li>
+          <li><span>Nutrition and monitoring your condition</span><span class="p">p. 116</span></li>
+          <li><span>Individual conditions, safety and limitations</span><span class="p">p. 119</span></li>
+        </ul>
+      </div>
+      <button class="btn ghost more" id="more" type="button" aria-expanded="false">Show the full table of contents</button>
+    </div>
+  </section>
+
+  <section class="pages-sec" aria-labelledby="pages-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Take a look inside</p>
+        <h2 id="pages-title">This is what the book’s pages look like</h2>
+        <p class="lead">Diagrams, illustrations and lively language. Click a page to view it larger.</p>
+      </div>
+      <ul class="pages">
+        <li><figure><button type="button" data-zoom="img/page-19.jpg" aria-label="Open page 19 larger"><img src="https://buteykolive.com/21-oshibka/img/page-19.jpg" width="1800" height="2546" loading="lazy" alt="Page 19: mistake No. 2, the “left-hand rule” diagram on five fingers"></button><figcaption><b>P. 19.</b> Mistake No. 2: the left-hand rule</figcaption></figure></li>
+        <li><figure><button type="button" data-zoom="img/page-28.jpg" aria-label="Open page 28 larger"><img src="https://buteykolive.com/21-oshibka/img/page-28.jpg" width="1800" height="2546" loading="lazy" alt="Page 28: mistake No. 5, a stopwatch and the conclusion “a breath hold is a tool, not the essence of the method”"></button><figcaption><b>P. 28.</b> Mistake No. 5: a breath hold is a tool, not the essence of the method</figcaption></figure></li>
+        <li><figure><button type="button" data-zoom="img/page-11.jpg" aria-label="Open page 11 larger"><img src="https://buteykolive.com/21-oshibka/img/page-11.jpg" width="1800" height="2546" loading="lazy" alt="Page 11 from the introduction: the author describes his path to the Buteyko method"></button><figcaption><b>P. 11.</b> Introduction: the author’s path to the method</figcaption></figure></li>
+      </ul>
+    </div>
+  </section>
+  <dialog class="lb" id="lb" aria-label="Book page"><img alt="" id="lb-img"></dialog>
+
+  <section class="excerpt" aria-label="Excerpt from the book">
+    <div class="wrap">
+      <figure>
+        <blockquote>
+          <p>The Buteyko method is not a collection of breathing exercises. It is a system.</p>
+          <p>Changes happen not because you have watched many videos. They happen when you correctly and regularly carry out what you have already understood.</p>
+        </blockquote>
+        <figcaption>Alik Mullakhmetov, “21 critical beginner mistakes in the Buteyko method”, mistake No. 1</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="audience">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Who it is for</p>
+        <h2>Who will find the book useful</h2>
+      </div>
+      <ul class="who">
+        <li><b>Beginners</b><span>It will help form a correct idea of the method and avoid typical mistakes from the very first sessions.</span></li>
+        <li><b>Those who already practice VEDB</b><span>It will let you analyze your own sessions and better understand how your control pause changes.</span></li>
+        <li><b>People studying breathing techniques on their own</b><span>It will explain how breathing exercises, breath holds and the Buteyko method differ.</span></li>
+        <li><b>Instructors and teachers</b><span>It will serve as additional material for explaining frequent mistakes and answering students’ questions.</span></li>
+        <li><b>People interested in the physiology of breathing</b><span>It introduces the regulation of lung ventilation, the role of carbon dioxide and self-observation.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="author" class="author">
+    <div class="wrap">
+      <img class="portrait" src="https://buteykolive.com/21-oshibka/img/author.jpg" width="800" height="1000" alt="Alik Mullakhmetov">
+      <div class="author-copy">
+        <p class="eyebrow">About the author</p>
+        <h2>Alik Mullakhmetov</h2>
+        <p class="lead">Biologist, teacher, specialist in physical therapy and occupational therapy, VEDB senior instructor and examiner for the Buteyko method. Master of Education in “Biology and Human Health”.</p>
+        <ul class="stats">
+          <li><b>30 years</b>of research and teaching work</li>
+          <li><b>20+</b>scientific publications, including in international journals</li>
+          <li><b>150+</b>VEDB instructors in Europe, Asia, Africa and America</li>
+        </ul>
+        <p>Founder of Alik Mullakhmetov’s Health Academy. He runs two YouTube channels: on the basics of breathing and health, and on using the Buteyko method in sports.</p>
+        <div class="links">
+          <a href="https://www.youtube.com/@buteykolive" target="_blank" rel="noopener">YouTube: Health Academy</a> <a href="https://www.youtube.com/@primefitguru" target="_blank" rel="noopener">YouTube: Prime Fit Guru</a> <a href="https://buteykolive.com/en/">Website buteykolive.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Questions</p>
+        <h2>The book in brief</h2>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>How can I get the book?</summary>
+          <p>Click the “Download the book in Telegram” button. The Telegram bot will open: press “Start”, and the bot will send the PDF right into the chat.</p>
+        </details>
+        <details>
+          <summary>Is the book really free?</summary>
+          <p>Yes. Downloading is free. The author permits copying and distributing the book, in whole or in part, in print and electronic form, provided that the author’s name and the title of the book are stated.</p>
+        </details>
+        <details>
+          <summary>Is this a course with exercises?</summary>
+          <p>No. It is a book about how to avoid typical mistakes: it explains the principles of the method and the physiology of breathing and answers frequently asked questions. The author recommends consultations with a trained instructor, because mistakes are easier to see from the outside.</p>
+        </details>
+        <details>
+          <summary>Is the book suitable if I am just starting?</summary>
+          <p>Yes. The first part is written for beginners, and the reference section of 121 questions is handy to open as you practice.</p>
+        </details>
+        <details>
+          <summary>May I translate and retell the book?</summary>
+          <p>Yes, you may translate, abridge and rework it. You must state the author and the title of the book and mark the changes made.</p>
+        </details>
+        <details>
+          <summary>Does the book replace a doctor’s consultation?</summary>
+          <p>No. The book is educational and contains no diagnoses or prescriptions. See the safety section below for details.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="safety" aria-labelledby="safety-title">
+    <div class="wrap">
+      <div class="box">
+        <h2 id="safety-title">Important safety information</h2>
+        <p>The book is intended for educational and informational purposes. It does not replace examination, monitoring and treatment by qualified specialists.</p>
+        <ul>
+          <li>People with heart and vascular, respiratory, neurological and other chronic diseases, as well as pregnant women, need to talk to their treating doctor before practicing.</li>
+          <li>In case of dizziness, feeling faint or a noticeable worsening of how you feel, the exercise must be stopped.</li>
+          <li>In case of chest pain, pronounced difficulty breathing or loss of consciousness, you must call an ambulance immediately.</li>
+          <li>Breath holds must not be performed in water, while driving or in any situation where a possible loss of consciousness is dangerous.</li>
+          <li>Information from the book is not grounds for stopping medicines, changing dosages or refusing prescribed treatment.</li>
+        </ul>
+        <p class="small">The body’s response to breathing exercises is individual. The author does not guarantee any particular therapeutic or health results.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>Do not repeat the mistakes that hundreds of people have already made</h2>
+      <p>Download the book and check your practice against it. It will take one evening, and you can start noticing your mistakes in the very first chapters.</p>
+      <a class="btn" href="https://t.me/buteyko_bot?start=6b0427357f24747de80c9dcc" data-cta target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        Download the book in Telegram
+      </a>
+    </div>
+  </section>
+</main>
+
+<div class="stick" id="stick">
+  <a class="btn" href="https://t.me/buteyko_bot?start=6b0427357f24747de80c9dcc" data-cta target="_blank" rel="noopener">Download the book in Telegram</a>
+</div>
+
+<footer class="contacts">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <h3>Author</h3>
+        <p>Alik Mullakhmetov<br>VEDB senior instructor and examiner, the Buteyko method</p>
+      </div>
+      <div>
+        <h3>Consultations and training</h3>
+        <p>Individual consultations, training in the Buteyko method, training and certification of VEDB instructors.</p>
+      </div>
+      <div>
+        <h3>Get in touch</h3>
+        <p><a href="https://t.me/alikmullahmetov" target="_blank" rel="noopener">Telegram @alikmullahmetov</a><br>
+        Viber, WhatsApp: <a href="tel:+380997173275">+380 99 717 3275</a><br>
+        <a href="mailto:noastma@gmail.com">noastma@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="legal">
+      <p>Author: Alik Mullakhmetov. Alenkiy Tsvetochek helped create the book.</p>
+      <p>© 2026 Alik Mullakhmetov. The book “21 critical beginner mistakes in the Buteyko method” is distributed freely and free of charge, provided that the author’s name and the title of the book are stated. When translating, abridging or reworking it, the changes made must be indicated.</p>
+      <p>The materials are educational and do not replace a doctor’s consultation. Results are individual.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // 1) Ссылка на Telegram-бота. Замените на адрес вашего бота, например "https://t.me/имя_бота".
+  var BOT_URL = "https://t.me/buteyko_bot?start=6b0427357f24747de80c9dcc";
+  // 2) ID видео YouTube (часть ссылки после v=). Если пусто, блок «Видео» скрыт.
+  var VIDEO_ID = "IZ28L6FG39s";   // вертикальный ролик 80 с, обложка img/video.jpg
+
+  var lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img");
+  document.querySelectorAll("[data-zoom]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      lbImg.src = b.getAttribute("data-zoom");
+      lbImg.alt = b.querySelector("img").alt;
+      if (lb.showModal) lb.showModal();
+    });
+  });
+  if (lb) lb.addEventListener("click", function () { lb.close(); });
+
+  document.querySelectorAll("[data-cta]").forEach(function (a) { a.href = BOT_URL; });
+
+  if (VIDEO_ID) document.querySelectorAll("[data-video]").forEach(function (el) { el.hidden = false; });
+
+  // 3) нажатия «Скачать» в Google Analytics
+  document.querySelectorAll("[data-cta]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      if (window.gtag) gtag("event", "book_download_click", { place: a.closest(".stick") ? "bottom_bar" : a.closest(".hero") ? "hero" : "final" });
+    });
+  });
+
+  var more = document.getElementById("more");
+  more.addEventListener("click", function () {
+    var open = document.getElementById("inside").classList.toggle("open");
+    more.textContent = open ? "Свернуть оглавление" : "Показать всё оглавление";
+    more.setAttribute("aria-expanded", open);
+    if (!open) document.getElementById("inside").scrollIntoView();
+  });
+
+  // нижняя кнопка: видна, пока на экране нет ни первой, ни последней кнопки
+  var bar = document.getElementById("stick"), seen = new Map();
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { seen.set(e.target, e.isIntersecting || (e.target.classList.contains("cta-row") && e.boundingClientRect.top > 0)); });
+    bar.classList.toggle("show", ![].concat(Array.from(seen.values())).some(Boolean));
+  });
+  [document.querySelector(".hero .cta-row"), document.getElementById("video-box"), document.querySelector(".final"), document.querySelector("footer")].forEach(function (el) { if (el) io.observe(el); });
+
+  var box = document.getElementById("video-box");
+  if (box && VIDEO_ID) {
+    box.innerHTML = '<img src="https://buteykolive.com/21-oshibka/img/video.jpg" alt="">' +
+      '<button class="play" type="button" aria-label="Смотреть видео">' +
+      '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></button>';
+    box.querySelector("button").addEventListener("click", function () {
+      box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + VIDEO_ID +
+        '?autoplay=1&rel=0" title="Video about the book" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+    });
+  }
+})();
+</script>
+</body>
+</html>

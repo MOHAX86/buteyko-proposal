@@ -41,3 +41,16 @@ h1, h2, h3, .t-display { hyphens: manual; -webkit-hyphens: manual; }
 .prose-wrap > *, .prose > * { min-width: 0; }
 .prose-wrap h1 { overflow-wrap: break-word; }
 .prose .btn { white-space: normal; text-align: center; max-width: 100%; height: auto; min-height: var(--btn-h); line-height: 1.25; padding-block: 11px; }
+
+/* en */
+.nav__actions .lang-switch + .lang-switch { margin-left: -6px; }
+@media (max-width: 420px) {
+  .nav__logo.brand { gap: 7px; }
+  .brand img { width: 30px; height: 30px; }
+  .brand b { font-size: 14.5px; }
+  .brand small { font-size: 11.5px; }
+  .nav__actions { gap: 8px; }
+  .nav__actions .lang-switch { min-width: 36px; }
+  .nav__actions .lang-switch + .lang-switch { margin-left: -4px; }
+}
+@media (max-width: 340px) { .brand img { display: none; } }
