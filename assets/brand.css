@@ -54,3 +54,10 @@ h1, h2, h3, .t-display { hyphens: manual; -webkit-hyphens: manual; }
   .nav__actions .lang-switch + .lang-switch { margin-left: -4px; }
 }
 @media (max-width: 340px) { .brand img { display: none; } }
+
+/* 26.11.2026: footer column headings are links */
+.footer__col h3 a{color:inherit;text-decoration:none;display:inline-block;padding:4px 0}
+.footer__col h3 a:hover,.footer__col h3 a:focus-visible{text-decoration:underline;text-underline-offset:4px}
+
+/* 26.11.2026: the footer grows with its content, so the closing photo never covers the footer links on low desktop screens */
+@media (min-width:640px){footer.closing{height:auto;min-height:0}footer.closing>.wrap{height:auto;grid-template-rows:auto auto}}

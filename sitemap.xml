@@ -1167,6 +1167,10 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://buteykolive.com/buteyko-method-trainingru"/>
   </url>
   <url>
+    <loc>https://buteykolive.com/dokumenty</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
     <loc>https://buteykolive.com/21-oshibka/</loc>
     <lastmod>2026-11-26</lastmod>
   </url>
@@ -1181,6 +1185,9 @@
   </url>
   <url>
     <loc>https://buteykolive.com/en/contacts</loc>
+  </url>
+  <url>
+    <loc>https://buteykolive.com/en/documents</loc>
   </url>
   <url>
     <loc>https://buteykolive.com/en/</loc>
