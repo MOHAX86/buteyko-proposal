@@ -517,3 +517,6 @@ details p{padding:0 24px 24px;color:var(--brown);max-width:680px}
 /* en */
 .nav-right .lang + .lang{margin-left:-4px}
 @media (max-width:420px){.nav-right{gap:6px}.nav-right .lang{min-width:40px;padding-inline:6px}.brand-name{font-size:14px}}
+
+/* course link */
+.course-note a{color:inherit;font-weight:700;text-decoration:underline;text-underline-offset:3px}
