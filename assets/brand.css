@@ -95,3 +95,6 @@ h1, h2, h3, .t-display { hyphens: manual; -webkit-hyphens: manual; }
   .nav__actions .btn{padding-inline:12px;font-size:13px}
   .nav__actions .btn svg,.nav__actions .btn .btn__ic,.nav__actions .btn i{display:none}
 }
+
+/* 27.11.2026: шесть значков соцсетей помещаются и на экране 320 */
+@media (max-width: 359px) { .footer .socials { gap: 1px; flex-wrap: wrap; } }
