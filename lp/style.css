@@ -478,11 +478,11 @@ details p{padding:0 24px 24px;color:var(--brown);max-width:680px}
 .m-note{margin-top:12px;font-size:16px;line-height:1.4}
 .m-bottom{color:#fff;display:flex;flex-direction:column;gap:18px}
 .m-picks{display:flex;align-items:flex-end;gap:14px}
-.m-pick{display:flex;flex-direction:column;align-items:center;gap:8px;background:none;border:0;padding:0;cursor:pointer}
+.m-pick{display:flex;flex-direction:column;align-items:center;gap:8px;background:none;border:0;padding:0;cursor:pointer;color:inherit}
 .m-dot{width:5px;height:5px;border-radius:50%;background:#fff;opacity:0;transition:opacity .3s}
-.m-pick img{width:60px;height:60px;border-radius:50%;border:2px solid rgba(255,255,255,.45);transition:border-color .3s,transform .3s}
-.m-pick:hover img{transform:translateY(-3px)}
-.m-pick[aria-pressed="true"] img{border-color:#fff}
+.m-ic{display:grid;place-items:center;width:60px;height:60px;border-radius:50%;border:2px solid rgba(255,255,255,.45);background:rgba(255,255,255,.1);font-size:28px;transition:border-color .3s,background-color .3s,color .3s,transform .3s}
+.m-pick:hover .m-ic{transform:translateY(-3px)}
+.m-pick[aria-pressed="true"] .m-ic{border-color:#fff;background:#fff;color:var(--navy)}
 .m-pick[aria-pressed="true"] .m-dot{opacity:1}
 .m-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;border-top:1px solid rgba(255,255,255,.35);padding-top:18px;font-size:17px}
 .m-meta b{font-weight:500}
@@ -505,9 +505,10 @@ details p{padding:0 24px 24px;color:var(--brown);max-width:680px}
   .m-bottom{color:inherit;margin-top:-34px;position:relative;z-index:1;flex-direction:column-reverse}
   .m-picks{justify-content:center}
   .m-meta{display:none}
-  .m-pick img{border-color:rgba(255,255,255,.7);box-shadow:0 2px 12px rgba(0,16,72,.25)}
+  .m-ic{border-color:rgba(255,255,255,.7);background:var(--c);box-shadow:0 2px 12px rgba(0,16,72,.25)}
+  .mentor[data-tone="light"] .m-ic{background:#fff}
   .mentor[data-tone="light"] .m-dot{background:var(--navy)}
-  .mentor[data-tone="light"] .m-pick[aria-pressed="true"] img{border-color:var(--navy)}
+  .mentor[data-tone="light"] .m-pick[aria-pressed="true"] .m-ic{border-color:var(--navy);background:var(--navy);color:#fff}
   .m-actions .btn{flex:1 1 100%}
   .m-text{min-height:4.4em;font-size:19px}
   .m-note{text-align:center}

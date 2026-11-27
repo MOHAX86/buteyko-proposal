@@ -98,3 +98,24 @@ h1, h2, h3, .t-display { hyphens: manual; -webkit-hyphens: manual; }
 
 /* 27.11.2026: шесть значков соцсетей помещаются и на экране 320 */
 @media (max-width: 359px) { .footer .socials { gap: 1px; flex-wrap: wrap; } }
+
+/* 27.11.2026: the registry and the book pages are taller than one screen: their blocks grow instead of
+   lying over the next one (system.css fixes a section to one screen from 1280px) */
+main > :is(#registry,#inside).section{height:auto;min-height:100vh;min-height:100svh}
+main > :is(#registry,#inside).section > .wrap{height:auto}
+@media (min-width:640px){
+  main > .hero.hx--sub:has(.bk){height:auto;min-height:100vh;min-height:100svh}
+  main > .hero.hx--sub:has(.bk) > .wrap{height:auto;grid-template-rows:auto}
+}
+@media (min-width:1024px){
+  /* the whole cover on a low screen: narrower, never cropped */
+  main > .hero.hx--sub .bk__main{width:min(100%,calc(max(420px,min(640px,100svh - 190px)) * 662 / 926));justify-self:end}
+}
+
+/* low desktop screens (1280px and wider, up to 800px high): every section grows with its content, the same
+   way system.css already does between 640 and 1279px */
+@media (min-width:1280px) and (max-height:800px){
+  main > :is(section,.section):not(.hero,.section--hero){height:auto;min-height:calc(var(--h,1) * 100vh);min-height:calc(var(--h,1) * 100svh)}
+  :where(main > :is(section,.section):not(.hero,.section--hero)){display:flex;flex-direction:column}
+  main > :is(section,.section):not(.hero,.section--hero) > :is(.wrap,.container){flex:1 0 auto;height:auto;min-height:0}
+}
