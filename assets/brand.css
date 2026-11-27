@@ -119,3 +119,16 @@ main > :is(#registry,#inside).section > .wrap{height:auto}
   :where(main > :is(section,.section):not(.hero,.section--hero)){display:flex;flex-direction:column}
   main > :is(section,.section):not(.hero,.section--hero) > :is(.wrap,.container){flex:1 0 auto;height:auto;min-height:0}
 }
+
+/* 27.11.2026: methodist contacts open by the name inside the registry card */
+#registry .md__list{align-items:start}
+.md__d summary{display:block;cursor:pointer;list-style:none}
+.md__d summary::-webkit-details-marker{display:none}
+.md__more{display:inline-block;margin-top:10px;font-size:var(--t-small);font-weight:600;text-decoration:underline;text-underline-offset:4px}
+.md__more::after{content:" +"}
+.md__d[open] .md__more::after{content:" \2212"}
+.md__contacts{display:grid;gap:10px;justify-items:start;margin-top:12px;font-size:var(--t-small);overflow-wrap:anywhere}
+#registry .md__contacts a{color:inherit}
+.md__apps{display:flex;flex-wrap:wrap;gap:8px}
+#registry .md__apps a{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border:1px solid currentColor;border-radius:999px;text-decoration:none}
+#registry .md__contacts>a{text-decoration:underline;text-underline-offset:3px}
