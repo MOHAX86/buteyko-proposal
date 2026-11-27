@@ -520,3 +520,33 @@ details p{padding:0 24px 24px;color:var(--brown);max-width:680px}
 
 /* course link */
 .course-note a{color:inherit;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+/* 27.11.2026: шире меню (Методистам, Книги) и поиск: логотип слева, пункты по центру */
+.nav-bar{grid-template-columns:auto 1fr auto}
+.nav-brand{order:-1}
+.nav-links{justify-content:center;gap:22px}
+.nav-links a,.nav-links .dd>summary{font-size:15px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+.menu-search{font:inherit;font-size:32px;font-weight:300;color:inherit;background:none;border:0;min-height:52px;cursor:pointer;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+:is(.nav-links,.dd) details.dd,.nav-links .dd{background:transparent;border-radius:0}
+.nav-links .dd>summary{display:inline-flex;justify-content:flex-start;min-height:44px;gap:6px;padding:0;border-radius:0;transition:opacity .2s}
+.nav-links .dd>summary:hover{opacity:.65}
+.nav-links .dd__list a{font-size:16px;text-transform:none;letter-spacing:0}
+.nav.on-dark:not(.solid) .nav-links .dd>summary{color:#fff}
+.nav.on-dark:not(.solid) .srch-btn{border-color:rgba(255,255,255,.55)}
+@media (max-width:1279px){
+  .nav-bar{grid-template-columns:1fr auto;gap:12px}
+  .nav-links{display:none}
+  .nav-brand{order:0}
+  .nav-right{order:1}
+  .burger{display:block}
+}
+@media (max-width:700px){
+  .nav-search{display:none}
+  .menu-in{gap:4px;justify-content:flex-start}
+  .menu-in>a:not(.btn),.menu-search{font-size:25px;min-height:46px}
+}
+@media (max-height:760px){.menu-in{justify-content:flex-start}.menu-in>a:not(.btn),.menu-search{font-size:24px;min-height:44px}}
+@media (max-width:359px){.nav-right{gap:2px}.nav .brand-name{font-size:12.5px}.nav-right .lang{min-width:36px;padding-inline:4px}.nav-right .lang + .lang{margin-left:0}.nav .wrap{padding:0 10px}.burger{width:40px}.burger span{left:8px}}
+
+/* на телефоне поиск открывается из меню: в шапке кнопка наезжала на название */
+@media (max-width:429px){.nav .nav-search{display:none}}

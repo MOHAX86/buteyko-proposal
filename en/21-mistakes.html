@@ -371,7 +371,8 @@ h1,h2,h3{font-weight:500!important}
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Video</p>
-        <h2>Watch a video about the book</h2>
+        <h2>Video about the book</h2>
+        <p class="lead" id="video-soon" hidden>The video is being updated and will appear here soon.</p>
       </div>
       <div class="video" id="video-box">
         <div class="ph">
@@ -638,7 +639,7 @@ h1,h2,h3{font-weight:500!important}
   // 1) Ссылка на Telegram-бота. Замените на адрес вашего бота, например "https://t.me/имя_бота".
   var BOT_URL = "https://t.me/buteyko_bot?start=6b0427357f24747de80c9dcc";
   // 2) ID видео YouTube (часть ссылки после v=). Если пусто, блок «Видео» скрыт.
-  var VIDEO_ID = "IZ28L6FG39s";   // вертикальный ролик 80 с, обложка img/video.jpg
+  var VIDEO_ID = "";   // 27.11.2026: ролик IZ28L6FG39s скрыт (в первом кадре люди без согласия). Вставить ID новой версии
 
   var lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img");
   document.querySelectorAll("[data-zoom]").forEach(function (b) {
@@ -653,6 +654,11 @@ h1,h2,h3{font-weight:500!important}
   document.querySelectorAll("[data-cta]").forEach(function (a) { a.href = BOT_URL; });
 
   if (VIDEO_ID) document.querySelectorAll("[data-video]").forEach(function (el) { el.hidden = false; });
+  else {   // пока ролика нет: раздел с обложкой книги и строкой, без кнопки в меню
+    var vs = document.getElementById("video"), vb = document.getElementById("video-box"), cv = document.querySelector('img[src$="img/cover.jpg"]');
+    vs.hidden = false; vb.style.aspectRatio = "4 / 5"; var im = new Image(); im.alt = ""; im.src = cv.src; vb.replaceChildren(im);
+    document.getElementById("video-soon").hidden = false;
+  }
 
   // 3) нажатия «Скачать» в Google Analytics
   document.querySelectorAll("[data-cta]").forEach(function (a) {

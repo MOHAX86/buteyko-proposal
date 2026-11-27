@@ -61,3 +61,37 @@ h1, h2, h3, .t-display { hyphens: manual; -webkit-hyphens: manual; }
 
 /* 26.11.2026: the footer grows with its content, so the closing photo never covers the footer links on low desktop screens */
 @media (min-width:640px){footer.closing{height:auto;min-height:0}footer.closing>.wrap{height:auto;grid-template-rows:auto auto}}
+
+/* 27.11.2026: methodist registry - country buttons in a row, names right under them (before, the names sat a screen lower) */
+#registry .md__filters{display:flex;flex-wrap:wrap;max-width:none;align-self:end}
+#registry .md__list{margin-top:var(--s-5)}
+
+/* 27.11.2026: phone menu of inner pages was broken: the header blur turned the fixed menu panel into a box inside the 56px header */
+@media (max-width:1023px){
+  .nav.nav--pill.is-open{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--bg)}
+  .nav.is-open .nav__links{padding-bottom:calc(var(--btn-h) * 3 + 72px)}
+  .nav.is-open .nav__item .dd{grid-column:1/-1}
+  .nav.is-open .nav__item .dd>summary{width:100%}
+  .nav.is-open .dd__list{position:static;min-width:0;padding:0 0 8px;box-shadow:none;background:transparent}
+  .nav.is-open .nav__actions .srch-btn{order:3;width:100%;height:48px;gap:10px}
+  .nav.is-open .nav__actions .srch-btn::after{content:"Поиск по сайту"}
+  .nav.is-open .nav__actions .srch-btn:lang(en)::after{content:"Search the site"}
+}
+@media (max-width:1023px){
+  .nav.is-open .nav__actions{grid-template-columns:1fr 1fr}
+  .nav.is-open .nav__actions>.btn,.nav.is-open .nav__actions .srch-btn{grid-column:1/-1}
+  .nav.is-open .nav__actions .lang-switch{width:100%;margin:0;border:1px solid var(--line-strong);border-radius:999px}
+  .nav.is-open .nav__actions .lang-switch:not(.lang-switch~.lang-switch):not(:has(~.lang-switch)){grid-column:1/-1}
+}
+
+/* 27.11.2026: with the search button the header must still fit a small laptop or a landscape tablet */
+@media (min-width:1024px) and (max-width:1199px){
+  .nav--pill .nav__bar{gap:10px}
+  .nav--pill .nav__links{padding:0 4px}
+  .nav--pill .nav__links .nav__link{padding-inline:8px}
+  .nav__actions{gap:4px}
+  .nav__actions .srch-btn{min-width:40px;height:40px}
+  .nav__actions .lang-switch{min-width:36px;padding-inline:4px}
+  .nav__actions .btn{padding-inline:12px;font-size:13px}
+  .nav__actions .btn svg,.nav__actions .btn .btn__ic,.nav__actions .btn i{display:none}
+}
